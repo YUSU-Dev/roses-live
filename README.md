@@ -58,7 +58,7 @@ Tests utilise [X](placeholder). Additional tests should be added when new busine
 
 ## Security
 
-If you've found a vulnerability, we want to know so that we can fix it. Our [security policy](?tab=security-ov-file) tells you how to do this.
+If you've found a vulnerability, we want to know so that we can fix it. Our [security policy](https://github.com/YUSU-Dev/roses-live?tab=security-ov-file) tells you how to do this.
 
 ## License
 
