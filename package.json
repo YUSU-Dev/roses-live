@@ -7,39 +7,11 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "postinstall": "nuxt prepare",
-    "prepare": "husky",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "typecheck": "tsc --noEmit && nuxt typecheck"
+    "postinstall": "nuxt prepare"
   },
   "dependencies": {
-    "@nuxt/eslint": "^0.5.7",
-    "@nuxtjs/tailwindcss": "^6.12.1",
-    "@sentry/nuxt": "^8.34.0-internal.0",
     "nuxt": "^3.13.0",
     "vue": "latest",
-    "vue-router": "latest",
-    "vue-tsc": "^2.1.6"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.12.0",
-    "eslint": "^9.12.0",
-    "eslint-plugin-vue": "^9.28.0",
-    "globals": "^15.11.0",
-    "husky": "^9.1.6",
-    "lint-staged": "^15.2.10",
-    "prettier": "3.3.3",
-    "tailwindcss": "^3.4.13",
-    "typescript": "^5.6.3",
-    "typescript-eslint": "^8.8.1"
-  },
-  "lint-staged": {
-    "**/*": [
-      "prettier --write --ignore-unknown",
-      "eslint . --fix"
-    ]
+    "vue-router": "latest"
   }
 }
