@@ -1,4 +1,5 @@
 # Roses Live
+
 Every year York SU plays against Lancaster SU in Europe's biggest varsity, 2025 marks 60 years since the first boat race of Roses. This repo contains all the code for the front end for RosesLive, this works in conjunction with our internal tools and a dedicated media platform to allow our media partners to report on the fixtures over the weekend.
 
 ## Technologies used
@@ -20,7 +21,6 @@ Duplicate the .env.example to .env
 ```bash
 cp .env.example .env
 ```
-
 
 ## Development Server
 
