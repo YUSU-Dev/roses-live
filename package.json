@@ -37,6 +37,9 @@
     "typescript-eslint": "^8.8.1"
   },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
+    "**/*": [
+      "prettier --write --ignore-unknown",
+      "eslint . --fix"
+    ]
   }
 }
