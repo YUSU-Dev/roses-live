@@ -8,7 +8,7 @@ export default defineNuxtConfig({
       autoSubfolderIndex: false,
     },
   },
-  modules: ["@nuxt/eslint", "@sentry/nuxt/module"],
+  modules: ["@nuxt/eslint", "@sentry/nuxt/module", "@nuxtjs/tailwindcss"],
   eslint: {
     config: {
       stylistic: true,
