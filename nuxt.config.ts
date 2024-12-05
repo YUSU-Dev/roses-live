@@ -8,10 +8,27 @@ export default defineNuxtConfig({
       autoSubfolderIndex: false,
     },
   },
+  css: ['~/assets/css/main.css'],
   modules: ['@nuxt/eslint', '@sentry/nuxt/module', '@nuxtjs/tailwindcss'],
   eslint: {
     config: {
       stylistic: true,
+    },
+  },
+  app: {
+    head: {
+      link: [
+        {
+          rel: 'icon',
+          type: 'image/x-icon',
+          href: '/yorksu-logo-black-icon.png',
+        },
+        { rel: 'stylesheet', href: 'https://use.typekit.net/nks8xpu.css' },
+        {
+          rel: 'stylesheet',
+          href: 'https://use.fontawesome.com/releases/v6.7.1/css/all.css',
+        },
+      ],
     },
   },
 })
