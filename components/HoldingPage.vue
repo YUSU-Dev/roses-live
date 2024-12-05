@@ -1,28 +1,38 @@
 <template>
-  <div class="flex h-screen items-center justify-center bg-beige shadow">
-    <div class="flex w-10/12 flex-col">
-      <img
-        class="my-4 w-10/12 md:w-6/12"
-        src="https://assets-cdn.sums.su/YU/IMG/Website/new_logo_beige.png"
-        alt="University of York Students' Union"
-        loading="lazy"
-      >
-      <h1 class="my-4 text-xl">
-        This is a special purpose website, and is currently under construction..
+  <div class="flex flex-wrap justify-center items-center gap-y-8">
+    <img
+      src="https://assets-cdn.sums.su/YU/website/img/Roses/500x500_Roses_Holding_Page.webp"
+      class="aspect-square"
+      alt="Roses 2025 logo"
+    >
+    <div class="flex flex-col gap-y-8 text-center">
+      <h1 class="text-5xl xxs:text-6xl sm:text-8xl">
+        #RosesAreWhite
       </h1>
-      <h1 class="my-4 text-xl">
-        To get in touch with us, you can contact us at
-        <a
-          href="mailto:helpdesk@yorksu.org"
-          class="text-blue-800 underline"
-        >helpdesk@yorksu.org</a>.
-      </h1>
+      <RosesCountdown date="2025-05-02T20:00:00" />
+      <div class="flex justify-center">
+        <SocialLinks />
+      </div>
+      <div class="flex justify-center items-center gap-6">
+        <a href="https://yorksu.org/"><img
+          src="https://assets-cdn.sums.su/YU/website/img/yorksu-logo-black-full.png"
+          alt="University of York Students' Union"
+          class="w-40"
+        ></a>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import RosesCountdown from './Countdown.vue'
+import SocialLinks from './Socials.vue'
+
 export default {
   name: 'HoldingPage',
+  components: {
+    RosesCountdown,
+    SocialLinks,
+  },
 }
 </script>
