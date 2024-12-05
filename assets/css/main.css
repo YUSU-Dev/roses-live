@@ -1,0 +1,16 @@
+body {
+  @apply text-[#231f20];
+  font-family: "ff-good-web-pro-extra-conden", sans-serif;
+}
+
+.countdown-tile {
+  @apply flex justify-center items-center w-36 h-36 border-8 border-[#231f20] bg-gradient-to-b from-[#ffffff] from-60% to-[#231f20] to-100%;
+}
+
+.countdown-text {
+  @apply text-6xl font-bold font-black;
+}
+
+.countdown-title {
+  @apply text-3xl font-extrabold;
+}
