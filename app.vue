@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto h-screen flex items-center">
+  <div class="container mx-auto h-screen flex justify-center items-center">
     <HoldingPage />
   </div>
 </template>
