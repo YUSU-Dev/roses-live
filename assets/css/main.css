@@ -1,6 +1,6 @@
 body {
-  @apply text-[#231f20];
   font-family: "ff-good-web-pro-extra-conden", sans-serif;
+  @apply text-[#231f20] italic;
 }
 
 .countdown-tile {
