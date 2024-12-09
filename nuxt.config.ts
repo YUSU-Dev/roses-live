@@ -21,7 +21,7 @@ export default defineNuxtConfig({
         {
           rel: 'icon',
           type: 'image/x-icon',
-          href: '/yorksu-logo-black-icon.png',
+          href: '/roses-logo.png',
         },
         { rel: 'stylesheet', href: 'https://use.typekit.net/nks8xpu.css' },
         {
