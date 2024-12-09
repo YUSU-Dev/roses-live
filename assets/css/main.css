@@ -8,7 +8,7 @@ body {
 }
 
 .countdown-text {
-  @apply text-6xl font-bold font-black;
+  @apply text-6xl font-black;
 }
 
 .countdown-title {
