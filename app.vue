@@ -7,8 +7,9 @@
         content="Roses 2025 will be returning to York! #RosesAreWhite"
       />
     </Head>
+    <Navbar />
     <div class="container mx-auto h-screen flex justify-center items-center">
-      <HoldingPage />
+      <NuxtPage />
     </div>
   </div>
 </template>

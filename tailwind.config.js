@@ -13,6 +13,7 @@ export default {
         "advice-green": "#00A463",
         "primary-blue": "#307CBF",
         "primary-red": "#E74C3C",
+        "roses-dark": "#231f20",
       },
       screens: {
         // This is just to allow more breakpoints smaller than the default, can be changed to something else
