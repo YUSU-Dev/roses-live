@@ -24,6 +24,7 @@ export default defineNuxtConfig({
           href: "/roses-logo.png",
         },
         { rel: "stylesheet", href: "https://use.typekit.net/nks8xpu.css" },
+        { rel: "stylesheet", href: "https://use.typekit.net/jxs0adx.css" },
         {
           rel: "stylesheet",
           href: "https://use.fontawesome.com/releases/v6.7.1/css/all.css",

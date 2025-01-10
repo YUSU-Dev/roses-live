@@ -1,6 +1,10 @@
 body {
   font-family: "ff-good-web-pro-extra-conden", sans-serif;
-  @apply text-[#231f20] italic;
+  @apply text-[#231f20];
+}
+
+body a {
+  font-family: "soleil", sans-serif;
 }
 
 .countdown-tile {
