@@ -13,8 +13,8 @@
         >
           <div class="flex flex-col gap-2 lg:gap-1">
             <h2 class="text-roses-red mb-2">Useful Links</h2>
-            <a>Roses Live</a>
-            <a>Fixtures</a>
+           <!-- <a>Roses Live</a>
+            <a>Fixtures</a> -->
             <a>Get Involved</a>
             <a>About</a>
             <a>Food & Drink</a>
