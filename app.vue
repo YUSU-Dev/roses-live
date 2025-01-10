@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="flex flex-col h-full">
     <Head>
       <Title>Roses Live</Title>
       <Meta
@@ -8,8 +8,11 @@
       />
     </Head>
     <Navbar />
-    <div class="container mx-auto h-screen flex justify-center items-center">
+    <div class="container mx-auto flex justify-center">
       <NuxtPage />
+    </div>
+    <div class="flex flex-grow items-end">
+      <Footer />
     </div>
   </div>
 </template>

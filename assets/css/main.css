@@ -1,10 +1,18 @@
-body {
-  font-family: "ff-good-web-pro-extra-conden", sans-serif;
-  @apply text-[#231f20];
+html,
+body,
+#__nuxt,
+#__layout {
+  height: 100% !important;
+  width: 100% !important;
 }
 
-body a {
+body {
   font-family: "soleil", sans-serif;
+}
+
+body .xcond {
+  font-family: "ff-good-web-pro-extra-conden", sans-serif;
+  @apply text-[#231f20];
 }
 
 .countdown-tile {
