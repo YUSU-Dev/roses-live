@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full bg-roses-dark py-10">
+  <div class="w-full bg-roses-dark py-10 footer">
     <div class="container mx-auto flex flex-col gap-12">
       <div class="flex flex-col lg:flex-row justify-between items-start">
         <div class="order-2 lg:order-1">
@@ -13,8 +13,8 @@
         >
           <div class="flex flex-col gap-2 lg:gap-1">
             <h2 class="text-roses-red mb-2">Useful Links</h2>
-            <a>Roses Live</a>
-            <a>Fixtures</a>
+            <!-- <a>Roses Live</a>
+            <a>Fixtures</a> -->
             <a>Get Involved</a>
             <a>About</a>
             <a>Food & Drink</a>
@@ -31,12 +31,14 @@
             <div class="flex flex-col gap-2 lg:gap-1">
               <h2 class="text-roses-red mb-2">Contact Details</h2>
               <a>Phone: 01904 32 3724</a>
-              <a>Email: reception@yorksu.org</a>
+              <a href="mailto:helpdesk@yorksu.org"
+                >Email: helpdesk@yorksu.org</a
+              >
             </div>
           </div>
         </div>
         <div class="flex w-56 items-center pt-6 order-3">
-          <a href="https://yorksu.org/">
+          <a href="https://yorksu.org/" target="_blank">
             <img
               src="https://assets-cdn.sums.su/YU/website/img/yorksu-logo-white-full.png"
               class="w-full h-fit"

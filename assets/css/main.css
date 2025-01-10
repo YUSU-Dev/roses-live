@@ -26,3 +26,7 @@ body .xcond {
 .countdown-title {
   @apply text-3xl font-extrabold;
 }
+
+.footer a {
+  @apply hover:underline;
+}
