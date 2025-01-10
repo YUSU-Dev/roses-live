@@ -22,7 +22,7 @@
         </template>
       </div>
       <div class="hidden lg:flex w-48 items-center">
-        <a href="https://yorksu.org/">
+        <a href="https://yorksu.org/" target="_blank">
           <img
             src="https://assets-cdn.sums.su/YU/website/img/yorksu-logo-white-full.png"
             class="w-full h-fit"
