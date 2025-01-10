@@ -17,13 +17,9 @@
       <div
         class="hidden lg:flex flex-grow max-w-3xl items-center justify-between text-white font-semibold"
       >
-        <a>Roses Live</a>
-        <a>Fixtures</a>
-        <a>Get Involved</a>
-        <a>About</a>
-        <a>Food & Drink</a>
-        <a>Shop</a>
-        <a>Map</a>
+        <template v-for="link in links" :key="link.name">
+          <a v-if="!link.hidden" :href="link.href">{{ link.name }}</a>
+        </template>
       </div>
       <div class="hidden lg:flex w-48 items-center">
         <a href="https://yorksu.org/">
@@ -51,13 +47,9 @@
       <hr class="border-zinc-600 mt-6 mx-6" />
       <div class="container mx-auto flex flex-col gap-10">
         <div class="flex flex-col items-center gap-4 pt-6 text-white">
-          <a>Roses Live</a>
-          <a>Fixtures</a>
-          <a>Get Involved</a>
-          <a>About</a>
-          <a>Food & Drink</a>
-          <a>Shop</a>
-          <a>Map</a>
+          <template v-for="link in links" :key="link.name">
+            <a v-if="!link.hidden" :href="link.href">{{ link.name }}</a>
+          </template>
         </div>
         <div class="flex justify-center items-center pb-8">
           <img
@@ -77,6 +69,15 @@ export default {
   data() {
     return {
       isMenuOpen: false,
+      links: [
+        { name: "Roses Live", href: "/", hidden: true },
+        { name: "Fixtures", href: "/", hidden: true },
+        { name: "Get Involved", href: "/", hidden: false },
+        { name: "About", href: "/", hidden: false },
+        { name: "Food & Drink", href: "/", hidden: false },
+        { name: "Shop", href: "/", hidden: false },
+        { name: "Map", href: "/", hidden: false },
+      ],
     };
   },
 };
