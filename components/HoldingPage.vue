@@ -8,7 +8,7 @@
       />
     </div>
     <div class="flex flex-col gap-y-8 text-center">
-      <h1 class="text-5xl xxs:text-6xl sm:text-8xl">#RosesAreWhite</h1>
+      <h1 class="text-5xl xxs:text-6xl sm:text-8xl xcond">#RosesAreWhite</h1>
       <RosesCountdown date="2025-05-02T20:00:00" />
       <div class="flex justify-center">
         <SocialLinks />

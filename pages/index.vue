@@ -1,5 +1,3 @@
 <template>
-  <div>
-    <h1>Hello World</h1>
-  </div>
+  <div class="flex flex-col text-4xl py-10">Test index</div>
 </template>
