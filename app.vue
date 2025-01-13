@@ -8,7 +8,7 @@
       />
     </Head>
     <Navbar />
-    <div class="container mx-auto flex justify-center">
+    <div class="">
       <NuxtPage />
     </div>
     <div class="flex flex-grow items-end">

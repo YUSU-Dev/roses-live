@@ -12,7 +12,7 @@ body {
 
 body .xcond {
   font-family: "ff-good-web-pro-extra-conden", sans-serif;
-  @apply text-[#231f20];
+  @apply italic;
 }
 
 .countdown-tile {
