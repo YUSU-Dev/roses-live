@@ -1,36 +1,37 @@
 <template>
-  <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
-    <div class="flex flex-col items-center gap-4">
-      <div class="countdown-tile">
-        <p class="countdown-text">
-          {{ time.days }}
+  <div
+    class="flex flex-col lg:flex-row gap-2 sm:gap-10 justify-center items-center lg:items-start"
+  >
+    <div class="flex gap-0 sm:gap-10">
+      <div class="flex flex-col items-center justify-center gap-4 w-32">
+        <p class="countdown-text xcond">
+          {{ formatTime(time.days) }}
         </p>
+        <p class="font-semibold">Days</p>
       </div>
-      <p class="countdown-title">DAYS</p>
+      <p class="text-9xl leading-[0.75]">:</p>
+      <div class="flex flex-col items-center justify-center gap-4 w-32">
+        <p class="countdown-text xcond">
+          {{ formatTime(time.hours) }}
+        </p>
+        <p class="font-semibold">Hours</p>
+      </div>
     </div>
-    <div class="flex flex-col items-center gap-4">
-      <div class="countdown-tile">
-        <p class="countdown-text">
-          {{ time.hours }}
+    <p class="hidden lg:flex text-9xl leading-[0.75]">:</p>
+    <div class="flex gap-0 sm:gap-10">
+      <div class="flex flex-col items-center justify-center gap-4 w-32">
+        <p class="countdown-text xcond">
+          {{ formatTime(time.minutes) }}
         </p>
+        <p class="font-semibold">Minutes</p>
       </div>
-      <p class="countdown-title">HOURS</p>
-    </div>
-    <div class="flex flex-col items-center gap-4">
-      <div class="countdown-tile">
-        <p class="countdown-text">
-          {{ time.minutes }}
+      <p class="text-9xl leading-[0.75]">:</p>
+      <div class="flex flex-col items-center justify-center gap-4 w-32">
+        <p class="countdown-text xcond">
+          {{ formatTime(time.seconds) }}
         </p>
+        <p class="font-semibold">Seconds</p>
       </div>
-      <p class="countdown-title">MINUTES</p>
-    </div>
-    <div class="flex flex-col items-center gap-4">
-      <div class="countdown-tile">
-        <p class="countdown-text">
-          {{ time.seconds }}
-        </p>
-      </div>
-      <p class="countdown-title">SECONDS</p>
     </div>
   </div>
 </template>
@@ -79,6 +80,9 @@ export default {
           this.time.seconds = 0;
         }
       }, 1000);
+    },
+    formatTime(value) {
+      return value < 10 ? "0" + value : value;
     },
   },
 };
