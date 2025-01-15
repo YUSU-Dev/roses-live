@@ -12,7 +12,6 @@ body {
 
 body .xcond {
   font-family: "ff-good-web-pro-extra-conden", sans-serif;
-  @apply italic;
 }
 
 .countdown-tile {
@@ -20,7 +19,7 @@ body .xcond {
 }
 
 .countdown-text {
-  @apply text-6xl font-black;
+  @apply text-9xl text-roses-red font-extrabold;
 }
 
 .countdown-title {

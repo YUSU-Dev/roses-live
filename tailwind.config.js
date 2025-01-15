@@ -15,6 +15,7 @@ export default {
         "primary-red": "#E74C3C",
         "roses-dark": "#231f20",
         "roses-red": "#ea3723",
+        "light-gray": "#f8f8f8",
       },
       screens: {
         // This is just to allow more breakpoints smaller than the default, can be changed to something else
