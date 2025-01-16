@@ -23,12 +23,6 @@
             alt="University of York Logo"
           />
         </a>
-        <a href="/">
-          <img
-            src="https://assets-cdn.sums.su/YU/website/img/Roses/York_Parties_Logo.png"
-            alt="York Parties Logo"
-          />
-        </a>
       </div>
     </div>
   </div>
