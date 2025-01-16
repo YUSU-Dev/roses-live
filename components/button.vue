@@ -1,7 +1,7 @@
 <template>
   <a
     :href="href"
-    class="bg-roses-red text-white px-10 py-2 rounded-full w-min"
+    class="bg-roses-red text-white px-10 py-2 rounded-full w-fit"
     >{{ title }}</a
   >
 </template>
