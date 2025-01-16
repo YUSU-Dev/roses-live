@@ -13,12 +13,6 @@
         </a>
         <a href="/">
           <img
-            src="https://assets-cdn.sums.su/YU/website/img/Roses/equitix_logo.png"
-            alt="Equitix Logo"
-          />
-        </a>
-        <a href="/">
-          <img
             src="https://assets-cdn.sums.su/YU/website/img/Roses/Uni_of_York_logo.png"
             alt="University of York Logo"
           />
