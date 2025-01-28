@@ -7,7 +7,7 @@
       <RosesButton title="Sunday" />
     </div>
     <div class="grid grid-cols-2 sm:grid-cols-4 lg:flex gap-6">
-      <RosesButton title="Sports" />
+      <RosesButton title="Activities" />
     </div>
   </div>
 </template>
