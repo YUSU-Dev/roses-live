@@ -7,11 +7,13 @@
       <div class="flex flex-col lg:max-w-[40%] gap-6 text-white justify-center">
         <p class="text-lg hidden lg:block">{{ subTitle }}</p>
         <h1 class="text-7xl lg:text-8xl font-bold xcond italic">{{ title }}</h1>
-        <RosesButton
-          v-if="buttonHref && buttonTitle"
-          :href="buttonHref"
-          :title="buttonTitle"
-        />
+        <div>
+          <RosesButton
+            v-if="buttonHref && buttonTitle"
+            :href="buttonHref"
+            :title="buttonTitle"
+          />
+        </div>
       </div>
       <div v-if="subImage" class="hidden lg:flex">
         <img :src="subImage" class="object-cover w-full h-full" alt="" />
