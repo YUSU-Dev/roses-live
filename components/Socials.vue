@@ -1,4 +1,5 @@
 <template>
+  <h2 class="sr-only">Social links</h2>
   <div class="flex gap-6 text-2xl xxs:text-3xl">
     <a href="https://www.instagram.com/yorkunisu" target="_blank"
       ><i class="fa-brands fa-instagram" />

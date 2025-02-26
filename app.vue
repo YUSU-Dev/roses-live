@@ -1,5 +1,9 @@
+<script setup lang="ts">
+import SponsorsBanner from "./components/SponsorsBanner.vue";
+</script>
+
 <template>
-  <div>
+  <div class="flex flex-col h-full">
     <Head>
       <Title>Roses Live</Title>
       <Meta
@@ -7,8 +11,13 @@
         content="Roses 2025 will be returning to York! #RosesAreWhite"
       />
     </Head>
-    <div class="container mx-auto h-screen flex justify-center items-center">
-      <HoldingPage />
+    <Navbar />
+    <div class="">
+      <NuxtPage />
+    </div>
+    <div class="flex flex-col flex-grow justify-end items-end">
+      <SponsorsBanner />
+      <Footer />
     </div>
   </div>
 </template>
