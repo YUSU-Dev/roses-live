@@ -38,13 +38,22 @@
           </div>
         </div>
         <div class="flex w-56 items-center pt-6 order-3">
-          <a href="https://yorksu.org/" target="_blank">
-            <img
-              src="https://assets-cdn.sums.su/YU/website/img/yorksu-logo-white-full.png"
-              class="w-full h-fit"
-              alt="University of York Students' Union"
-            />
-          </a>
+          <div class="flex-col flex gap-3">
+            <a href="https://yorksu.org/" target="_blank">
+              <img
+                src="https://assets-cdn.sums.su/YU/website/img/yorksu-logo-white-full.png"
+                class="w-full h-fit"
+                alt="University of York Students' Union"
+              />
+            </a>
+            <div>
+              <img
+                src="https://app.greenweb.org/api/v3/greencheckimage/roseslive.co.uk?nocache=true"
+                alt="This website runs on green hosting - verified by thegreenwebfoundation.org"
+                class="w-full h-fit"
+              />
+            </div>
+          </div>
         </div>
       </div>
       <div class="flex flex-col lg:flex-row text-white justify-between gap-6">
