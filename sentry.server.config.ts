@@ -1,5 +1,4 @@
 import * as Sentry from "@sentry/nuxt";
-
 Sentry.init({
   dsn: "https://e6600512df57797f4fd551f8f8adf187@o4506869614903296.ingest.us.sentry.io/4508098677374976",
   // Tracing

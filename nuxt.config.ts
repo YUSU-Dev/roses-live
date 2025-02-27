@@ -1,11 +1,14 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import tailwindcss from "@tailwindcss/vite";
+
 export default defineNuxtConfig({
-  compatibilityDate: "2024-04-03",
+  compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
+  vite: { plugins: [tailwindcss()] },
 
   nitro: { prerender: { autoSubfolderIndex: false } },
   css: ["~/assets/css/main.css"],
-  modules: ["@nuxt/eslint", "@sentry/nuxt/module", "@nuxtjs/tailwindcss"],
+  modules: ["@nuxt/eslint", "@sentry/nuxt/module"],
   eslint: { config: { stylistic: false } },
   app: {
     head: {
