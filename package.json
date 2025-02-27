@@ -20,6 +20,7 @@
     "@nuxtjs/tailwindcss": "^6.12.1",
     "@sentry/nuxt": "^8.34.0-internal.0",
     "nuxt": "^3.13.0",
+    "posthog-js": "^1.224.0",
     "vue": "latest",
     "vue-router": "latest",
     "vue-tsc": "^2.2.0"
