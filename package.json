@@ -18,7 +18,7 @@
   "dependencies": {
     "@nuxt/eslint": "^0.7.5",
     "@nuxtjs/tailwindcss": "^6.12.1",
-    "@sentry/nuxt": "^8.34.0-internal.0",
+    "@sentry/nuxt": "^9.0.0",
     "nuxt": "^3.13.0",
     "vue": "latest",
     "vue-router": "latest",
