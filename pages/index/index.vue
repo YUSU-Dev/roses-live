@@ -14,15 +14,42 @@
         alt=""
         title="About"
         sub-title="ONE TEAM ONE YORK"
-        button-title="Read More"
-        button-href="/about"
       >
         <template #text>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus
-            cum tenetur, non quod ex nesciunt a asperiores labore at aperiam
-            sunt, accusantium consectetur? Iusto placeat delectus cum inventore
-            nostrum enim?
+            Roses is an annual sporting varsity between the University of York
+            and Lancaster University. But it wasn’t always a sports contest. It
+            began way back in medieval times as a war for the throne of England,
+            between the Houses of York and Lancaster. When that war was fought
+            and won, a new one began... Now, our battlefield is the playing
+            field, fought between the University of York and Lancaster
+            University. Each year, we take turns to host this epic battle and
+            2025 is our turn. We’ll be hosting hundreds of fixtures between
+            Friday 2 and Sunday 4 May, from American Football and Cheerleading
+            to Debating and Octopush!
+          </p>
+          <p>
+            But it won’t just be sports fixtures; across the weekend, there will
+            be a range of events to attend across campus and in our venues. So
+            if you aren’t a massive sports fan, you can still get involved in
+            the Roses buzz! This year is the 60th anniversary of the
+            competition, so it’s a special one for everyone!
+          </p>
+          <h3 class="text-5xl xcond font-bold py-6">
+            Show us how you’re celebrating
+          </h3>
+          <p>
+            We want to hear from you throughout the weekend. Whether you’re
+            celebrating a win, cheering on Team York from the sidelines, or
+            enjoying a well-earned pizza at Courtyard, let us know!
+          </p>
+          <p>
+            Tag @yorkunisu in your Instagram posts and we’ll reshare some of our
+            favourite moments throughout Roses.
+          </p>
+          <p>
+            Plus, give us a follow for all the important updates across the
+            weekend.
           </p>
         </template>
       </TextImageSection>
@@ -38,7 +65,7 @@
     <CtaTiles />
     <div class="py-28">
       <TextImageSection
-        image="https://assets-cdn.sums.su/YU/website/img/Roses/About_Image_Homepage.png"
+        image="https://assets-cdn.sums.su/YU/website/img/Roses/York_Mind_Image.jpg"
         alt=""
         title="Our Charity Partner"
         sub-title="ROSES IN MIND"
@@ -47,10 +74,32 @@
       >
         <template #text>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus
-            cum tenetur, non quod ex nesciunt a asperiores labore at aperiam
-            sunt, accusantium consectetur? Iusto placeat delectus cum inventore
-            nostrum enim?
+            Each year, we partner with a different charity. Across Roses
+            weekend, we raise awareness and money for the charity, highlighting
+            important causes. This year, we are partnering with
+            <a
+              class="text-roses-red hover:underline"
+              href="https://www.yorkmind.org.uk/"
+              target="_blank"
+              >York Mind</a
+            >.
+          </p>
+          <p>
+            York Mind are an independent local mental health charity which
+            empowers individuals experiencing mental ill health to start on the
+            pathway to recovery, supported by one simple belief: the condition
+            should never define the person.
+          </p>
+          <p>
+            To mark the announcement, our Sports Officer, TJ, shared her story
+            of how sport helped her to overcome her own mental health
+            challenges.
+            <a
+              class="text-roses-red hover:underline"
+              href="https://yorksu.org/news/article/sport-mental-health"
+              target="_blank"
+              >Read TJ’s story: Sport and my mental health</a
+            >.
           </p>
         </template>
       </TextImageSection>
