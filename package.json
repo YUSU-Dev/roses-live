@@ -16,7 +16,7 @@
     "typecheck": "tsc --noEmit && nuxt typecheck"
   },
   "dependencies": {
-    "@nuxt/eslint": "^0.7.5",
+    "@nuxt/eslint": "^1.0.0",
     "@nuxtjs/tailwindcss": "^6.12.1",
     "@sentry/nuxt": "^8.34.0-internal.0",
     "nuxt": "^3.13.0",
