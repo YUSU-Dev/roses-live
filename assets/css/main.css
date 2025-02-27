@@ -1,3 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --font-*: initial;
+  --font-sans: soleil, inter, sans-serif;
+  --font-serif: rooney-web, serif;
+
+  --color-beige: #f4e9e1;
+  --color-mustard: #f2cb50;
+  --color-light-blue: #d3e6ef;
+  --color-light-pink: #fad7d9;
+  --color-primary-pink: #ffbbbe;
+  --color-voice-orange: #f2682f;
+  --color-advice-green: #00a463;
+  --color-primary-blue: #307cbf;
+  --color-primary-red: #e74c3c;
+  --color-roses-dark: #231f20;
+  --color-roses-red: #ea3723;
+  --color-light-gray: #f8f8f8;
+
+  --breakpoint-xxs: 320px;
+  --breakpoint-xs: 476px;
+  --breakpoint-3xl: 1650px;
+  --breakpoint-max: 1900px;
+}
+
+@utility container {
+  padding-inline: 1rem;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
 html,
 body,
 #__nuxt,
@@ -15,7 +63,7 @@ body .xcond {
 }
 
 .countdown-tile {
-  @apply flex justify-center items-center w-36 h-36 border-8 border-[#231f20] bg-gradient-to-b from-[#ffffff] from-60% to-[#231f20] to-100%;
+  @apply flex justify-center items-center w-36 h-36 border-8 border-[#231f20] bg-linear-to-b from-[#ffffff] from-60% to-[#231f20] to-100%;
 }
 
 .countdown-text {
