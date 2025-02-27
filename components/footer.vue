@@ -18,22 +18,22 @@
             <a>Get Involved</a>
             <a>About</a>
             <a>Food & Drink</a>
-            <a>Shop</a>
+            <a href="https://yorksu.org/shop?category=9" target="_blank">
+              Shop</a
+            >
             <a>Map</a>
           </div>
           <div class="flex flex-col gap-4">
             <div class="flex flex-col gap-2 lg:gap-1">
               <h2 class="text-roses-red mb-2">Student Media</h2>
-              <a>Nouse</a>
-              <a>YSTV</a>
-              <a>URY</a>
+              <a href="https://nouse.co.uk" target="_blank">Nouse</a>
+              <a href="https://ystv.co.uk" target="_blank">YSTV</a>
+              <a href="https://ury.org.uk" target="_blank">URY</a>
             </div>
             <div class="flex flex-col gap-2 lg:gap-1">
               <h2 class="text-roses-red mb-2">Contact Details</h2>
-              <a>Phone: 01904 32 3724</a>
-              <a href="mailto:helpdesk@yorksu.org"
-                >Email: helpdesk@yorksu.org</a
-              >
+              <!-- <a href="tel:01904323724">01904 32 3724</a> -->
+              <a href="mailto:helpdesk@yorksu.org">helpdesk@yorksu.org</a>
             </div>
           </div>
         </div>
@@ -50,7 +50,10 @@
       <div class="flex flex-col lg:flex-row text-white justify-between gap-6">
         <div class="flex items-center order-2 lg:order-1">
           <p class="mb-0 text-xs lg:text-sm">
-            © University of York Students' Union 2025 | All rights reserved
+            © University of York Students' Union 2025 | All rights reserved |
+            <a class="text-roses-red hover:underline" href="/contributors"
+              >Website Credits</a
+            >
           </p>
         </div>
         <div class="flex gap-2 items-center order-1 lg:order-2">
@@ -63,10 +66,5 @@
 
 <script>
 import SocialLinks from "./Socials.vue";
-export default {
-  name: "FooterBar",
-  components: {
-    SocialLinks,
-  },
-};
+export default { name: "FooterBar", components: { SocialLinks } };
 </script>
