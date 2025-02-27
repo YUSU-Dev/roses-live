@@ -44,8 +44,5 @@
       "prettier --write --ignore-unknown",
       "eslint . --fix"
     ]
-  },
-  "engines": {
-    "node": ">= 20"
   }
 }
