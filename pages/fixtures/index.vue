@@ -31,33 +31,24 @@ export default {
     DayFilters,
     FixtureSearch,
   },
-  props: {
-    fixtures: {
-      type: Array,
-      default() {
-        return [
-          {
-            id: 1,
-            date: "2025-05-02T15:00:00",
-            sport: "Football",
-            team: "Men's 1st",
-            location: "22 Acres",
-            pointsAvailable: 2,
-            YorkScore: 0,
-            LancasterScore: 0,
-          },
-          {
-            id: 2,
-            date: "2025-05-02T15:00:00",
-            sport: "Equestrian",
-            team: "2nd team",
-            location: "Harrogate Riding Centre",
-            pointsAvailable: 2,
-            YorkScore: 0,
-            LancasterScore: 0,
-          },
-        ];
-      },
+  data() {
+    return {
+      fixtures: [],
+    };
+  },
+  mounted() {
+    this.fetchFixtures();
+  },
+  methods: {
+    async fetchFixtures() {
+      const response = await fetch(
+        "https://sports-admin.yorksu.org/api/clst1o9lv0001q5teb61pqfyy/seasons/clt4n09g7000hrtqt660v90bp/fixtures",
+      );
+      this.fixtures = await response.json();
+      this.fixtures = this.fixtures.sort((a, b) => {
+        return new Date(a.startsAt) - new Date(b.startsAt);
+      });
+      console.log(this.fixtures);
     },
   },
 };
