@@ -48,7 +48,6 @@ export default {
       this.fixtures = this.fixtures.sort((a, b) => {
         return new Date(a.startsAt) - new Date(b.startsAt);
       });
-      console.log(this.fixtures);
     },
   },
 };
