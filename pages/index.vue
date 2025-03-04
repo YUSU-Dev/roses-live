@@ -22,34 +22,14 @@
             began way back in medieval times as a war for the throne of England,
             between the Houses of York and Lancaster. When that war was fought
             and won, a new one began... Now, our battlefield is the playing
-            field, fought between the University of York and Lancaster
-            University. Each year, we take turns to host this epic battle and
-            2025 is our turn. We’ll be hosting hundreds of fixtures between
-            Friday 2 and Sunday 4 May, from American Football and Cheerleading
-            to Debating and Octopush!
-          </p>
-          <p>
-            But it won’t just be sports fixtures; across the weekend, there will
-            be a range of events to attend across campus and in our venues. So
-            if you aren’t a massive sports fan, you can still get involved in
-            the Roses buzz! This year is the 60th anniversary of the
-            competition, so it’s a special one for everyone!
-          </p>
-          <h3 class="text-5xl xcond font-bold py-6">
-            Show us how you’re celebrating
-          </h3>
-          <p>
-            We want to hear from you throughout the weekend. Whether you’re
-            celebrating a win, cheering on Team York from the sidelines, or
-            enjoying a well-earned pizza at Courtyard, let us know!
-          </p>
-          <p>
-            Tag @yorkunisu in your Instagram posts and we’ll reshare some of our
+            field. This year is the 60th anniversary of the competition, so it’s
+            a special one for everyone! We’ll be hosting hundreds of sports
+            fixtures between Friday 2nd and Sunday 4th May. But if you aren’t a
+            massive sports fan, you can still get involved in the Roses buzz!
+            Across the weekend, there will be a range of events to attend across
+            campus and in our venues. And we want to hear from you too! Tag
+            @yorkunisu in your Instagram posts and we’ll reshare some of our
             favourite moments throughout Roses.
-          </p>
-          <p>
-            Plus, give us a follow for all the important updates across the
-            weekend.
           </p>
         </template>
       </TextImageSection>
