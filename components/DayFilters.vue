@@ -55,6 +55,12 @@ export default {
   components: {
     RosesButton,
   },
+  props: {
+    searchTerm: {
+      type: String,
+      default: "",
+    },
+  },
   emits: ["selectDay"],
   data() {
     return {
@@ -76,6 +82,16 @@ export default {
         endsAt: "2025-05-05T00:00:00Z",
       },
     };
+  },
+  watch: {
+    searchTerm() {
+      if (this.searchTerm === "") {
+        this.setDefaultDay();
+      } else {
+        this.selectedDay = null;
+        this.$emit("selectDay", null);
+      }
+    },
   },
   mounted() {
     this.setDefaultDay();

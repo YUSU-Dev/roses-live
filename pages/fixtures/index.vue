@@ -6,8 +6,8 @@
     />
     <div class="container mx-auto py-28">
       <div class="pb-12 lg:pb-28 flex flex-col gap-8">
-        <DayFilters @select-day="updateDay" />
-        <FixtureSearch />
+        <DayFilters :search-term="searchTerm" @select-day="updateDay" />
+        <FixtureSearch @search="updateSearch" />
       </div>
       <div v-if="!loading">
         <FixtureTile
@@ -43,6 +43,7 @@ export default {
       fixtures: [],
       selectedDay: null,
       loading: true,
+      searchTerm: "",
     };
   },
   mounted() {
@@ -51,12 +52,21 @@ export default {
   methods: {
     async fetchFixtures() {
       this.loading = true;
-      const response = await fetch(
-        "https://sports-admin.yorksu.org/api/clst1o9lv0001q5teb61pqfyy/seasons/cm7uo6y6a0005nn0153286r5l/fixtures?" +
+      let parameters = "";
+      if (this.selectedDay && this.searchTerm === "") {
+        parameters +=
           "startsAt=" +
           this.selectedDay.startsAt +
           "&endsAt=" +
-          this.selectedDay.endsAt,
+          this.selectedDay.endsAt;
+      }
+      if (this.searchTerm !== "") {
+        parameters += "&query=" + this.searchTerm;
+      }
+      console.log(parameters);
+      const response = await fetch(
+        "https://sports-admin.yorksu.org/api/clst1o9lv0001q5teb61pqfyy/seasons/cm7uo6y6a0005nn0153286r5l/fixtures?" +
+          parameters,
       );
       this.fixtures = await response.json();
       this.fixtures = this.fixtures.sort((a, b) => {
@@ -67,6 +77,11 @@ export default {
     updateDay(day) {
       console.log(day);
       this.selectedDay = day;
+      this.fetchFixtures();
+    },
+    updateSearch(search) {
+      console.log(search);
+      this.searchTerm = search;
       this.fetchFixtures();
     },
   },
