@@ -1,6 +1,6 @@
 <template>
   <a
-    :href="fixture.sport.slug"
+    :href="'activities/' + fixture.sport.slug"
     class="w-full flex flex-col gap-2 lg:gap-0 lg:flex-row fixtureTile"
   >
     <div class="fixtureTime">
@@ -25,7 +25,7 @@
         </p>
       </div>
     </div>
-    <div class="flex flex-col gap-2">
+    <div class="flex flex-col gap-2 lg:pr-24 lg:pl-16">
       <div
         class="flex items-center justify-start sm:justify-end gap-6 sm:gap-8"
       >
@@ -35,6 +35,9 @@
             <p v-if="York && York.result" class="text-xl lg:text-2xl">
               {{ formatScore(York.result.score) }}
             </p>
+            <p v-else class="">
+              <i class="fa-regular fa-clock"></i>
+            </p>
           </div>
         </div>
         <div class="flex gap-4 items-center">
@@ -42,6 +45,9 @@
           <div class="scoreTile scoreTileLancaster">
             <p v-if="Lancaster && Lancaster.result" class="text-xl lg:text-2xl">
               {{ formatScore(Lancaster.result.score) }}
+            </p>
+            <p v-else class="">
+              <i class="fa-regular fa-clock"></i>
             </p>
           </div>
         </div>
