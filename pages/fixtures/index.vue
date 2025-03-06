@@ -6,14 +6,19 @@
     />
     <div class="container mx-auto py-28">
       <div class="pb-12 lg:pb-28 flex flex-col gap-8">
-        <DayFilters />
-        <FixtureSearch />
+        <DayFilters :search-term="searchTerm" @select-day="updateDay" />
+        <FixtureSearch @search="updateSearch" />
       </div>
-      <FixtureTile
-        v-for="fixture in fixtures"
-        :key="fixture.id"
-        :fixture="fixture"
-      />
+      <div v-if="!loading">
+        <FixtureTile
+          v-for="fixture in fixtures"
+          :key="fixture.id"
+          :fixture="fixture"
+        />
+      </div>
+      <div v-else>
+        <LoadingFixtureTile />
+      </div>
     </div>
   </div>
 </template>
@@ -23,6 +28,7 @@ import HeroBanner from "~/components/HeroBanner.vue";
 import FixtureTile from "~/components/FixtureTile.vue";
 import DayFilters from "~/components/DayFilters.vue";
 import FixtureSearch from "~/components/FixtureSearch.vue";
+import LoadingFixtureTile from "~/components/LoadingFixtureTile.vue";
 export default {
   name: "FixturesPage",
   components: {
@@ -30,10 +36,14 @@ export default {
     FixtureTile,
     DayFilters,
     FixtureSearch,
+    LoadingFixtureTile,
   },
   data() {
     return {
       fixtures: [],
+      selectedDay: null,
+      loading: true,
+      searchTerm: "",
     };
   },
   mounted() {
@@ -41,13 +51,37 @@ export default {
   },
   methods: {
     async fetchFixtures() {
+      this.loading = true;
+      let parameters = "";
+      if (this.selectedDay && this.searchTerm === "") {
+        parameters +=
+          "startsAt=" +
+          this.selectedDay.startsAt +
+          "&endsAt=" +
+          this.selectedDay.endsAt;
+      } else if (this.searchTerm !== "") {
+        parameters = "&query=" + this.searchTerm;
+      }
       const response = await fetch(
-        "https://sports-admin.yorksu.org/api/clst1o9lv0001q5teb61pqfyy/seasons/clt4n09g7000hrtqt660v90bp/fixtures",
+        "https://sports-admin.yorksu.org/api/clst1o9lv0001q5teb61pqfyy/seasons/cm7uo6y6a0005nn0153286r5l/fixtures?" +
+          parameters,
       );
       this.fixtures = await response.json();
       this.fixtures = this.fixtures.sort((a, b) => {
         return new Date(a.startsAt) - new Date(b.startsAt);
       });
+      this.loading = false;
+    },
+    updateDay(day) {
+      this.selectedDay = day;
+      this.fetchFixtures();
+    },
+    updateSearch(search) {
+      this.searchTerm = search;
+      if (this.searchTerm === "") {
+        this.selectedDay = this.$refs.dayFilters.selectedDay;
+      }
+      this.fetchFixtures();
     },
   },
 };
