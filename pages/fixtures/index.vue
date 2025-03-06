@@ -59,11 +59,9 @@ export default {
           this.selectedDay.startsAt +
           "&endsAt=" +
           this.selectedDay.endsAt;
+      } else if (this.searchTerm !== "") {
+        parameters = "&query=" + this.searchTerm;
       }
-      if (this.searchTerm !== "") {
-        parameters += "&query=" + this.searchTerm;
-      }
-      console.log(parameters);
       const response = await fetch(
         "https://sports-admin.yorksu.org/api/clst1o9lv0001q5teb61pqfyy/seasons/cm7uo6y6a0005nn0153286r5l/fixtures?" +
           parameters,
@@ -75,13 +73,14 @@ export default {
       this.loading = false;
     },
     updateDay(day) {
-      console.log(day);
       this.selectedDay = day;
       this.fetchFixtures();
     },
     updateSearch(search) {
-      console.log(search);
       this.searchTerm = search;
+      if (this.searchTerm === "") {
+        this.selectedDay = this.$refs.dayFilters.selectedDay;
+      }
       this.fetchFixtures();
     },
   },
