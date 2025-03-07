@@ -49,7 +49,11 @@
             alt="Food & Drink"
           />
         </a>
-        <a class="relative flex flex-col justify-end overflow-hidden">
+        <a
+          class="relative flex flex-col justify-end overflow-hidden"
+          href="https://yorksu.org/shop?category=9"
+          target="_blank"
+        >
           <div
             class="absolute flex w-full justify-between items-center px-6 pb-8 z-10"
           >

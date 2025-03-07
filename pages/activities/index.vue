@@ -60,4 +60,7 @@ export default {
     },
   },
 };
+useHead({
+  title: "Activities | Roses Live",
+});
 </script>

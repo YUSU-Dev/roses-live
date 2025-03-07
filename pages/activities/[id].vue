@@ -60,4 +60,7 @@ export default {
     },
   },
 };
+useHead({
+  title: `Roses Live`,
+});
 </script>
