@@ -85,4 +85,7 @@ export default {
     },
   },
 };
+useHead({
+  title: "Fixtures | Roses Live",
+});
 </script>

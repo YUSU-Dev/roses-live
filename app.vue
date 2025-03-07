@@ -4,13 +4,6 @@ import SponsorsBanner from "./components/SponsorsBanner.vue";
 
 <template>
   <div class="flex flex-col h-full">
-    <Head>
-      <Title>Roses Live</Title>
-      <Meta
-        name="description"
-        content="Roses 2025 will be returning to York! #RosesAreWhite"
-      />
-    </Head>
     <Navbar />
     <div class="">
       <NuxtPage />
