@@ -17,15 +17,17 @@
       <div
         class="hidden lg:flex flex-grow max-w-3xl items-center justify-between text-white font-semibold"
       >
-        <template v-for="link in links" :key="link.name">
-          <a v-if="!link.hidden" :href="link.href">{{ link.name }}</a>
+        <template v-for="link in links">
+          <a v-if="!link.hidden" :key="link.name" :href="link.href">{{
+            link.name
+          }}</a>
         </template>
       </div>
       <div class="hidden lg:flex w-48 items-center">
         <a href="https://yorksu.org/" target="_blank">
           <img
             src="https://assets-cdn.sums.su/YU/website/img/yorksu-logo-white-full.png"
-            class="w-full h-fit"
+            class="w-full h-auto"
             alt="University of York Students' Union"
           />
         </a>
@@ -47,8 +49,10 @@
       <hr class="border-zinc-600 mt-6 mx-6" />
       <div class="container mx-auto flex flex-col gap-10">
         <div class="flex flex-col items-center gap-4 pt-6 text-white">
-          <template v-for="link in links" :key="link.name">
-            <a v-if="!link.hidden" :href="link.href">{{ link.name }}</a>
+          <template v-for="link in links">
+            <a v-if="!link.hidden" :key="link.name" :href="link.href">{{
+              link.name
+            }}</a>
           </template>
         </div>
         <div class="flex justify-center items-center pb-8">
@@ -71,12 +75,16 @@ export default {
       isMenuOpen: false,
       links: [
         { name: "Roses Live", href: "/", hidden: true },
-        { name: "Fixtures", href: "/", hidden: true },
-        { name: "Get Involved", href: "/", hidden: false },
-        { name: "About", href: "/", hidden: false },
-        { name: "Food & Drink", href: "/", hidden: false },
-        { name: "Shop", href: "/", hidden: false },
-        { name: "Map", href: "/", hidden: false },
+        { name: "Fixtures", href: "/fixtures", hidden: false },
+        { name: "Get Involved", href: "/", hidden: true },
+        { name: "About", href: "/", hidden: true },
+        { name: "Food & Drink", href: "/", hidden: true },
+        {
+          name: "Shop",
+          href: "https://yorksu.org/shop?category=9",
+          hidden: true,
+        },
+        { name: "Map", href: "/", hidden: true },
       ],
     };
   },
