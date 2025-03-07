@@ -47,7 +47,7 @@ export default {
     };
   },
   mounted() {
-    this.fetchFixtures();
+    useAsyncData(() => this.fetchFixtures());
   },
   methods: {
     async fetchFixtures() {
@@ -62,11 +62,10 @@ export default {
       } else if (this.searchTerm !== "") {
         parameters = "&query=" + this.searchTerm;
       }
-      const response = await fetch(
+      this.fixtures = await $fetch(
         "https://sports-admin.yorksu.org/api/clst1o9lv0001q5teb61pqfyy/seasons/cm7uo6y6a0005nn0153286r5l/fixtures?" +
           parameters,
       );
-      this.fixtures = await response.json();
       this.fixtures = this.fixtures.sort((a, b) => {
         return new Date(a.startsAt) - new Date(b.startsAt);
       });
