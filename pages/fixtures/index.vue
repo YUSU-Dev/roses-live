@@ -7,7 +7,7 @@
     <div class="container mx-auto py-28">
       <div class="pb-12 lg:pb-28 flex flex-col gap-8">
         <DayFilters :search-term="searchTerm" @select-day="updateDay" />
-        <FixtureSearch @search="updateSearch" />
+        <FixtureSearch ref="fixtureSearch" @search="updateSearch" />
       </div>
       <div v-if="!loading">
         <FixtureTile
@@ -73,6 +73,10 @@ export default {
     },
     updateDay(day) {
       this.selectedDay = day;
+      if (this.selectedDay !== null && this.searchTerm !== "") {
+        this.searchTerm = "";
+        this.$refs.fixtureSearch.$refs.searchInput.value = "";
+      }
       this.fetchFixtures();
     },
     updateSearch(search) {

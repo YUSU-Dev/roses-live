@@ -85,9 +85,9 @@ export default {
   },
   watch: {
     searchTerm() {
-      if (this.searchTerm === "") {
+      if (this.searchTerm === "" && this.selectedDay === null) {
         this.setDefaultDay();
-      } else {
+      } else if (this.searchTerm !== "") {
         this.selectedDay = null;
         this.$emit("selectDay", null);
       }
