@@ -3,6 +3,7 @@
     <form :action="search" class="w-full flex items-center h-10.5">
       <input
         id="searchInput"
+        ref="searchInput"
         type="text"
         class="w-full bg-light-gray px-6 py-2 rounded-s-lg border placeholder-slate-500 border-slate-300"
         placeholder="Search for a fixture or activity..."
