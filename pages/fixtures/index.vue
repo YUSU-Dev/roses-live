@@ -11,7 +11,7 @@
       </div>
       <div v-if="!loading">
         <div
-          v-for="(fixtures, date) in groupedFixtures"
+          v-for="(dayFixtures, date) in groupedFixtures"
           :key="date"
           class="not-last:mb-20"
         >
@@ -19,7 +19,7 @@
             {{ date }}
           </h2>
           <FixtureTile
-            v-for="fixture in fixtures"
+            v-for="fixture in dayFixtures"
             :key="fixture.id"
             :fixture="fixture"
           />
