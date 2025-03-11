@@ -66,18 +66,22 @@ export default {
     return {
       selectedDay: null,
       before: {
+        name: "Before",
         startsAt: "2025-03-05T00:00:00Z",
         endsAt: "2025-05-02T00:00:00Z",
       },
       friday: {
+        name: "Friday",
         startsAt: "2025-05-02T00:00:00Z",
         endsAt: "2025-05-03T00:00:00Z",
       },
       saturday: {
+        name: "Saturday",
         startsAt: "2025-05-03T00:00:00Z",
         endsAt: "2025-05-04T00:00:00Z",
       },
       sunday: {
+        name: "Sunday",
         startsAt: "2025-05-04T00:00:00Z",
         endsAt: "2025-05-05T00:00:00Z",
       },
