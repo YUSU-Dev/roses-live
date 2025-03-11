@@ -10,11 +10,20 @@
         <FixtureSearch ref="fixtureSearch" @search="updateSearch" />
       </div>
       <div v-if="!loading">
-        <FixtureTile
-          v-for="fixture in fixtures"
-          :key="fixture.id"
-          :fixture="fixture"
-        />
+        <div
+          v-for="(dayFixtures, date) in groupedFixtures"
+          :key="date"
+          class="not-last:mb-20"
+        >
+          <h2 v-if="date" class="text-3xl font-bold lg:pl-13 mb-4 lg:mb-10">
+            {{ date }}
+          </h2>
+          <FixtureTile
+            v-for="fixture in dayFixtures"
+            :key="fixture.id"
+            :fixture="fixture"
+          />
+        </div>
       </div>
       <div v-else>
         <LoadingFixtureTile />
@@ -29,6 +38,7 @@ import FixtureTile from "~/components/FixtureTile.vue";
 import DayFilters from "~/components/DayFilters.vue";
 import FixtureSearch from "~/components/FixtureSearch.vue";
 import LoadingFixtureTile from "~/components/LoadingFixtureTile.vue";
+import { groupBy } from "lodash";
 export default {
   name: "FixturesPage",
   components: {
@@ -45,6 +55,21 @@ export default {
       loading: true,
       searchTerm: "",
     };
+  },
+  computed: {
+    groupedFixtures() {
+      const options = { weekday: "long", day: "numeric", month: "long" };
+      if (this.selectedDay?.name === "Before" || this.searchTerm !== "") {
+        return groupBy(this.fixtures, (fixture) => {
+          return new Date(fixture.startsAt).toLocaleDateString(
+            "en-GB",
+            options,
+          );
+        });
+      } else {
+        return { "": this.fixtures };
+      }
+    },
   },
   mounted() {
     useAsyncData(() => this.fetchFixtures());
