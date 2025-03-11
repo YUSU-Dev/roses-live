@@ -59,16 +59,9 @@ export default {
   computed: {
     groupedFixtures() {
       const options = { weekday: "long", day: "numeric", month: "long" };
-      if (this.selectedDay?.name === "Before" || this.searchTerm !== "") {
-        return groupBy(this.fixtures, (fixture) => {
-          return new Date(fixture.startsAt).toLocaleDateString(
-            "en-GB",
-            options,
-          );
-        });
-      } else {
-        return { "": this.fixtures };
-      }
+      return groupBy(this.fixtures, (fixture) => {
+        return new Date(fixture.startsAt).toLocaleDateString("en-GB", options);
+      });
     },
   },
   mounted() {
