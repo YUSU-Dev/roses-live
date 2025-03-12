@@ -101,3 +101,7 @@ body .xcond {
 .fixtureDetails {
   @apply lg:pl-16;
 }
+
+.key-rules ol {
+  @apply list-decimal list-inside flex flex-col gap-2;
+}

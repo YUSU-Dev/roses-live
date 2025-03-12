@@ -18,11 +18,13 @@
           <h2 v-if="date" class="text-3xl font-bold lg:pl-13 mb-4 lg:mb-10">
             {{ date }}
           </h2>
-          <FixtureTile
+          <a
             v-for="fixture in dayFixtures"
             :key="fixture.id"
-            :fixture="fixture"
-          />
+            :href="'activities/' + fixture.sport.slug"
+          >
+            <FixtureTile :fixture="fixture" />
+          </a>
         </div>
       </div>
       <div v-else>

@@ -1,8 +1,5 @@
 <template>
-  <a
-    :href="'activities/' + fixture.sport.slug"
-    class="w-full flex flex-col gap-2 lg:gap-0 lg:flex-row fixtureTile"
-  >
+  <div class="w-full flex flex-col gap-2 lg:gap-0 lg:flex-row fixtureTile">
     <div class="fixtureTime">
       <p
         class="font-semibold text-xl lg:text-2xl w-15 flex lg:justify-center items-center"
@@ -61,7 +58,7 @@
         </p>
       </div>
     </div>
-  </a>
+  </div>
 </template>
 
 <script>
