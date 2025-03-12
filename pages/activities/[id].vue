@@ -1,62 +1,107 @@
 <template>
   <div>
     <HeroBanner
-      title="ACTIVITIES"
+      :title="fixtures[0]?.sport.name"
       image="https://assets-cdn.sums.su/YU/website/img/Roses/Hero_Banner_Fixtures.png"
     />
     <div class="container mx-auto py-28">
-      <div class="pb-12 lg:pb-28 flex flex-col gap-8">
-        <DayFilters />
-      </div>
       <div
-        class="flex justify-between items-center lg:px-24 border-b border-slate-300 py-5"
+        v-if="fixtures[0]?.sport.description"
+        class="pb-12 lg:pb-28 key-rules"
       >
-        <h2>Activity</h2>
-        <h2>Fixtures</h2>
-      </div>
-      <a
-        v-for="activity in activities"
-        :key="activity.name"
-        class="flex justify-between items-center lg:px-24 border-b border-slate-300 py-5 group overflow-hidden"
-        :href="activity.href"
-      >
-        <h2
-          class="text-lg sm:text-xl font-bold activity-row-name md:group-hover:translate-x-5 transition-all uppercase"
-        >
-          {{ activity.name }}
+        <h2 class="text-4xl font-bold text-roses-red mb-4 lg:mb-10">
+          KEY RULES
         </h2>
-        <i
-          class="fa-solid fa-arrow-right text-roses-red text-xl sm:text-2xl md:group-hover:translate-x-5 transition-all"
-        ></i>
-      </a>
+        <div v-html="fixtures[0].sport.description"></div>
+      </div>
+      <div v-if="!loading">
+        <h2 class="text-4xl font-bold text-roses-red mb-4">CURRENT FIXTURES</h2>
+        <div
+          v-for="(dayFixtures, date) in groupedFixtures"
+          :key="date"
+          class="not-last:mb-20"
+        >
+          <h3 v-if="date" class="text-3xl font-bold mb-4 lg:mb-10">
+            {{ date }}
+          </h3>
+          <FixtureTile
+            v-for="fixture in dayFixtures"
+            :key="fixture.id"
+            :fixture="fixture"
+          />
+        </div>
+      </div>
+      <div v-else>
+        <LoadingFixtureTile />
+      </div>
+      <div class="py-12 lg:py-28">
+        <h2 class="text-4xl font-bold text-roses-red mb-4">
+          HISTORIC FIXTURES
+        </h2>
+        <HistoricFixtureTile
+          v-for="historicFixture in historicFixtures"
+          :key="historicFixture.id"
+          :historic-fixture="historicFixture"
+        />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import HeroBanner from "~/components/HeroBanner.vue";
-import DayFilters from "~/components/DayFilters.vue";
+import FixtureTile from "~/components/FixtureTile.vue";
+import LoadingFixtureTile from "~/components/LoadingFixtureTile.vue";
+import HistoricFixtureTile from "~/components/HistoricFixtureTile.vue";
+import { groupBy } from "lodash";
 export default {
   name: "FixturesPage",
   components: {
     HeroBanner,
-    DayFilters,
+    FixtureTile,
+    LoadingFixtureTile,
+    HistoricFixtureTile,
   },
-  props: {
-    activities: {
-      type: Array,
-      default() {
-        return [
-          {
-            name: "Football",
-            href: "/fixtures/football",
-          },
-          {
-            name: "Equestrian",
-            href: "/fixtures/equestrian",
-          },
-        ];
-      },
+  data() {
+    return {
+      route: "",
+      fixtures: {},
+      historicFixtures: {},
+      loading: true,
+    };
+  },
+  computed: {
+    groupedFixtures() {
+      const options = { weekday: "long", day: "numeric", month: "long" };
+      return groupBy(this.fixtures, (fixture) => {
+        return new Date(fixture.startsAt).toLocaleDateString("en-GB", options);
+      });
+    },
+  },
+  mounted() {
+    this.route = this.$route.params.id;
+    this.getSport();
+  },
+  methods: {
+    async getSport() {
+      this.loading = true;
+      const [fixtures, historicFixtures] = await Promise.all([
+        $fetch(
+          `https://sports-admin.yorksu.org/api/clst1o9lv0001q5teb61pqfyy/seasons/cm7uo6y6a0005nn0153286r5l/fixtures?sport=${this.route}`,
+        ),
+        $fetch(
+          `https://sports-admin.yorksu.org/api/clst1o9lv0001q5teb61pqfyy/seasons/cm7uo9rsm0009nn01x3q76tx7/fixtures?sport=${this.route}`,
+        ),
+      ]);
+      this.fixtures = fixtures;
+      this.fixtures = this.fixtures.sort((a, b) => {
+        return new Date(a.startsAt) - new Date(b.startsAt);
+      });
+      this.historicFixtures = historicFixtures;
+      this.historicFixtures = this.historicFixtures.sort((a, b) => {
+        return new Date(b.startsAt) - new Date(a.startsAt);
+      });
+      this.loading = false;
     },
   },
 };
