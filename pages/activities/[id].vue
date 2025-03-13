@@ -92,7 +92,7 @@ export default {
           `https://sports-admin.yorksu.org/api/clst1o9lv0001q5teb61pqfyy/seasons/cm7uo9rsm0009nn01x3q76tx7/fixtures?sport=${this.route}`,
         ),
         $fetch(
-          `https://sports-admin.yorksu.org/api/clst1o9lv0001q5teb61pqfyy/seasons/cm7uo9rsm0009nn01x3q76tx7/sports/${this.route}`,
+          `https://sports-admin.yorksu.org/api/clst1o9lv0001q5teb61pqfyy/seasons/cm7uo6y6a0005nn0153286r5l/sports/${this.route}`,
         ),
       ]);
       this.sport = sport;
