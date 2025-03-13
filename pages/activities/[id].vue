@@ -1,18 +1,16 @@
+<!-- eslint-disable vue/no-v-html -->
 <template>
   <div>
     <HeroBanner
-      :title="fixtures[0]?.sport.name"
+      :title="sport?.name"
       image="https://assets-cdn.sums.su/YU/website/img/Roses/Hero_Banner_Fixtures.png"
     />
     <div class="container mx-auto py-28">
-      <div
-        v-if="fixtures[0]?.sport.description"
-        class="pb-12 lg:pb-28 key-rules"
-      >
+      <div v-if="sport?.description" class="pb-12 lg:pb-28 key-rules">
         <h2 class="text-4xl font-bold text-roses-red mb-4 lg:mb-10">
           KEY RULES
         </h2>
-        <div v-html="fixtures[0].sport.description"></div>
+        <div v-html="sport.description"></div>
       </div>
       <div v-if="!loading">
         <h2 class="text-4xl font-bold text-roses-red mb-4">CURRENT FIXTURES</h2>
@@ -67,6 +65,7 @@ export default {
       route: "",
       fixtures: {},
       historicFixtures: {},
+      sport: {},
       loading: true,
     };
   },
@@ -85,14 +84,18 @@ export default {
   methods: {
     async getSport() {
       this.loading = true;
-      const [fixtures, historicFixtures] = await Promise.all([
+      const [fixtures, historicFixtures, sport] = await Promise.all([
         $fetch(
           `https://sports-admin.yorksu.org/api/clst1o9lv0001q5teb61pqfyy/seasons/cm7uo6y6a0005nn0153286r5l/fixtures?sport=${this.route}`,
         ),
         $fetch(
           `https://sports-admin.yorksu.org/api/clst1o9lv0001q5teb61pqfyy/seasons/cm7uo9rsm0009nn01x3q76tx7/fixtures?sport=${this.route}`,
         ),
+        $fetch(
+          `https://sports-admin.yorksu.org/api/clst1o9lv0001q5teb61pqfyy/seasons/cm7uo9rsm0009nn01x3q76tx7/sports/${this.route}`,
+        ),
       ]);
+      this.sport = sport;
       this.fixtures = fixtures;
       this.fixtures = this.fixtures.sort((a, b) => {
         return new Date(a.startsAt) - new Date(b.startsAt);
