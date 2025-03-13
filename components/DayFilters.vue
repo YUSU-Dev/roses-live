@@ -43,18 +43,23 @@
       </button>
     </div>
     <div class="grid grid-cols-2 sm:grid-cols-4 lg:flex gap-6">
-      <RosesButton title="Activities" />
+      <button
+        role="button"
+        :class="[
+          'bg-roses-red text-white px-6 lg:px-10 py-2 rounded-full text-center hover:cursor-pointer',
+          { '!bg-black !text-white': selectedDay === 'activities' },
+        ]"
+        @click="selectDay('activities')"
+      >
+        Activities
+      </button>
     </div>
   </div>
 </template>
 
 <script>
-import RosesButton from "~/components/button.vue";
 export default {
   name: "DayFilters",
-  components: {
-    RosesButton,
-  },
   props: {
     searchTerm: {
       type: String,
@@ -91,7 +96,7 @@ export default {
     searchTerm() {
       if (this.searchTerm === "" && this.selectedDay === null) {
         this.setDefaultDay();
-      } else if (this.searchTerm !== "") {
+      } else if (this.searchTerm !== "" && this.selectedDay !== "activities") {
         this.selectedDay = null;
         this.$emit("selectDay", null);
       }
