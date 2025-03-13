@@ -9,26 +9,41 @@
         <DayFilters :search-term="searchTerm" @select-day="updateDay" />
         <FixtureSearch ref="fixtureSearch" @search="updateSearch" />
       </div>
-      <div v-if="!loading">
-        <div
-          v-for="(dayFixtures, date) in groupedFixtures"
-          :key="date"
-          class="not-last:mb-20"
-        >
-          <h2 v-if="date" class="text-3xl font-bold lg:pl-13 mb-4 lg:mb-10">
-            {{ date }}
-          </h2>
-          <a
-            v-for="fixture in dayFixtures"
-            :key="fixture.id"
-            :href="'activities/' + fixture.sport.slug"
+      <div v-if="selectedDay !== 'activities'">
+        <div v-if="!loading">
+          <div
+            v-for="(dayFixtures, date) in groupedFixtures"
+            :key="date"
+            class="not-last:mb-20"
           >
-            <FixtureTile :fixture="fixture" />
-          </a>
+            <h2 v-if="date" class="text-3xl font-bold lg:pl-13 mb-4 lg:mb-10">
+              {{ date }}
+            </h2>
+            <a
+              v-for="fixture in dayFixtures"
+              :key="fixture.id"
+              :href="'activities/' + fixture.sport.slug"
+            >
+              <FixtureTile :fixture="fixture" />
+            </a>
+          </div>
+        </div>
+        <div v-else>
+          <LoadingFixtureTile />
         </div>
       </div>
       <div v-else>
-        <LoadingFixtureTile />
+        <div
+          class="flex justify-between items-center lg:px-24 border-b border-slate-300 py-5"
+        >
+          <h2>Activity</h2>
+          <h2>Fixtures</h2>
+        </div>
+        <ActivityTile
+          v-for="activity in activities"
+          :key="activity.name"
+          :activity="activity"
+        />
       </div>
     </div>
   </div>
@@ -40,6 +55,7 @@ import FixtureTile from "~/components/FixtureTile.vue";
 import DayFilters from "~/components/DayFilters.vue";
 import FixtureSearch from "~/components/FixtureSearch.vue";
 import LoadingFixtureTile from "~/components/LoadingFixtureTile.vue";
+import ActivityTile from "~/components/ActivityTile.vue";
 import { groupBy } from "lodash";
 export default {
   name: "FixturesPage",
@@ -49,10 +65,12 @@ export default {
     DayFilters,
     FixtureSearch,
     LoadingFixtureTile,
+    ActivityTile,
   },
   data() {
     return {
       fixtures: [],
+      activities: [],
       selectedDay: null,
       loading: true,
       searchTerm: "",
@@ -91,8 +109,27 @@ export default {
       });
       this.loading = false;
     },
+    async fetchActivities() {
+      let parameters = "";
+      if (this.searchTerm !== "") {
+        parameters = "query=" + this.searchTerm;
+      }
+      this.activities = await $fetch(
+        "https://sports-admin.yorksu.org/api/clst1o9lv0001q5teb61pqfyy/seasons/cm7uo6y6a0005nn0153286r5l/sports?" +
+          parameters,
+      );
+      this.activities = this.activities.sort((a, b) => {
+        return a.name.localeCompare(b.name);
+      });
+    },
     updateDay(day) {
       this.selectedDay = day;
+      if (this.selectedDay === "activities") {
+        this.searchTerm = "";
+        this.$refs.fixtureSearch.$refs.searchInput.value = "";
+        this.fetchActivities();
+        return;
+      }
       if (this.selectedDay !== null && this.searchTerm !== "") {
         this.searchTerm = "";
         this.$refs.fixtureSearch.$refs.searchInput.value = "";
@@ -101,6 +138,10 @@ export default {
     },
     updateSearch(search) {
       this.searchTerm = search;
+      if (this.selectedDay === "activities") {
+        this.fetchActivities();
+        return;
+      }
       if (this.searchTerm === "") {
         this.selectedDay = this.$refs.dayFilters.selectedDay;
       }
