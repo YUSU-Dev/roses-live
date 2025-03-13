@@ -24,7 +24,7 @@
           <p class="font-semibold text-lg lg:text-2xl">YORK</p>
           <div class="scoreTile scoreTileYork">
             <p class="text-xl lg:text-2xl">
-              {{ formatScore(historicFixture.teams[0].result.score) }}
+              {{ formatScore(historicFixture.teams[1].result.score) }}
             </p>
           </div>
         </div>
@@ -32,7 +32,7 @@
           <p class="font-semibold text-lg lg:text-2xl">LANCASTER</p>
           <div class="scoreTile scoreTileLancaster">
             <p class="text-xl lg:text-2xl">
-              {{ formatScore(historicFixture.teams[1].result.score) }}
+              {{ formatScore(historicFixture.teams[0].result.score) }}
             </p>
           </div>
         </div>
