@@ -76,8 +76,8 @@ export default {
       links: [
         { name: "Roses Live", href: "/", hidden: true },
         { name: "Fixtures", href: "/fixtures", hidden: false },
-        { name: "Get Involved", href: "/", hidden: true },
-        { name: "About", href: "/", hidden: true },
+        { name: "Get Involved", href: "/get-involved", hidden: false },
+        { name: "About", href: "/about", hidden: false },
         { name: "Food & Drink", href: "/", hidden: true },
         {
           name: "Shop",
