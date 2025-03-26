@@ -103,8 +103,8 @@ body .xcond {
 }
 
 .key-rules ol {
-  @apply list-decimal list-inside flex flex-col gap-2;
+  @apply list-decimal flex flex-col gap-2 pl-4;
 }
 .key-rules ul {
-  @apply list-disc list-inside flex flex-col gap-2;
+  @apply list-disc flex flex-col gap-2 pl-4;
 }
