@@ -17,6 +17,7 @@
                         <a>Fixtures</a> -->
             <a>Get Involved</a>
             <a>About</a>
+            <a href="/terms-and-conditions">Terms & Conditions</a>
             <a>Food & Drink</a>
             <a href="https://yorksu.org/shop?category=9" target="_blank">
               Shop</a

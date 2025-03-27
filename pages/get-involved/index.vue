@@ -66,4 +66,7 @@ export default {
     HeroBanner,
   },
 };
+useHead({
+  title: "Get Involved | Roses Live",
+});
 </script>

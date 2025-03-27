@@ -44,4 +44,7 @@ export default {
     HeroBanner,
   },
 };
+useHead({
+  title: "About | Roses Live",
+});
 </script>
