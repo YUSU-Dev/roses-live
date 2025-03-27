@@ -4,7 +4,7 @@
       title="CONTRIBUTORS"
       image="https://assets-cdn.sums.su/YU/website/img/Roses/Hero_Banner_Homepage.png"
     />
-    <div class="container mx-auto py-28">
+    <div class="container mx-auto py-28 gap-6">
       <p>
         The Roses Live website represents a collaborative effort between staff,
         students, and alumni from the
