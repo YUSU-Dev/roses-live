@@ -150,6 +150,6 @@ export default {
   },
 };
 useHead({
-  title: "Fixtures | Roses Live",
+  title: "Fixtures",
 });
 </script>
