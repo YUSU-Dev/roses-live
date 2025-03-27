@@ -17,7 +17,7 @@
             <a href="/fixtures">Fixtures</a>
             <a href="/get-involved">Get Involved</a>
             <a href="/about">About</a>
-            <!-- <a href="food-drink">Food & Drink</a> -->
+            <!-- <a href="/food-drink">Food & Drink</a> -->
             <!-- <a href="https://yorksu.org/shop?category=9" target="_blank">
               Shop</a
             > -->
