@@ -28,8 +28,14 @@
             massive sports fan, you can still get involved in the Roses buzz!
             Across the weekend, there will be a range of events to attend across
             campus and in our venues. And we want to hear from you too! Tag
-            @yorkunisu in your Instagram posts and we’ll reshare some of our
-            favourite moments throughout Roses.
+            <a
+              class="text-roses-red hover:underline"
+              href="https://instagram.com/yorkunisu"
+              target="_blank"
+              >@yorkunisu</a
+            >
+            in your Instagram posts and we’ll reshare some of our favourite
+            moments throughout Roses.
           </p>
         </template>
       </TextImageSection>
@@ -50,7 +56,8 @@
         title="Our Charity Partner"
         sub-title="ROSES IN MIND"
         button-title="York Mind"
-        button-href="/"
+        button-href="https://www.yorkmind.org.uk/"
+        button-target="_blank"
       >
         <template #text>
           <p>

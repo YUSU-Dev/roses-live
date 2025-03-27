@@ -21,6 +21,7 @@
         v-if="buttonTitle && buttonHref"
         :title="buttonTitle"
         :href="buttonHref"
+        :target="buttonTarget"
       />
     </div>
   </div>
@@ -61,6 +62,10 @@ export default {
     buttonHref: {
       type: String,
       required: true,
+    },
+    buttonTarget: {
+      type: String,
+      default: "_self",
     },
   },
 };

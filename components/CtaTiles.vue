@@ -23,7 +23,10 @@
             alt="Fixtures"
           />
         </a>
-        <a class="relative flex flex-col justify-end overflow-hidden">
+        <a
+          href="/get-involved"
+          class="relative flex flex-col justify-end overflow-hidden"
+        >
           <div
             class="absolute flex w-full justify-between items-center px-6 pb-8 z-10"
           >
@@ -36,7 +39,10 @@
             alt="Get Involved"
           />
         </a>
-        <a class="relative flex flex-col justify-end overflow-hidden">
+        <!-- <a
+          href="/food-drink"
+          class="relative flex flex-col justify-end overflow-hidden"
+        >
           <div
             class="absolute flex w-full justify-between items-center px-6 pb-8 z-10"
           >
@@ -65,7 +71,7 @@
             src="https://assets-cdn.sums.su/YU/website/img/Roses/Shop_Tile.png"
             alt="Shop"
           />
-        </a>
+        </a> -->
       </div>
     </div>
   </div>

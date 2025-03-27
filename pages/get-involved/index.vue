@@ -22,7 +22,7 @@
             Move for your mental health, your physical health, or just to get
             outside. Head to our
             <a
-              href="https://l.facebook.com/l.php?u=https%3A%2F%2Fyorksu.org%2Fsport%2Frun-to-roses%3Ffbclid%3DIwZXh0bgNhZW0CMTAAAR1KatRWK1quvKtwZ44-pLbZwCMtmJpUa6f7U_LywBa_yLbrM0Ksf1K2uS8_aem_mGg4TnCKxjC3lDPkDi-NRg&h=AT09Co8Zu2kY48D-25_zCNQZJy-2ZVCuFZT5sdgIIaiNM9gLYZgBAT18K6dr-R99yT1A85XLmLLtsPsiHf9-aXCpUDqBrHTGZso9aqxHRhJwIED0b03kkIPGUFgCZzpOrfcJ&__tn__=-UK-R&c[0]=AT2Pre_SUxxDPGSJ6t-yD3HMx_AAeLDlxJ_FoECp6c85oH3EPiyyX_8Pai31af0tU386kqLIXAJobyX-Zp36SQ38FPJTPfMzYg1Vvf3kLZugMKya3Jy3BERhT-jb1xk5xXIprBATl8EM_pI_HfBLkWAPKVGW8GTF24GD0Gm--YZWLe5M_7Agwb4t9mP32Pexkrbie2HEcNXl9swVqkvqeSfAtY8"
+              href="https://yorksu.org/sport/run-to-roses?utm_source=yorksu&utm_medium=roses-live-website&utm_campaign=roses2025"
               target="_blank"
               class="text-roses-red hover:underline"
               >Run to Roses page</a
@@ -45,7 +45,7 @@
           </p>
           <p>
             <a
-              href="https://yorksu.org/news/article/roses-volunteer-2025"
+              href="https://yorksu.org/news/article/roses-volunteer-2025?utm_source=yorksu&utm_medium=roses-live-website&utm_campaign=roses2025"
               target="_blank"
               class="text-roses-red hover:underline"
               >Read all about being a Roses Volunteer</a
