@@ -13,15 +13,15 @@
         >
           <div class="flex flex-col gap-2 lg:gap-1">
             <h2 class="text-roses-red mb-2">Useful Links</h2>
-            <!-- <a>Roses Live</a>
-                        <a>Fixtures</a> -->
-            <a>Get Involved</a>
-            <a>About</a>
-            <a>Food & Drink</a>
-            <a href="https://yorksu.org/shop?category=9" target="_blank">
+            <!-- <a>Roses Live</a> -->
+            <a href="/fixtures">Fixtures</a>
+            <a href="/get-involved">Get Involved</a>
+            <a href="/about">About</a>
+            <!-- <a href="/food-drink">Food & Drink</a> -->
+            <!-- <a href="https://yorksu.org/shop?category=9" target="_blank">
               Shop</a
-            >
-            <a>Map</a>
+            > -->
+            <!-- <a href="/map">Map</a> -->
           </div>
           <div class="flex flex-col gap-4">
             <div class="flex flex-col gap-2 lg:gap-1">
