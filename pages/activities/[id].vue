@@ -104,11 +104,12 @@ export default {
       this.historicFixtures = this.historicFixtures.sort((a, b) => {
         return new Date(b.startsAt) - new Date(a.startsAt);
       });
+      // SET PAGE TITLE
+      useHead({
+        title: `${this.sport?.name} | Roses Live`,
+      });
       this.loading = false;
     },
   },
 };
-useHead({
-  title: `Roses Live`,
-});
 </script>

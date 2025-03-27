@@ -22,6 +22,7 @@
               Shop</a
             > -->
             <!-- <a href="/map">Map</a> -->
+            <a href="/terms-and-conditions">Terms & Conditions</a>
           </div>
           <div class="flex flex-col gap-4">
             <div class="flex flex-col gap-2 lg:gap-1">
