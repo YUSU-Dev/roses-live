@@ -51,7 +51,7 @@
       </div>
       <div>
         <h2 class="text-2xl font-bold">Cookies</h2>
-        <h3 className="text-xl  pt-4 font-bold">What Are Cookies?</h3>
+        <h3 className="text-xl pt-4 font-bold">What Are Cookies?</h3>
         <p>
           A cookie is a small text file which helps your web browser navigate
           through a particular website. The cookie can then be read back later
@@ -59,7 +59,7 @@
           of allowing a computer to remember specific information relating to a
           website which has been visited.
         </p>
-        <h3 className="text-xl  pt-4 font-bold">How We Use Cookies</h3>
+        <h3 className="text-xl pt-4 font-bold">How We Use Cookies</h3>
         <p>
           We use cookies for a variety of reasons which are detailed below.
           Unfortunately in most cases there are no industry standard options for
@@ -68,7 +68,7 @@
           all cookies if you are not sure whether you need them or not in case
           they are used to provide a service that you use.
         </p>
-        <h3 className="text-xl  pt-4 font-bold">Disabling Cookies</h3>
+        <h3 className="text-xl pt-4 font-bold">Disabling Cookies</h3>
         <p>
           You can prevent the setting of cookies by adjusting the settings on
           your browser (see your browser documentation for how to do this). Be
@@ -76,7 +76,7 @@
           many other websites that you visit.
           <b>It is recommended that you do not disable cookies.</b>
         </p>
-        <h3 className="text-xl  pt-4 font-bold">The Cookies We Set</h3>
+        <h3 className="text-xl pt-4 font-bold">The Cookies We Set</h3>
         <h4 className="pt-4 font-bold">Third Party Cookies</h4>
         <p>This website will track your engagement using PostHog, including:</p>
 
