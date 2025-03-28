@@ -67,6 +67,6 @@ export default {
   },
 };
 useHead({
-  title: "Get Involved | Roses Live",
+  title: "Get Involved",
 });
 </script>

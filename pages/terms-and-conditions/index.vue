@@ -108,6 +108,6 @@ import HeroBanner from "~/components/HeroBanner.vue";
 
 export default { name: "CookiePolicyPage", components: { HeroBanner } };
 useHead({
-  title: "Terms and Conditions | Roses Live",
+  title: "Terms & Conditions",
 });
 </script>

@@ -45,6 +45,6 @@ export default {
   },
 };
 useHead({
-  title: "About | Roses Live",
+  title: "About",
 });
 </script>

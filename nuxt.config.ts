@@ -14,8 +14,22 @@ export default defineNuxtConfig({
 
   nitro: { prerender: { autoSubfolderIndex: false } },
   css: ["~/assets/css/main.css"],
-  modules: ["@nuxt/eslint", "@sentry/nuxt/module"],
+  modules: ["@nuxt/eslint", "@sentry/nuxt/module", "@nuxtjs/seo"],
   eslint: { config: { stylistic: false } },
+  site: {
+    url: "https://roseslive.co.uk",
+    name: "Roses Live",
+    description:
+      "Roses is an annual sporting varsity between the University of York and Lancaster University. Roses 2025 marks the 60th anniversary of the competition! #RosesAreWhite",
+    defaultLocale: "en",
+  },
+  seo: {
+    meta: {
+      titleTemplate: "%s | Roses Live",
+      description:
+        "Roses is an annual sporting varsity between the University of York and Lancaster University. Roses 2025 marks the 60th anniversary of the competition! #RosesAreWhite",
+    },
+  },
   app: {
     head: {
       htmlAttrs: { lang: "en" },
@@ -37,5 +51,9 @@ export default defineNuxtConfig({
       posthogPublicKey: "phc_7UNozIT6wt5PDS26tlecUIcybDSxDVOhyrj1RC7amws",
       posthogHost: "https://eu.i.posthog.com",
     },
+  },
+  robots: {
+    blockAiBots: true,
+    blockNonSeoBots: true,
   },
 });

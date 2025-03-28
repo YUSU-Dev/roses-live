@@ -43,6 +43,6 @@ import HeroBanner from "~/components/HeroBanner.vue";
 
 export default { name: "ContributorsPage", components: { HeroBanner } };
 useHead({
-  title: "Contributors | Roses Live",
+  title: "Contributor",
 });
 </script>

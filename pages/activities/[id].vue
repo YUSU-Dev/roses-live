@@ -106,7 +106,7 @@ export default {
       });
       // SET PAGE TITLE
       useHead({
-        title: `${this.sport?.name} | Roses Live`,
+        title: `${this.sport?.name}`,
       });
       this.loading = false;
     },
