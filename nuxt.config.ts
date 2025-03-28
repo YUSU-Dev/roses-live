@@ -52,4 +52,8 @@ export default defineNuxtConfig({
       posthogHost: "https://eu.i.posthog.com",
     },
   },
+  robots: {
+    blockAiBots: true,
+    blockNonSeoBots: true,
+  },
 });

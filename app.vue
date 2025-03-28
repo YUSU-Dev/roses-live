@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import SponsorsBanner from "./components/SponsorsBanner.vue";
-defineOgImageComponent("DefaultPage");
+defineOgImageComponent("RosesOgTemplate");
 </script>
 
 <template>
