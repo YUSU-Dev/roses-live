@@ -20,6 +20,8 @@
     "@nuxtjs/seo": "^3.0.1",
     "@sentry/nuxt": "^9.2.0",
     "@tailwindcss/vite": "^4.0.9",
+    "ical-generator": "^8.1.1",
+    "lucide-vue-next": "^0.485.0",
     "nuxt": "^3.13.0",
     "posthog-js": "^1.224.0",
     "vue": "latest",
