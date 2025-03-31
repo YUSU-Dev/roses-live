@@ -78,7 +78,7 @@ export default {
         { name: "Fixtures", href: "/fixtures", hidden: false },
         { name: "Get Involved", href: "/get-involved", hidden: false },
         { name: "About", href: "/about", hidden: false },
-        { name: "Food & Drink", href: "/", hidden: true },
+        { name: "Food & Drink", href: "/food-and-drink", hidden: false },
         {
           name: "Shop",
           href: "https://yorksu.org/shop?category=9",
