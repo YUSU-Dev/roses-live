@@ -38,8 +38,15 @@
             enjoying a well-earned pizza at Courtyard, let us know!
           </p>
           <p>
-            Tag <a href="https://instagram.com/yorkunisu" target="_blank" class="text-roses-red hover:underline">@yorkunisu</a> in your Instagram posts and we’ll reshare some of our
-            favourite moments throughout Roses.
+            Tag
+            <a
+              href="https://instagram.com/yorkunisu"
+              target="_blank"
+              class="text-roses-red hover:underline"
+              >@yorkunisu</a
+            >
+            in your Instagram posts and we’ll reshare some of our favourite
+            moments throughout Roses.
           </p>
           <p>
             Plus, give us a follow for all the important updates across the
