@@ -38,7 +38,9 @@
               >YSTV</a
             >
             <a href="https://ury.org.uk" target="_blank">URY</a>
-            <a href="https://www.youtube.com/@LancsLA1TV" target="_blank">LA1TV</a>
+            <a href="https://www.youtube.com/@LancsLA1TV" target="_blank"
+              >LA1TV</a
+            >
             <a href="https://bailriggfm.co.uk/" target="_blank">Bailrigg FM</a>
           </div>
         </div>
