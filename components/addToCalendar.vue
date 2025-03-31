@@ -5,7 +5,7 @@
         class="flex gap-2 bg-roses-red text-white px-6 md:px-3 py-2 text-center hover:bg-roses-red-dark transition duration-200 ease-in-out"
         @click="togglePopUp()"
       >
-        <CalendarPlus /><span class="md:hidden">Add to Google Calendar</span>
+        <CalendarPlus />
       </button>
     </div>
     <Teleport to="#teleports">
