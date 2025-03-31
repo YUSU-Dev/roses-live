@@ -29,6 +29,10 @@
   padding-inline: 1rem;
 }
 
+.body .container {
+  @apply max-w-[1000px];
+}
+
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
   so we've added these compatibility styles to make sure everything still

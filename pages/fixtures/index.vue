@@ -4,46 +4,48 @@
       title="FIXTURES"
       image="https://assets-cdn.sums.su/YU/website/img/Roses/Hero_Banner_Fixtures.png"
     />
-    <div class="container mx-auto py-28">
-      <div class="pb-12 lg:pb-28 flex flex-col gap-8">
-        <DayFilters :search-term="searchTerm" @select-day="updateDay" />
-        <FixtureSearch ref="fixtureSearch" @search="updateSearch" />
-      </div>
-      <div v-if="selectedDay !== 'activities'">
-        <div v-if="!loading">
-          <div
-            v-for="(dayFixtures, date) in groupedFixtures"
-            :key="date"
-            class="not-last:mb-20"
-          >
-            <h2 v-if="date" class="text-3xl font-bold lg:pl-13 mb-4 lg:mb-10">
-              {{ date }}
-            </h2>
-            <a
-              v-for="fixture in dayFixtures"
-              :key="fixture.id"
-              :href="'activities/' + fixture.sport.slug"
+    <div class="body">
+      <div class="container mx-auto py-28">
+        <div class="pb-12 lg:pb-28 flex flex-col gap-8">
+          <DayFilters :search-term="searchTerm" @select-day="updateDay" />
+          <FixtureSearch ref="fixtureSearch" @search="updateSearch" />
+        </div>
+        <div v-if="selectedDay !== 'activities'">
+          <div v-if="!loading">
+            <div
+              v-for="(dayFixtures, date) in groupedFixtures"
+              :key="date"
+              class="not-last:mb-20"
             >
-              <FixtureTile :fixture="fixture" />
-            </a>
+              <h2 v-if="date" class="text-3xl font-bold lg:pl-13 mb-4 lg:mb-10">
+                {{ date }}
+              </h2>
+              <a
+                v-for="fixture in dayFixtures"
+                :key="fixture.id"
+                :href="'activities/' + fixture.sport.slug"
+              >
+                <FixtureTile :fixture="fixture" />
+              </a>
+            </div>
+          </div>
+          <div v-else>
+            <LoadingFixtureTile />
           </div>
         </div>
         <div v-else>
-          <LoadingFixtureTile />
+          <div
+            class="flex justify-between items-center lg:px-24 border-b border-slate-300 py-5"
+          >
+            <h2>Activity</h2>
+            <h2>Fixtures</h2>
+          </div>
+          <ActivityTile
+            v-for="activity in activities"
+            :key="activity.name"
+            :activity="activity"
+          />
         </div>
-      </div>
-      <div v-else>
-        <div
-          class="flex justify-between items-center lg:px-24 border-b border-slate-300 py-5"
-        >
-          <h2>Activity</h2>
-          <h2>Fixtures</h2>
-        </div>
-        <ActivityTile
-          v-for="activity in activities"
-          :key="activity.name"
-          :activity="activity"
-        />
       </div>
     </div>
   </div>

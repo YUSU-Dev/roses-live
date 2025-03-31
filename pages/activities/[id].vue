@@ -5,42 +5,46 @@
       :title="sport?.name"
       image="https://assets-cdn.sums.su/YU/website/img/Roses/Hero_Banner_Fixtures.png"
     />
-    <div class="container mx-auto py-28">
-      <div v-if="sport?.description" class="pb-12 lg:pb-28 key-rules">
-        <h2 class="text-4xl font-bold text-roses-red mb-4 lg:mb-10">
-          KEY RULES
-        </h2>
-        <div v-html="sport.description"></div>
-      </div>
-      <div v-if="!loading">
-        <h2 class="text-4xl font-bold text-roses-red mb-4">CURRENT FIXTURES</h2>
-        <div
-          v-for="(dayFixtures, date) in groupedFixtures"
-          :key="date"
-          class="not-last:mb-20"
-        >
-          <h3 v-if="date" class="text-3xl font-bold mb-4 lg:mb-10">
-            {{ date }}
-          </h3>
-          <FixtureTile
-            v-for="fixture in dayFixtures"
-            :key="fixture.id"
-            :fixture="fixture"
+    <div class="body">
+      <div class="container mx-auto py-28">
+        <div v-if="sport?.description" class="pb-12 lg:pb-28 key-rules">
+          <h2 class="text-4xl font-bold text-roses-red mb-4 lg:mb-10">
+            KEY RULES
+          </h2>
+          <div v-html="sport.description"></div>
+        </div>
+        <div v-if="!loading">
+          <h2 class="text-4xl font-bold text-roses-red mb-4">
+            CURRENT FIXTURES
+          </h2>
+          <div
+            v-for="(dayFixtures, date) in groupedFixtures"
+            :key="date"
+            class="not-last:mb-20"
+          >
+            <h3 v-if="date" class="text-3xl font-bold mb-4 lg:mb-10">
+              {{ date }}
+            </h3>
+            <FixtureTile
+              v-for="fixture in dayFixtures"
+              :key="fixture.id"
+              :fixture="fixture"
+            />
+          </div>
+        </div>
+        <div v-else>
+          <LoadingFixtureTile />
+        </div>
+        <div class="py-12 lg:py-28">
+          <h2 class="text-4xl font-bold text-roses-red mb-4">
+            HISTORIC FIXTURES
+          </h2>
+          <HistoricFixtureTile
+            v-for="historicFixture in historicFixtures"
+            :key="historicFixture.id"
+            :historic-fixture="historicFixture"
           />
         </div>
-      </div>
-      <div v-else>
-        <LoadingFixtureTile />
-      </div>
-      <div class="py-12 lg:py-28">
-        <h2 class="text-4xl font-bold text-roses-red mb-4">
-          HISTORIC FIXTURES
-        </h2>
-        <HistoricFixtureTile
-          v-for="historicFixture in historicFixtures"
-          :key="historicFixture.id"
-          :historic-fixture="historicFixture"
-        />
       </div>
     </div>
   </div>
