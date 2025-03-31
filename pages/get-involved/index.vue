@@ -33,7 +33,7 @@
           </p>
         </div>
       </div>
-      <div class="flex flex-col gap-6">
+      <div class="flex flex-col gap-6 pb-28">
         <h2 class="text-5xl xcond font-bold">ROSES VOLUNTEERS</h2>
         <div class="flex flex-col gap-4">
           <p>
@@ -49,9 +49,56 @@
               target="_blank"
               class="text-roses-red hover:underline"
               >Read all about being a Roses Volunteer</a
+            >.
+          </p>
+          <p>
+            Applications are now closed, but keep an eye out on our socials and
+            here for any new roles that may become available.
+          </p>
+        </div>
+      </div>
+      <div class="flex flex-col gap-6 pb-28">
+        <h2 class="text-5xl xcond font-bold">ROSES EVENTS</h2>
+        <div class="flex flex-col gap-4">
+          <p>
+            Alongside our 100+ competitive fixtures, we also have a selection of
+            events over Roses weekend that you can get involved with!
+          </p>
+          <p>
+            Unwind with some crafts at The Happy Place under James Marquee,
+            watch show-stopping performances at The Roses Fringe Festival, or
+            take the stage at our Karaoke Night and Open Mic nights!
+          </p>
+          <div class="flex mt-4">
+            <RosesButton
+              title="Roses Events"
+              href="https://yorksu.org/events?category=37"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col gap-6">
+        <h2 class="text-5xl xcond font-bold">ART COMPETITION</h2>
+        <div class="flex flex-col gap-4">
+          <p>
+            Our very own
+            <a
+              href="https://www.instagram.com/uoyartsociety"
+              target="_blank"
+              class="text-roses-red hover:underline"
+              >Art Society</a
             >
-            and submit your Roses Volunteer application by midday on Friday 28
-            March 2025.
+            and UNA Lancaster (Up North Arts, Lancaster’s Art Society) are
+            holding an art competition on the theme of adrenaline, movement, and
+            unity. The winning pieces will be showcased across Roses weekend in
+            the
+            <a
+              href="https://www.instagram.com/normanreagallery/"
+              target="_blank"
+              class="text-roses-red hover:underline"
+              >Norman Rea Art Gallery</a
+            >
+            and the top three winners will receive a prize!
           </p>
         </div>
       </div>
@@ -61,9 +108,11 @@
 
 <script>
 import HeroBanner from "~/components/HeroBanner.vue";
+import RosesButton from "~/components/button.vue";
 export default {
   components: {
     HeroBanner,
+    RosesButton,
   },
 };
 useHead({

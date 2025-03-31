@@ -15,8 +15,8 @@
           />
         </div>
       </div>
-      <div v-if="subImage" class="hidden lg:flex">
-        <img :src="subImage" class="object-cover w-full h-full" alt="" />
+      <div v-if="subImage" class="hidden lg:flex items-end">
+        <img :src="subImage" class="object-contain w-full h-auto" alt="" />
       </div>
     </div>
   </div>
