@@ -52,8 +52,11 @@
           <add-to-calendar
             :start-date="fixture.startsAt"
             :end-date="fixture.endsAt"
-            :title="'Roses 2025 | ' + fixture.sport.name + ' - ' + teamName"
-            :description="'Follow all the action live on roseslive.co.uk! Brought to you by York SU (yorksu.org).'"
+            :title="fixture.sport.name + ' - ' + teamName"
+            :description="
+              'Follow all the action live on roseslive.co.uk! Brought to you by York SU (yorksu.org). Fixture Details: https://roseslive.co.uk/activities/' +
+              fixture.sport.slug
+            "
             :location="fixture.location.name"
           />
         </div>
@@ -71,7 +74,10 @@
           :start-date="fixture.startsAt"
           :end-date="fixture.endsAt"
           :title="'Roses 2025 | ' + fixture.sport.name + ' - ' + teamName"
-          :description="'Follow all the action live on roseslive.co.uk! Brought to you by York SU (yorksu.org).'"
+          :description="
+            'Follow all the action live on roseslive.co.uk! Brought to you by York SU (yorksu.org). Fixture Details: https://roseslive.co.uk/activities/' +
+            fixture.sport.slug
+          "
           :location="fixture.location.name"
         />
       </div>
