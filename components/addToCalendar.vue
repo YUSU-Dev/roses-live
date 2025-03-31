@@ -1,12 +1,13 @@
 <template>
   <div>
     <div class="flex flex-col items-end justify-end">
-      <button
+      <a
+        href="javascript:void(0)"
         class="flex gap-2 bg-roses-red text-white px-6 md:px-3 py-2 text-center hover:bg-roses-red-dark transition duration-200 ease-in-out"
         @click="togglePopUp()"
       >
         <CalendarPlus />
-      </button>
+      </a>
     </div>
     <Teleport to="#teleports">
       <AddToCalendarModal

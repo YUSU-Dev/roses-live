@@ -69,7 +69,7 @@
           {{ fixture.scoringRules[0].pointsValue }} POINTS
         </p>
       </div>
-      <div v-if="fixture.startsAt" class="md:hidden flex items-center">
+      <div v-if="fixture.startsAt" class="md:hidden flex justify-end">
         <add-to-calendar
           :start-date="fixture.startsAt"
           :end-date="fixture.endsAt"
