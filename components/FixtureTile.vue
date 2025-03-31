@@ -13,7 +13,7 @@
         <p v-if="York.team" class="">{{ York.team.name }}</p>
       </div>
       <div class="flex justify-between">
-        <p v-if="fixture.location">{{ fixture.location.name }}</p>
+        <p v-if="fixture.location">{{ locationName }}</p>
         <p
           v-if="fixture.scoringRules[0].pointsValue !== 0"
           class="block lg:hidden whitespace-nowrap"
@@ -57,7 +57,7 @@
               'Follow all the action live on roseslive.co.uk! Brought to you by York SU (yorksu.org). Fixture Details: https://roseslive.co.uk/activities/' +
               fixture.sport.slug
             "
-            :location="fixture.location.name"
+            :location="locationName"
           />
         </div>
       </div>
@@ -78,7 +78,7 @@
             'Follow all the action live on roseslive.co.uk! Brought to you by York SU (yorksu.org). Fixture Details: https://roseslive.co.uk/activities/' +
             fixture.sport.slug
           "
-          :location="fixture.location.name"
+          :location="locationName"
         />
       </div>
     </div>
@@ -118,6 +118,13 @@ export default {
         (team) => team.team.collectionId === this.yorkCollectionId,
       );
       return team ? team.team.name : null;
+    },
+    locationName() {
+      return `${this.fixture.location.name}${
+        this.fixture.location.parent
+          ? ", " + this.fixture.location.parent.name
+          : ""
+      }`;
     },
   },
   mounted() {
