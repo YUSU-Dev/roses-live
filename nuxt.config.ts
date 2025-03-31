@@ -14,7 +14,12 @@ export default defineNuxtConfig({
 
   nitro: { prerender: { autoSubfolderIndex: false } },
   css: ["~/assets/css/main.css"],
-  modules: ["@nuxt/eslint", "@sentry/nuxt/module", "@nuxtjs/seo"],
+  modules: [
+    "@nuxt/eslint",
+    "@sentry/nuxt/module",
+    "@nuxtjs/seo",
+    "nuxt-security",
+  ],
   eslint: { config: { stylistic: false } },
   site: {
     url: "https://roseslive.co.uk",
