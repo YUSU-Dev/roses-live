@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col items-end justify-end">
     <a
-      :href="`https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${formattedStartDate}/${formattedEndDate}&details=${description}&location=${location}&sf=true&output=xml`"
+      :href="`https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${formattedStartDate}/${formattedEndDate}&ctz=UTC&details=${description}&location=${location}&sf=true&output=xml`"
       target="_blank"
       class="flex gap-2 bg-roses-red text-white px-6 md:px-3 py-2 text-center hover:bg-roses-red-dark transition duration-200 ease-in-out"
       ><CalendarPlus /><span class="md:hidden">Add to Google Calendar</span></a
