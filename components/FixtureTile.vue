@@ -48,6 +48,18 @@
             </p>
           </div>
         </div>
+        <div v-if="fixture.startsAt" class="hidden md:flex items-center">
+          <add-to-calendar
+            :start-date="fixture.startsAt"
+            :end-date="fixture.endsAt"
+            :title="fixture.sport.name + ' - ' + teamName"
+            :description="
+              'Follow all the action live on roseslive.co.uk! Brought to you by York SU (yorksu.org). Fixture Details: https://roseslive.co.uk/activities/' +
+              fixture.sport.slug
+            "
+            :location="fixture.location.name"
+          />
+        </div>
       </div>
       <div class="hidden lg:flex items-center justify-end">
         <p
@@ -57,13 +69,29 @@
           {{ fixture.scoringRules[0].pointsValue }} POINTS
         </p>
       </div>
+      <div v-if="fixture.startsAt" class="md:hidden flex justify-end">
+        <add-to-calendar
+          :start-date="fixture.startsAt"
+          :end-date="fixture.endsAt"
+          :title="'Roses 2025 | ' + fixture.sport.name + ' - ' + teamName"
+          :description="
+            'Follow all the action live on roseslive.co.uk! Brought to you by York SU (yorksu.org). Fixture Details: https://roseslive.co.uk/activities/' +
+            fixture.sport.slug
+          "
+          :location="fixture.location.name"
+        />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import addToCalendar from "~/components/addToCalendar.vue";
 export default {
   name: "FixtureTile",
+  components: {
+    addToCalendar,
+  },
   props: {
     fixture: {
       type: Object,
