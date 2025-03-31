@@ -6,7 +6,7 @@
       button-title="Fixtures"
       button-href="/fixtures"
       image="https://assets-cdn.sums.su/YU/website/img/Roses/Hero_Banner_Homepage.png"
-      sub-image="https://assets-cdn.sums.su/YU/website/img/Roses/One_Team_One_York_Homepage.png"
+      sub-image="https://assets-cdn.sums.su/YU/website/img/Roses/Hero_banner_NEW_cropped.png"
     />
     <div class="pt-28">
       <TextImageSection
