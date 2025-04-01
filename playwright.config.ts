@@ -78,14 +78,14 @@ export default defineConfig<ConfigOptions>({
   ],
 
   /* Run your local dev server before starting the tests */
-  // webServer: {
-  //   command: process.env.CI ? 'npm start' : "npm run dev",
-  //   url: 'http://127.0.0.1:3000',
-  //   reuseExistingServer: !process.env.CI,
-  //   env: {
-  //     ...process.env,
-  //     E2E_TEST: "true",
-  //   },
-  //   stdout: "pipe",
-  // },
+  webServer: {
+    command: process.env.CI ? 'npm start' : "npm run dev",
+    url: 'http://127.0.0.1:3000',
+    reuseExistingServer: !process.env.CI,
+    env: {
+      ...process.env,
+      E2E_TEST: "true",
+    },
+    stdout: "pipe",
+  },
 });
