@@ -52,7 +52,7 @@
               Alongside our 100+ competitive fixtures, we also have a selection
               of events over Roses weekend. Join us for the
               <a
-                href="https://yorksu.org/events/id/4394-roses-2025-opening-ceremony-mens-1s-basketball"
+                href="https://yorksu.org/events/id/4394-roses-2025-opening-ceremony-mens-1s-basketball?utm_source=yorksu&utm_medium=roses-live-website&utm_campaign=roses2025"
                 target="_blank"
                 class="text-roses-red hover:underline"
                 >Opening Ceremony</a
@@ -60,7 +60,7 @@
               amazing performances from student groups! Or maybe you want to
               dress up in your finest for an evening of excitement? Join us for
               <a
-                href="https://yorksu.org/events/id/4395-roses-2025-fight-night"
+                href="https://yorksu.org/events/id/4395-roses-2025-fight-night?utm_source=yorksu&utm_medium=roses-live-website&utm_campaign=roses2025"
                 target="_blank"
                 class="text-roses-red hover:underline"
                 >Fight Night</a
