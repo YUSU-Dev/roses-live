@@ -14,8 +14,8 @@
           <template #text>
             <p>
               Supporting Team York is hard work - but we’ve got you covered!
-              We’ll have a range of food and drink across campus to keep you
-              full and hydrated across the weekend. From bagels and pizza to
+              We’ll have a range of food and drink options across campus to keep
+              you full and hydrated across the weekend. From bagels and pizza to
               coffee and puddings, there will be plenty of tasty treats on
               offer!
             </p>
