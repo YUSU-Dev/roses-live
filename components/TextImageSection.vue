@@ -11,8 +11,8 @@
       class="flex flex-col gap-6 order-1 lg:order-2 items-center text-center lg:items-start lg:text-start"
     >
       <div class="flex flex-col gap-4">
-        <h2 class="text-roses-red font-semibold">{{ title }}</h2>
-        <h3 class="text-5xl xcond font-bold">{{ subTitle }}</h3>
+        <h2 v-if="title" class="text-roses-red font-semibold">{{ title }}</h2>
+        <h3 v-if="subTitle" class="text-5xl xcond font-bold">{{ subTitle }}</h3>
       </div>
       <div class="flex flex-col gap-2">
         <slot name="text">{{ text }}</slot>

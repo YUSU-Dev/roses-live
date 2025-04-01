@@ -1,6 +1,9 @@
 <template>
   <div class="w-full flex items-center h-10.5">
     <form :action="search" class="w-full flex items-center h-10.5">
+      <label for="searchInput" class="sr-only"
+        >Search for a fixture or activity</label
+      >
       <input
         id="searchInput"
         ref="searchInput"
