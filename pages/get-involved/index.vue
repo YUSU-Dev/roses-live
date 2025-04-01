@@ -28,7 +28,13 @@
                 class="text-roses-red hover:underline"
                 >Run to Roses page</a
               >
-              for information on the Strava Run Club, and follow @yorksportunion
+              for information on the Strava Run Club, and follow
+              <a
+                href="https://instagram.com/yorksportunion"
+                target="_blank"
+                class="text-roses-red hover:underline"
+                >@yorksportunion</a
+              >
               on Instagram to stay up to date with the Challenge events,
               competitions, ambassadors, and lots more!
             </p>
@@ -44,10 +50,21 @@
           <div class="flex flex-col gap-4">
             <p>
               Alongside our 100+ competitive fixtures, we also have a selection
-              of events over Roses weekend. Join us for the Opening Ceremony,
-              which kicks off Roses Weekend with Mens' 1s Basketball and amazing
-              performances from student groups! Or maybe you want to dress up in
-              your finest for an evening of excitement? Join us for Fight Night!
+              of events over Roses weekend. Join us for the
+              <a
+                href="https://yorksu.org/events/id/4394-roses-2025-opening-ceremony-mens-1s-basketball"
+                target="_blank"
+                class="text-roses-red hover:underline"
+                >Opening Ceremony</a
+              >, which kicks off Roses Weekend with Mens' 1s Basketball and
+              amazing performances from student groups! Or maybe you want to
+              dress up in your finest for an evening of excitement? Join us for
+              <a
+                href="https://yorksu.org/events/id/4395-roses-2025-fight-night"
+                target="_blank"
+                class="text-roses-red hover:underline"
+                >Fight Night</a
+              >!
             </p>
             <p>
               Unwind with some crafts at The Happy Place under James Marquee,

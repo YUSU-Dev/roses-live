@@ -11,12 +11,12 @@
           <div class="flex flex-col gap-4">
             <p>
               Roses is an annual sporting varsity between the University of York
-              and Lancaster University. But it wasn’t always a sports contest.
-              It began way back in medieval times as a war for the throne of
-              England, between the Houses of York and Lancaster. When that war
-              was fought and won, a new one began... Now, our battlefield is the
-              playing field. Each year, we take turns to host this epic battle
-              and this year, Roses is back on home soil!
+              and Lancaster University, although it wasn't always a sports
+              contest. It began way back in medieval times as a war for the
+              throne of England, between the Houses of York and Lancaster. When
+              that war was fought and won, a new one began... Now, our
+              battlefield is the playing field. Each year, we take turns to host
+              this epic battle and this year, Roses is back on home soil!
             </p>
             <p>
               This year is the 60th anniversary of the competition, so it’s a
@@ -85,9 +85,9 @@
                 href="https://issuu.com/roupez.se/docs/tiger_cotton_presentation#:~:text=Tiger%20Cotton%C2%AE%20has%20been,Now%20it's%20finally%20here!&text=Tiger%20Cotton%20works%20to%20convert,scenario%20for%20farmers%20and%20wildlife.%E2%80%9D"
                 target="_blank"
                 class="text-roses-red hover:underline"
-                >tiger cotton</a
+                >Tiger Cotton</a
               >, a growing scheme which makes it financially viable for farmers
-              to transition to Organic Cotton growing. Stay tuned for more
+              to transition to organic cotton growing. Stay tuned for more
               sustainability updates!
             </p>
           </div>
@@ -123,10 +123,10 @@
             </p>
             <p>
               In the build up to Roses, we will be sharing information from York
-              Mind, like links to resources and services, as well as interesting
-              information like the connection between mental and physical
-              health. But we also want to connect with our students on the
-              importance of looking after mental health. So we'll also be
+              Mind, such as links to resources and services, as well as
+              interesting information like the connection between mental and
+              physical health. But we also want to connect with our students on
+              the importance of looking after mental health. So we'll also be
               sharing what you've been telling us about how sport and physical
               activity impact your mental health - and we can't wait to hear how
               you feel after the Run to Roses 60km Challenge!
