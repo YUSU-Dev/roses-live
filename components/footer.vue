@@ -42,6 +42,7 @@
               >LA1TV</a
             >
             <a href="https://bailriggfm.co.uk/" target="_blank">Bailrigg FM</a>
+            <a href="https://scan.lancastersu.co.uk/" target="_blank">SCAN</a>
           </div>
         </div>
         <div class="flex w-56 items-center pt-6 order-3">
