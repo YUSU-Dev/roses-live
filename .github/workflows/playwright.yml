@@ -51,7 +51,9 @@ jobs:
 
     - name: Install Playwright OS dependencies
       run: npx playwright install-deps
-
+    - name: Run webserver
+      run: npm run preview
+      
     - name: Run Playwright tests
       run: npx playwright test
 
