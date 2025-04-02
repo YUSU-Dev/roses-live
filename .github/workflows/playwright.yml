@@ -54,6 +54,8 @@ jobs:
 
     - name: Run Playwright tests
       run: npx playwright test
+      env:
+          DEPLOY_URL: ${{ github.event.inputs && github.event.inputs.url || github.event.deployment && github.event.deployment.payload.web_url || github.event.deployment_status && github.event.deployment_status.target_url}}
 
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
