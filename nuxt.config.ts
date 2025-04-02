@@ -48,6 +48,10 @@ export default defineNuxtConfig({
           rel: "stylesheet",
           href: "https://use.fontawesome.com/releases/v6.7.1/css/all.css",
         },
+        {
+          rel: "stylesheet",
+          href: "https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.css",
+        },
       ],
     },
   },
