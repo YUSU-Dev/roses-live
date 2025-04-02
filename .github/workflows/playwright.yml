@@ -53,7 +53,7 @@ jobs:
       run: npx playwright install-deps
 
     - name: Run Playwright tests
-      run: npx playwright test
+      run: npm run preview && npx playwright test
       env:
           DEPLOY_URL: ${{ github.event.inputs && github.event.inputs.url || github.event.deployment && github.event.deployment.payload.web_url || github.event.deployment_status && github.event.deployment_status.target_url}}
 
