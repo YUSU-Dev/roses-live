@@ -1,4 +1,7 @@
 name: Playwright Tests
+permissions:
+  contents: read
+  pull-requests: write
 on:
   push:
     branches: [ main, develop ]
@@ -13,12 +16,45 @@ jobs:
     - uses: actions/setup-node@v4
       with:
         node-version: lts/*
+
+    - name: Cache node_modules
+      uses: actions/cache@v4
+      id: cache-node-modules
+      with:
+        path: |
+          node_modules
+        key: modules-${{ hashFiles('package-lock.json') }}
+          
+    - name: Cache Builds
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/.npm
+          ${{ github.workspace }}/.nuxt
+        key: ${{ runner.os }}-nuxt-build-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**/*.js', '**/*.jsx', '**/*.ts', '**/*.tsx') }}
+        restore-keys: |
+          ${{ runner.os }}-nuxt-build-${{ hashFiles('**/package-lock.json') }}-
+          
     - name: Install dependencies
+      if: ${{ steps.cache-node-modules.outputs.cache-hit != 'true' }}
       run: npm ci
+      
+    - name: Build application
+      run: npm run build
+    
+    - name: Get Playwright version
+      id: playwright-version
+      run: echo version=$(npm info @playwright/test version) >> $GITHUB_OUTPUT
+
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
+
+    - name: Install Playwright OS dependencies
+      run: npx playwright install-deps
+
     - name: Run Playwright tests
       run: npx playwright test
+
     - uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
       with:
