@@ -88,7 +88,7 @@ body .xcond {
 }
 
 .scoreTile {
-  @apply px-1 aspect-square flex justify-center items-center w-9 h-9;
+  @apply px-1 flex justify-center items-center min-w-9 h-9;
 }
 
 .scoreTileYork {
