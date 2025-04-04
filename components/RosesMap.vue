@@ -91,13 +91,23 @@ export default {
       map.on("click", "locations", (e) => {
         const coordinates = e.features[0].geometry.coordinates.slice();
         const name = e.features[0].properties.name;
-        // const facilities = e.features[0].properties.facilities;
+        let facilities = e.features[0].properties.facilities;
+        try {
+          facilities = JSON.parse(facilities);
+        } catch {
+          facilities = [];
+        }
+        const facilitiesHTML =
+          facilities && facilities.length > 0
+            ? `<div class="flex flex-col gap-2"><h3>Facilities</h3><p>${facilities}</p></div>`
+            : "";
         this.currentPopup = new mapboxgl.Popup()
           .setLngLat(coordinates)
           .setHTML(
             `
-      <div class="flex flex-col p-1">
+      <div class="flex flex-col p-1 gap-4">
         <h2 class="text-2xl xcond">${name}</h2>
+        ${facilitiesHTML}
         <div class="flex w-full justify-center"><button id="directionsButton" class="bg-roses-red text-white px-6 py-2 rounded-full text-center hover:cursor-pointer">Directions</button></div>
       </div>
     `,
@@ -148,10 +158,8 @@ export default {
           },
         };
       });
-      console.log(this.formattedLocations);
     },
     updateActiveLocation(location) {
-      console.log(location);
       if (this.activeLocation) {
         this.map.setFeatureState(
           { source: "locations", id: this.activeLocation },
@@ -172,7 +180,6 @@ export default {
       });
     },
     async getRoute(destination) {
-      console.log(destination);
       if (this.userCoordinates) {
         this.route = await $fetch(
           `https://api.mapbox.com/optimized-trips/v1/mapbox/walking/${this.userCoordinates[0]},${this.userCoordinates[1]};${destination}?geometries=geojson&access_token=${mapboxgl.accessToken}`,
@@ -223,7 +230,6 @@ export default {
         maxZoom: 15,
         duration: 1000,
       });
-      console.log(this.route);
     },
   },
 };
