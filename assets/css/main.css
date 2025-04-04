@@ -146,3 +146,7 @@ body .xcond {
 .modal-footer {
   @apply flex items-center gap-3 rounded-b border-t border-gray-200 p-4 md:p-5 dark:border-gray-600;
 }
+
+.mapboxgl-popup-close-button {
+  @apply p-1 pr-2;
+}
