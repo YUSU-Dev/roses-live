@@ -48,6 +48,10 @@ export default defineNuxtConfig({
           rel: "stylesheet",
           href: "https://use.fontawesome.com/releases/v6.7.1/css/all.css",
         },
+        {
+          rel: "stylesheet",
+          href: "https://api.mapbox.com/mapbox-gl-js/v3.10.0/mapbox-gl.css",
+        },
       ],
     },
   },
@@ -78,6 +82,7 @@ export default defineNuxtConfig({
           "'unsafe-inline'", // Recommended default for most Nuxt apps
           "https://use.typekit.net",
           "https://use.fontawesome.com",
+          "https://api.mapbox.com/",
         ],
         "base-uri": ["'none'"],
         "img-src": [
@@ -94,6 +99,9 @@ export default defineNuxtConfig({
         "report-uri": [
           "https://o4506869614903296.ingest.us.sentry.io/api/4508098677374976/security/?sentry_key=e6600512df57797f4fd551f8f8adf187;",
         ],
+      },
+      permissionsPolicy: {
+        geolocation: ["self"], // Allow geolocation for the current origin
       },
     },
     sri: true,
