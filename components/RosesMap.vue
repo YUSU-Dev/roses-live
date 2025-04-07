@@ -19,7 +19,7 @@ export default {
   mounted() {
     this.getLocations();
     mapboxgl.accessToken =
-      "pk.eyJ1IjoieXVzdWRldjAiLCJhIjoiY20wcDd1emdqMDJjaTJxc2xqMjNmaTR4ZCJ9.IFewc52P-oNoevNrhzDB5A";
+      "pk.eyJ1IjoieXVzdWRldjAiLCJhIjoiY204em5udWdmMGRweTJxcjI2NHFoaWNudiJ9.Cn9SDKmXPg9AY0xa5LfUmQ";
     const map = new mapboxgl.Map({
       container: "map-container",
       style: "mapbox://styles/mapbox/streets-v12",
