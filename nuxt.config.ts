@@ -82,6 +82,7 @@ export default defineNuxtConfig({
           "'unsafe-inline'", // Recommended default for most Nuxt apps
           "https://use.typekit.net",
           "https://use.fontawesome.com",
+          "https://api.mapbox.com/",
         ],
         "base-uri": ["'none'"],
         "img-src": [
