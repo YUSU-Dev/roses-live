@@ -84,7 +84,7 @@ export default {
           href: "https://yorksu.org/shop?category=9",
           hidden: true,
         },
-        { name: "Map", href: "/", hidden: true },
+        { name: "Map", href: "/map", hidden: true },
       ],
     };
   },
