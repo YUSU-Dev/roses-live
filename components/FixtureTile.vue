@@ -24,31 +24,68 @@
     </div>
     <div class="flex flex-col gap-2 lg:pr-24 lg:pl-16">
       <div
-        class="flex items-center justify-start sm:justify-end gap-6 sm:gap-8"
+        class="flex flex-row lg:flex-col xl:flex-row items-center justify-start sm:justify-end gap-6 sm:gap-8"
       >
-        <div class="flex gap-4 items-center">
-          <p class="font-semibold text-lg lg:text-2xl">YORK</p>
-          <div class="scoreTile scoreTileYork">
-            <p v-if="York && York.result" class="text-xl lg:text-2xl">
-              {{ formatScore(York.result.score) }}
-            </p>
-            <p v-else class="">
-              <i class="fa-regular fa-clock"></i>
-            </p>
+        <div class="flex gap-6 sm:gap-8 w-full justify-end">
+          <div class="flex gap-4 items-center">
+            <p class="font-semibold text-lg lg:text-2xl">YORK</p>
+            <div class="scoreTile scoreTileYork">
+              <p v-if="York && York.result" class="text-xl lg:text-2xl">
+                {{ formatScore(York.result.score) }}
+              </p>
+              <p v-else class="">
+                <i class="fa-regular fa-clock"></i>
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-center">
+            <p class="font-semibold text-lg lg:text-2xl">LANCASTER</p>
+            <div class="scoreTile scoreTileLancaster">
+              <p
+                v-if="Lancaster && Lancaster.result"
+                class="text-xl lg:text-2xl"
+              >
+                {{ formatScore(Lancaster.result.score) }}
+              </p>
+              <p v-else class="">
+                <i class="fa-regular fa-clock"></i>
+              </p>
+            </div>
           </div>
         </div>
-        <div class="flex gap-4 items-center">
-          <p class="font-semibold text-lg lg:text-2xl">LANCASTER</p>
-          <div class="scoreTile scoreTileLancaster">
-            <p v-if="Lancaster && Lancaster.result" class="text-xl lg:text-2xl">
-              {{ formatScore(Lancaster.result.score) }}
-            </p>
-            <p v-else class="">
-              <i class="fa-regular fa-clock"></i>
-            </p>
+        <div class="flex gap-2 lg:w-full justify-end">
+          <div v-if="fixture.startsAt" class="hidden md:flex items-center">
+            <add-to-calendar
+              :start-date="fixture.startsAt"
+              :end-date="fixture.endsAt"
+              :title="fixture.sport.name + ' - ' + teamName"
+              :description="
+                'Follow all the action live on roseslive.co.uk! Brought to you by York SU (yorksu.org). Fixture Details: https://roseslive.co.uk/activities/' +
+                fixture.sport.slug
+              "
+              :location="locationName"
+            />
+          </div>
+          <div class="hidden md:flex items-center">
+            <a
+              class="flex gap-2 bg-roses-red text-white px-6 md:px-3 py-2 text-center hover:bg-roses-red-dark transition duration-200 ease-in-out scoreTile"
+              alt="See on map"
+              :href="'/map?location=' + fixture.location.id"
+              ><i class="fa-solid fa-location-dot text-2xl"></i
+            ></a>
           </div>
         </div>
-        <div v-if="fixture.startsAt" class="hidden md:flex items-center">
+      </div>
+      <div class="hidden lg:flex items-center justify-end">
+        <p
+          v-if="fixture.scoringRules[0].pointsValue !== 0"
+          class="whitespace-nowrap"
+        >
+          {{ fixture.scoringRules[0].pointsValue }} POINTS
+        </p>
+      </div>
+      <div class="flex md:hidden md:w-full justify-end gap-4">
+        <div v-if="fixture.startsAt" class="">
           <add-to-calendar
             :start-date="fixture.startsAt"
             :end-date="fixture.endsAt"
@@ -60,26 +97,14 @@
             :location="locationName"
           />
         </div>
-      </div>
-      <div class="hidden lg:flex items-center justify-end">
-        <p
-          v-if="fixture.scoringRules[0].pointsValue !== 0"
-          class="whitespace-nowrap"
-        >
-          {{ fixture.scoringRules[0].pointsValue }} POINTS
-        </p>
-      </div>
-      <div v-if="fixture.startsAt" class="md:hidden flex justify-end">
-        <add-to-calendar
-          :start-date="fixture.startsAt"
-          :end-date="fixture.endsAt"
-          :title="fixture.sport.name + ' - ' + teamName"
-          :description="
-            'Follow all the action live on roseslive.co.uk! Brought to you by York SU (yorksu.org). Fixture Details: https://roseslive.co.uk/activities/' +
-            fixture.sport.slug
-          "
-          :location="locationName"
-        />
+        <div class="flex items-center">
+          <a
+            class="flex gap-2 bg-roses-red text-white px-6 md:px-3 py-2 text-center hover:bg-roses-red-dark transition duration-200 ease-in-out scoreTile"
+            alt="See on map"
+            :href="'/map?location=' + fixture.location.id"
+            ><i class="fa-solid fa-location-dot text-2xl"></i
+          ></a>
+        </div>
       </div>
     </div>
   </div>

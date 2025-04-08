@@ -90,6 +90,7 @@ export default {
   methods: {
     async fetchFixtures() {
       this.loading = true;
+      const locationId = this.$route.query.location;
       let parameters = "";
       if (this.selectedDay && this.searchTerm === "") {
         parameters +=
@@ -99,6 +100,8 @@ export default {
           this.selectedDay.endsAt;
       } else if (this.searchTerm !== "") {
         parameters = "&query=" + this.searchTerm;
+      } else if (this.selectedDay === null) {
+        parameters = "location=" + locationId;
       }
       this.fixtures = await $fetch(
         "https://sports-admin.yorksu.org/api/clst1o9lv0001q5teb61pqfyy/seasons/cm7uo6y6a0005nn0153286r5l/fixtures?" +

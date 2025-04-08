@@ -18,6 +18,7 @@ export default {
     };
   },
   mounted() {
+    const urlLocationId = this.$route.query.location;
     this.getLocations();
     mapboxgl.accessToken =
       "pk.eyJ1IjoieXVzdWRldjAiLCJhIjoiY204em5udWdmMGRweTJxcjI2NHFoaWNudiJ9.Cn9SDKmXPg9AY0xa5LfUmQ";
@@ -125,6 +126,19 @@ export default {
           "text-anchor": "top",
         },
       });
+      if (urlLocationId) {
+        const locationFeature =
+          this.formattedLocations.find(
+            (feature) => feature.properties.id === urlLocationId,
+          ) ||
+          this.formattedChildLocations.find(
+            (feature) => feature.properties.id === urlLocationId,
+          );
+
+        if (locationFeature) {
+          this.updateActiveLocation({ features: [locationFeature] });
+        }
+      }
       map.on("mouseenter", "locations", () => {
         map.getCanvas().style.cursor = "pointer";
       });
@@ -277,23 +291,29 @@ export default {
       }
     },
     updateActiveLocation(location) {
-      if (this.activeLocation) {
+      if (location.features[0].id) {
+        if (this.activeLocation) {
+          this.map.setFeatureState(
+            { source: "locations", id: this.activeLocation },
+            { active: false },
+          );
+        }
+        this.activeLocation = location.features[0].id;
         this.map.setFeatureState(
-          { source: "locations", id: this.activeLocation },
-          { active: false },
+          { source: "locations", id: location.features[0].id },
+          { active: true },
         );
       }
-      this.activeLocation = location.features[0].id;
-      this.map.setFeatureState(
-        { source: "locations", id: location.features[0].id },
-        { active: true },
-      );
       this.map.flyTo({
         center: [
           location.features[0].geometry.coordinates[0],
           location.features[0].geometry.coordinates[1],
         ],
-        zoom: location.features[0].layer.id === "locations" ? 17 : 19,
+        zoom: location.features[0].layer
+          ? location.features[0].layer.id === "locations"
+            ? 17
+            : 19
+          : 16,
       });
     },
     async getRoute(destination) {
