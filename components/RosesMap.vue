@@ -170,13 +170,29 @@ export default {
             facilities = [];
           }
 
-          const facilitiesHTML =
+          let facilityContent = "";
+          if (facilities && facilities.length > 0) {
+            for (let i = 0; i < facilities.length; i++) {
+              let facilityDescription = "";
+              if (facilities[i].description) {
+                facilityDescription = `<p class="text-sm">${facilities[i].description}</p>`;
+              }
+              facilityContent += `
+                <div class="flex flex-col gap-1">
+                  <h4 class="text-base">${facilities[i].name}</h4>
+                  ${facilityDescription}
+                </div>
+              `;
+            }
+          }
+
+          const facilitiesContainer =
             facilities && facilities.length > 0
-              ? `<div class="flex flex-col gap-2"><h3>Facilities</h3><p>${facilities}</p></div>`
+              ? `<div class="flex flex-col gap-2"><h3 class="text-lg"">Facilities</h3>${facilityContent}</div>`
               : "";
 
           const fixturesButton =
-            layerId === "childLocations"
+            layerId === "childLocations" || !feature.properties.parent
               ? `<a href="/fixtures?location=${id}" id="fixturesButton" class="bg-roses-red text-white px-6 py-2 rounded-full text-center hover:cursor-pointer">Fixtures</a>`
               : "";
 
@@ -194,7 +210,7 @@ export default {
             ${parentName}
             <h2 class="text-2xl xcond">${name}</h2>
           </div>
-          ${facilitiesHTML}
+          ${facilitiesContainer}
           <div class="flex w-full justify-center gap-2">
             <button id="directionsButton" class="bg-roses-red text-white px-6 py-2 rounded-full text-center hover:cursor-pointer">Directions</button>
             ${fixturesButton}
@@ -258,6 +274,7 @@ export default {
             name: this.locations[i].name,
             id: this.locations[i].id,
             facilities: this.locations[i].facilities,
+            parent: this.locations[i].children.length > 0,
           },
           geometry: {
             type: "Point",
