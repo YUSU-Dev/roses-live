@@ -70,6 +70,7 @@ export default {
   data() {
     return {
       selectedDay: null,
+      locationId: null,
       before: {
         name: "Before",
         startsAt: "2025-03-05T00:00:00Z",
@@ -103,7 +104,13 @@ export default {
     },
   },
   mounted() {
-    this.setDefaultDay();
+    this.locationId = this.$route.query.location;
+    if (this.locationId) {
+      this.selectedDay = null;
+      this.$emit("selectDay", null);
+    } else {
+      this.setDefaultDay();
+    }
   },
   methods: {
     setDefaultDay() {

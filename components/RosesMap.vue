@@ -18,6 +18,7 @@ export default {
     };
   },
   mounted() {
+    const urlLocationId = this.$route.query.location;
     this.getLocations();
     mapboxgl.accessToken =
       "pk.eyJ1IjoieXVzdWRldjAiLCJhIjoiY204em5udWdmMGRweTJxcjI2NHFoaWNudiJ9.Cn9SDKmXPg9AY0xa5LfUmQ";
@@ -125,6 +126,19 @@ export default {
           "text-anchor": "top",
         },
       });
+      if (urlLocationId) {
+        const locationFeature =
+          this.formattedLocations.find(
+            (feature) => feature.properties.id === urlLocationId,
+          ) ||
+          this.formattedChildLocations.find(
+            (feature) => feature.properties.id === urlLocationId,
+          );
+
+        if (locationFeature) {
+          this.updateActiveLocation({ features: [locationFeature] });
+        }
+      }
       map.on("mouseenter", "locations", () => {
         map.getCanvas().style.cursor = "pointer";
       });
@@ -156,13 +170,29 @@ export default {
             facilities = [];
           }
 
-          const facilitiesHTML =
+          let facilityContent = "";
+          if (facilities && facilities.length > 0) {
+            for (let i = 0; i < facilities.length; i++) {
+              let facilityDescription = "";
+              if (facilities[i].description) {
+                facilityDescription = `<p class="text-sm">${facilities[i].description}</p>`;
+              }
+              facilityContent += `
+                <div class="flex flex-col gap-1">
+                  <h4 class="text-base">${facilities[i].name}</h4>
+                  ${facilityDescription}
+                </div>
+              `;
+            }
+          }
+
+          const facilitiesContainer =
             facilities && facilities.length > 0
-              ? `<div class="flex flex-col gap-2"><h3>Facilities</h3><p>${facilities}</p></div>`
+              ? `<div class="flex flex-col gap-2"><h3 class="text-lg"">Facilities</h3>${facilityContent}</div>`
               : "";
 
           const fixturesButton =
-            layerId === "childLocations"
+            layerId === "childLocations" || !feature.properties.parent
               ? `<a href="/fixtures?location=${id}" id="fixturesButton" class="bg-roses-red text-white px-6 py-2 rounded-full text-center hover:cursor-pointer">Fixtures</a>`
               : "";
 
@@ -180,7 +210,7 @@ export default {
             ${parentName}
             <h2 class="text-2xl xcond">${name}</h2>
           </div>
-          ${facilitiesHTML}
+          ${facilitiesContainer}
           <div class="flex w-full justify-center gap-2">
             <button id="directionsButton" class="bg-roses-red text-white px-6 py-2 rounded-full text-center hover:cursor-pointer">Directions</button>
             ${fixturesButton}
@@ -244,6 +274,7 @@ export default {
             name: this.locations[i].name,
             id: this.locations[i].id,
             facilities: this.locations[i].facilities,
+            parent: this.locations[i].children.length > 0,
           },
           geometry: {
             type: "Point",
@@ -277,23 +308,29 @@ export default {
       }
     },
     updateActiveLocation(location) {
-      if (this.activeLocation) {
+      if (location.features[0].id) {
+        if (this.activeLocation) {
+          this.map.setFeatureState(
+            { source: "locations", id: this.activeLocation },
+            { active: false },
+          );
+        }
+        this.activeLocation = location.features[0].id;
         this.map.setFeatureState(
-          { source: "locations", id: this.activeLocation },
-          { active: false },
+          { source: "locations", id: location.features[0].id },
+          { active: true },
         );
       }
-      this.activeLocation = location.features[0].id;
-      this.map.setFeatureState(
-        { source: "locations", id: location.features[0].id },
-        { active: true },
-      );
       this.map.flyTo({
         center: [
           location.features[0].geometry.coordinates[0],
           location.features[0].geometry.coordinates[1],
         ],
-        zoom: location.features[0].layer.id === "locations" ? 17 : 19,
+        zoom: location.features[0].layer
+          ? location.features[0].layer.id === "locations"
+            ? 17
+            : 19
+          : 16,
       });
     },
     async getRoute(destination) {
