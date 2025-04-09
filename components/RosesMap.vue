@@ -15,6 +15,8 @@ export default {
       userCoordinates: null,
       route: null,
       currentPopup: null,
+      venues: [],
+      formattedVenues: [],
     };
   },
   mounted() {
@@ -56,6 +58,14 @@ export default {
         data: {
           type: "FeatureCollection",
           features: this.formattedChildLocations,
+        },
+        generateId: true,
+      });
+      map.addSource("venues", {
+        type: "geojson",
+        data: {
+          type: "FeatureCollection",
+          features: this.formattedVenues,
         },
         generateId: true,
       });
@@ -126,6 +136,31 @@ export default {
           "text-anchor": "top",
         },
       });
+      map.addLayer({
+        id: "venues",
+        type: "circle",
+        source: "venues",
+        paint: {
+          "circle-radius": 6,
+          "circle-color": "#ffffff",
+          "circle-stroke-width": 3,
+          "circle-stroke-color": "#000000",
+          "circle-opacity": 0.8,
+        },
+      });
+      map.addLayer({
+        id: "venues-labels",
+        type: "symbol",
+        source: "venues",
+        minzoom: 12,
+        layout: {
+          "text-field": "{name}",
+          "text-font": ["Poppins Medium"],
+          "text-size": 14,
+          "text-offset": [0, 1.5],
+          "text-anchor": "top",
+        },
+      });
       if (urlLocationId) {
         const locationFeature =
           this.formattedLocations.find(
@@ -151,9 +186,15 @@ export default {
       map.on("mouseleave", "childLocations", () => {
         map.getCanvas().style.cursor = "";
       });
+      map.on("mouseenter", "venues", () => {
+        map.getCanvas().style.cursor = "pointer";
+      });
+      map.on("mouseleave", "venues", () => {
+        map.getCanvas().style.cursor = "";
+      });
       map.on("click", (e) => {
         const features = map.queryRenderedFeatures(e.point, {
-          layers: ["locations", "childLocations"],
+          layers: ["locations", "childLocations", "venues"],
         });
 
         if (features.length) {
@@ -191,10 +232,15 @@ export default {
               ? `<div class="flex flex-col gap-2"><h3 class="text-lg"">Facilities</h3>${facilityContent}</div>`
               : "";
 
-          const fixturesButton =
-            layerId === "childLocations" || !feature.properties.parent
+          let fixturesButton =
+            layerId === "childLocations" ||
+            (!feature.properties.parent && layerId !== "venues")
               ? `<a href="/fixtures?location=${id}" id="fixturesButton" class="bg-roses-red text-white px-6 py-2 rounded-full text-center hover:cursor-pointer">Fixtures</a>`
               : "";
+
+          if (layerId === "venues") {
+            fixturesButton = `<a href="/food-and-drink" id="fixturesButton" class="bg-roses-red text-white px-6 py-2 rounded-full text-center hover:cursor-pointer">See more</a>`;
+          }
 
           const parentName =
             layerId === "childLocations"
@@ -267,6 +313,9 @@ export default {
       this.locations = await $fetch(
         "https://sports-admin.yorksu.org/api/clst1o9lv0001q5teb61pqfyy/seasons/cm7uo6y6a0005nn0153286r5l/locations",
       );
+      this.venues = await $fetch(
+        "https://sports-admin.yorksu.org/api/clst1o9lv0001q5teb61pqfyy/seasons/cm99ujvqk000tpd01wfemt29p/locations",
+      );
       for (let i = 0; i < this.locations.length; i++) {
         this.formattedLocations.push({
           type: "Feature",
@@ -306,6 +355,19 @@ export default {
           }
         }
       }
+      this.venues.forEach((venue) => {
+        this.formattedVenues.push({
+          type: "Feature",
+          properties: {
+            name: venue.name,
+            id: venue.id,
+          },
+          geometry: {
+            type: "Point",
+            coordinates: [venue.longitude, venue.latitude],
+          },
+        });
+      });
     },
     updateActiveLocation(location) {
       if (location.features[0].id) {
@@ -327,7 +389,8 @@ export default {
           location.features[0].geometry.coordinates[1],
         ],
         zoom: location.features[0].layer
-          ? location.features[0].layer.id === "locations"
+          ? location.features[0].layer.id === "locations" ||
+            location.features[0].layer.id === "venues"
             ? 17
             : 19
           : 16,
