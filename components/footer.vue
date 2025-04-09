@@ -19,10 +19,10 @@
               <a href="/get-involved">Get Involved</a>
               <a href="/about">About</a>
               <a href="/food-and-drink">Food & Drink</a>
-              <!-- <a href="https://yorksu.org/shop?category=9" target="_blank">
+              <!-- <a href="https://go.yorksu.org/pQ16Z8l" target="_blank">
                 Shop</a
               > -->
-              <!-- <a href="/map">Map</a> -->
+              <a href="/map">Map</a>
               <a href="/terms-and-conditions">Terms & Conditions</a>
             </div>
             <div class="flex flex-col gap-2 lg:gap-1">
@@ -47,7 +47,7 @@
         </div>
         <div class="flex w-56 items-center pt-6 order-3">
           <div class="flex-col flex gap-3">
-            <a href="https://yorksu.org/" target="_blank">
+            <a href="https://go.yorksu.org/vHmb9FY" target="_blank">
               <img
                 src="https://assets-cdn.sums.su/YU/website/img/yorksu-logo-white-full.png"
                 class="w-full h-auto"

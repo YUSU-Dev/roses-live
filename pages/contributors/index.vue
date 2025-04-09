@@ -11,7 +11,7 @@
           staff, students, and alumni from the
           <a
             class="text-roses-red hover:underline"
-            href="https://yorksu.org"
+            href="https://go.yorksu.org/vHmb9FY"
             target="_blank"
           >
             University of York Students' Union</a
@@ -19,7 +19,7 @@
           and
           <a
             class="text-roses-red hover:underline"
-            href="https://lancastersu.co.uk/"
+            href="https://go.yorksu.org/4GpEEUC"
             target="_blank"
           >
             Lancaster University Students' Union</a

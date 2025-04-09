@@ -7,6 +7,63 @@
     <div class="body">
       <div class="container mx-auto py-28">
         <div class="flex flex-col gap-6 pb-28">
+          <h2 class="text-5xl xcond font-bold">ROSES EVENTS</h2>
+          <div class="flex flex-col gap-4">
+            <p>
+              Alongside our 100+ competitive sports fixtures, we also have a
+              selection of non-sporting events over Roses weekend. Join us for
+              the
+              <a
+                href="https://go.yorksu.org/M8evEQF"
+                target="_blank"
+                class="text-roses-red hover:underline"
+                >Opening Ceremony</a
+              >, which kicks off Roses Weekend with Mens' 1s Basketball and
+              amazing performances from student groups! Or maybe you want to
+              dress up in your finest for an evening of excitement? Join us for
+              <a
+                href="https://go.yorksu.org/0lzUCnx"
+                target="_blank"
+                class="text-roses-red hover:underline"
+                >Fight Night</a
+              >!
+            </p>
+            <p>
+              Unwind with some crafts at The Happy Place under James Marquee,
+              watch show-stopping performances at The Roses Fringe Festival, or
+              take the stage at our Karaoke Night and Open Mic nights!
+            </p>
+            <p>
+              Most events are free to attend, though a small number require
+              tickets, available via the
+              <a
+                class="text-roses-red hover:underline"
+                href="https://go.yorksu.org/FaHGy1a"
+                target="_blank"
+                >York Students’ Union website</a
+              >.
+            </p>
+            <p>
+              Though Roses is a student-led event, it’s open to all, so we
+              encourage all members of the University community to come along
+              and join the fun! Join us to cheer on our rowers in the Boat Race,
+              come on down to the Roses Family Fun Day, or grab a ticket to the
+              Opening Ceremony to see what Roses is all about!
+            </p>
+            <p>
+              Take a look at our full list of events on the York Students’ Union
+              website.
+            </p>
+            <div class="flex mt-4">
+              <RosesButton
+                title="Roses Events"
+                target="_blank"
+                href="https://go.yorksu.org/ExDEJln"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col gap-6 pb-28">
           <h2 class="text-5xl xcond font-bold">LET’S RUN TO ROSES!</h2>
           <div class="flex flex-col gap-4">
             <p>
@@ -23,14 +80,14 @@
               Move for your mental health, your physical health, or just to get
               outside. Head to our
               <a
-                href="https://yorksu.org/sport/run-to-roses?utm_source=yorksu&utm_medium=roses-live-website&utm_campaign=roses2025"
+                href="https://go.yorksu.org/erEafTI"
                 target="_blank"
                 class="text-roses-red hover:underline"
                 >Run to Roses page</a
               >
               for information on the Strava Run Club, and follow
               <a
-                href="https://instagram.com/yorksportunion"
+                href="https://go.yorksu.org/1tEdB3U"
                 target="_blank"
                 class="text-roses-red hover:underline"
                 >@yorksportunion</a
@@ -45,47 +102,13 @@
             alt="Run to Roses"
           />
         </div>
-        <div class="flex flex-col gap-6 pb-28">
-          <h2 class="text-5xl xcond font-bold">ROSES EVENTS</h2>
-          <div class="flex flex-col gap-4">
-            <p>
-              Alongside our 100+ competitive fixtures, we also have a selection
-              of events over Roses weekend. Join us for the
-              <a
-                href="https://yorksu.org/events/id/4394-roses-2025-opening-ceremony-mens-1s-basketball?utm_source=yorksu&utm_medium=roses-live-website&utm_campaign=roses2025"
-                target="_blank"
-                class="text-roses-red hover:underline"
-                >Opening Ceremony</a
-              >, which kicks off Roses Weekend with Mens' 1s Basketball and
-              amazing performances from student groups! Or maybe you want to
-              dress up in your finest for an evening of excitement? Join us for
-              <a
-                href="https://yorksu.org/events/id/4395-roses-2025-fight-night?utm_source=yorksu&utm_medium=roses-live-website&utm_campaign=roses2025"
-                target="_blank"
-                class="text-roses-red hover:underline"
-                >Fight Night</a
-              >!
-            </p>
-            <p>
-              Unwind with some crafts at The Happy Place under James Marquee,
-              watch show-stopping performances at The Roses Fringe Festival, or
-              take the stage at our Karaoke Night and Open Mic nights!
-            </p>
-            <div class="flex mt-4">
-              <RosesButton
-                title="Roses Events"
-                href="https://yorksu.org/events?category=37"
-              />
-            </div>
-          </div>
-        </div>
         <div class="flex flex-col gap-6">
           <h2 class="text-5xl xcond font-bold">ART COMPETITION</h2>
           <div class="flex flex-col gap-4">
             <p>
               Our very own
               <a
-                href="https://www.instagram.com/uoyartsociety"
+                href="https://go.yorksu.org/OwQ53so"
                 target="_blank"
                 class="text-roses-red hover:underline"
                 >Art Society</a
@@ -94,7 +117,7 @@
               holding an art competition on the theme of adrenaline, movement,
               and unity. The winning pieces will be showcased on 2 May in the
               <a
-                href="https://www.instagram.com/normanreagallery/"
+                href="https://go.yorksu.org/oJObcFc"
                 target="_blank"
                 class="text-roses-red hover:underline"
                 >Norman Rea Art Gallery</a

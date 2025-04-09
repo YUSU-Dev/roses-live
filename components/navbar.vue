@@ -24,7 +24,7 @@
         </template>
       </div>
       <div class="hidden lg:flex w-48 items-center">
-        <a href="https://yorksu.org/" target="_blank">
+        <a href="https://go.yorksu.org/vHmb9FY" target="_blank">
           <img
             src="https://assets-cdn.sums.su/YU/website/img/yorksu-logo-white-full.png"
             class="w-full h-auto"
@@ -81,10 +81,10 @@ export default {
         { name: "Food & Drink", href: "/food-and-drink", hidden: false },
         {
           name: "Shop",
-          href: "https://yorksu.org/shop?category=9",
+          href: "https://go.yorksu.org/pQ16Z8l",
           hidden: true,
         },
-        { name: "Map", href: "/map", hidden: true },
+        { name: "Map", href: "/map", hidden: false },
       ],
     };
   },
