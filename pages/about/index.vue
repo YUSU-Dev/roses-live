@@ -123,7 +123,7 @@
               TJ, shared her story of how sport helped her to overcome her own
               mental health challenges.
               <a
-                href="https://yorksu.org/news/article/sport-mental-health"
+                href="https://go.yorksu.org/jeuA8pb"
                 target="_blank"
                 class="text-roses-red hover:underline"
                 >Read TJ’s story: Sport and my mental health.</a

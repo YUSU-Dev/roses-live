@@ -57,7 +57,7 @@
         </a>
         <!-- <a
           class="relative flex flex-col justify-end overflow-hidden"
-          href="https://yorksu.org/shop?category=9"
+          href="https://go.yorksu.org/pQ16Z8l"
           target="_blank"
         >
           <div

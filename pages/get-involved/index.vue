@@ -14,7 +14,7 @@
               selection of non-sporting events over Roses weekend. Join us for
               the
               <a
-                href="https://yorksu.org/events/id/4394-roses-2025-opening-ceremony-mens-1s-basketball?utm_source=yorksu&utm_medium=roses-live-website&utm_campaign=roses2025"
+                href="https://go.yorksu.org/M8evEQF"
                 target="_blank"
                 class="text-roses-red hover:underline"
                 >Opening Ceremony</a
@@ -22,7 +22,7 @@
               amazing performances from student groups! Or maybe you want to
               dress up in your finest for an evening of excitement? Join us for
               <a
-                href="https://yorksu.org/events/id/4395-roses-2025-fight-night?utm_source=yorksu&utm_medium=roses-live-website&utm_campaign=roses2025"
+                href="https://go.yorksu.org/0lzUCnx"
                 target="_blank"
                 class="text-roses-red hover:underline"
                 >Fight Night</a
@@ -58,7 +58,7 @@
               <RosesButton
                 title="Roses Events"
                 target="_blank"
-                href="https://yorksu.org/events?category=37"
+                href="https://go.yorksu.org/ExDEJln"
               />
             </div>
           </div>

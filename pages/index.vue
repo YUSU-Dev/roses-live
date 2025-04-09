@@ -67,7 +67,7 @@
           title="Our Charity Partner"
           sub-title="ROSES IN MIND"
           button-title="York Mind"
-          button-href="https://www.yorkmind.org.uk/"
+          button-href="https://go.yorksu.org/TjTnAgh"
           button-target="_blank"
         >
           <template #text>
@@ -94,7 +94,7 @@
               challenges.
               <a
                 class="text-roses-red hover:underline"
-                href="https://yorksu.org/news/article/sport-mental-health"
+                href="https://go.yorksu.org/jeuA8pb"
                 target="_blank"
                 >Read TJ’s story: Sport and my mental health</a
               >.
