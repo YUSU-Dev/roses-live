@@ -35,11 +35,11 @@
           </div>
           <img
             class="hover:scale-105 transition-all"
-            src="https://assets-cdn.sums.su/YU/website/img/Roses/Food_Drink_Tile.png"
+            src="https://assets-cdn.sums.su/YU/website/img/Roses/Get_Involved_Tile.png"
             alt="Get Involved"
           />
         </a>
-        <!-- <a
+        <a
           href="/food-drink"
           class="relative flex flex-col justify-end overflow-hidden"
         >
@@ -51,11 +51,11 @@
           </div>
           <img
             class="hover:scale-105 transition-all"
-            src="https://assets-cdn.sums.su/YU/website/img/Roses/Get_Involved_Tile.png"
+            src="https://assets-cdn.sums.su/YU/website/img/Roses/Food_Drink_Tile.png"
             alt="Food & Drink"
           />
         </a>
-        <a
+        <!-- <a
           class="relative flex flex-col justify-end overflow-hidden"
           href="https://yorksu.org/shop?category=9"
           target="_blank"

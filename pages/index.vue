@@ -19,25 +19,34 @@
           <template #text>
             <p>
               Roses is an annual sporting varsity between the University of York
-              and Lancaster University. But it wasn’t always a sports contest.
-              It began way back in medieval times as a war for the throne of
-              England, between the Houses of York and Lancaster. When that war
-              was fought and won, a new one began... Now, our battlefield is the
-              playing field. This year is the 60th anniversary of the
-              competition, so it’s a special one for everyone! We’ll be hosting
-              hundreds of sports fixtures between Friday 2 and Sunday 4 May. But
-              if you aren’t a massive sports fan, you can still get involved in
+              and Lancaster University. Named for the War of the Roses, the
+              competition this year celebrates its 60th anniversary! We’ll be
+              hosting hundreds of sports fixtures and bonus events between
+              Friday 2 and Sunday 4 May.
+            </p>
+            <p>
+              If you aren’t a massive sports fan, you can still get involved in
               the Roses buzz! Across the weekend, there will be a range of
-              events to attend across campus and in our venues. And we want to
-              hear from you too! Tag
+              events to attend across campus and in our venues. Keep an eye on
+              this website and
               <a
                 class="text-roses-red hover:underline"
-                href="https://instagram.com/yorkunisu"
+                href="https://go.yorksu.org/vbmh9v6"
                 target="_blank"
-                >@yorkunisu</a
+                >York SU socials</a
               >
-              in your Instagram posts and we’ll reshare some of our favourite
-              moments throughout Roses.
+              to be the first to hear more details.
+            </p>
+            <p>
+              Most events are free to attend, though a small number require
+              tickets. Visit the
+              <a
+                class="text-roses-red hover:underline"
+                href="https://go.yorksu.org/FaHGy1a"
+                target="_blank"
+                >York Students’ Union website</a
+              >
+              to purchase tickets.
             </p>
           </template>
         </TextImageSection>
@@ -68,7 +77,7 @@
               highlighting important causes. This year, we are partnering with
               <a
                 class="text-roses-red hover:underline"
-                href="https://www.yorkmind.org.uk/"
+                href="https://go.yorksu.org/TjTnAgh"
                 target="_blank"
                 >York Mind</a
               >.
