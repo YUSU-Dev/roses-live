@@ -49,7 +49,7 @@
               sidelines, or enjoying a well-earned pizza at The Courtyard, let
               us know! Tag
               <a
-                href="https://instagram.com/yorkunisu"
+                href="https://go.yorksu.org/vbmh9v6"
                 target="_blank"
                 class="text-roses-red hover:underline"
                 >@yorkunisu</a
@@ -69,7 +69,7 @@
               of our vendors will be selling beef in line with our participation
               in the
               <a
-                href="https://yorksu.org/sustainability"
+                href="https://go.yorksu.org/Ey0rZcl"
                 target="_blank"
                 class="text-roses-red hover:underline"
                 >Sustainable SUs charter</a
@@ -82,13 +82,20 @@
               Don’t worry, merch isn’t exempt from our sustainability work
               either. This year, all of our Roses merchandise will be made from
               <a
-                href="https://issuu.com/roupez.se/docs/tiger_cotton_presentation#:~:text=Tiger%20Cotton%C2%AE%20has%20been,Now%20it's%20finally%20here!&text=Tiger%20Cotton%20works%20to%20convert,scenario%20for%20farmers%20and%20wildlife.%E2%80%9D"
+                href="https://go.yorksu.org/9xrp6cB"
                 target="_blank"
                 class="text-roses-red hover:underline"
                 >Tiger Cotton</a
               >, a growing scheme which makes it financially viable for farmers
-              to transition to organic cotton growing. Stay tuned for more
-              sustainability updates!
+              to transition to organic cotton growing.
+            </p>
+            <p>
+              <a
+                href="https://go.yorksu.org/tLee0cc"
+                target="_blank"
+                class="text-roses-red hover:underline"
+                >Read all about sustainability at Roses 2025</a
+              >.
             </p>
           </div>
         </div>
@@ -101,21 +108,22 @@
               money for the charity, highlighting an important cause. This year,
               we are partnering with
               <a
-                href="https://www.yorkmind.org.uk/"
+                href="https://go.yorksu.org/TjTnAgh"
                 target="_blank"
                 class="text-roses-red hover:underline"
                 >York Mind</a
-              >. They are an independent local mental health charity which
-              empowers individuals experiencing mental ill health to start on
-              the pathway to recovery, supported by one simple belief: the
-              condition should never define the person.
+              >, while Lancaster fundraises for Lancashire Mind. They are an
+              independent local mental health charity which empowers individuals
+              experiencing mental ill health to start on the pathway to
+              recovery, supported by one simple belief: the condition should
+              never define the person.
             </p>
             <p>
               To mark the announcement of our partnership, our Sports Officer,
               TJ, shared her story of how sport helped her to overcome her own
               mental health challenges.
               <a
-                href="https://yorksu.org/news/article/sport-mental-health"
+                href="https://go.yorksu.org/jeuA8pb"
                 target="_blank"
                 class="text-roses-red hover:underline"
                 >Read TJ’s story: Sport and my mental health.</a
@@ -131,6 +139,33 @@
               activity impact your mental health - and we can't wait to hear how
               you feel after the Run to Roses 60km Challenge!
             </p>
+            <p>Did you know that…</p>
+            <ul class="list-disc pl-6">
+              <li>
+                £5 could pay travel expenses for a York Mind volunteer to
+                support in a group
+              </li>
+              <li>
+                £20 could support a young person through a 1:1 mentoring session
+              </li>
+              <li>£30 could pay for someone to attend a counselling session</li>
+              <li>
+                £240 could support a young person to access twelve 1:1 mentoring
+                sessions
+              </li>
+              <li>
+                £480 could provide someone with a confidential safe space to
+                talk to a trained counsellor, through sixteen 1:1 counselling
+                sessions.
+              </li>
+            </ul>
+            <div class="flex">
+              <RosesButton
+                href="https://go.yorksu.org/UxA3oQP"
+                target="_blank"
+                title="Donate Now"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -140,9 +175,11 @@
 
 <script>
 import HeroBanner from "~/components/HeroBanner.vue";
+import RosesButton from "~/components/button.vue";
 export default {
   components: {
     HeroBanner,
+    RosesButton,
   },
 };
 useHead({
