@@ -40,7 +40,7 @@
           />
         </a>
         <a
-          href="/food-drink"
+          href="/food-and-drink"
           class="relative flex flex-col justify-end overflow-hidden"
         >
           <div
