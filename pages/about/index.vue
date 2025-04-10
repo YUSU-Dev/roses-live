@@ -79,6 +79,10 @@
               When you’re done, return your cup to get your deposit back..
             </p>
             <p>
+              There’s more sustainability information to come, so keep your eyes
+              peeled for updates.
+            </p>
+            <!-- <p>
               Don’t worry, merch isn’t exempt from our sustainability work
               either. This year, all of our Roses merchandise will be made from
               <a
@@ -88,15 +92,15 @@
                 >Tiger Cotton</a
               >, a growing scheme which makes it financially viable for farmers
               to transition to organic cotton growing.
-            </p>
-            <p>
+            </p> -->
+            <!-- <p>
               <a
                 href="https://go.yorksu.org/tLee0cc"
                 target="_blank"
                 class="text-roses-red hover:underline"
                 >Read all about sustainability at Roses 2025</a
               >.
-            </p>
+            </p> -->
           </div>
         </div>
         <div class="flex flex-col gap-6">
