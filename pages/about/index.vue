@@ -93,14 +93,14 @@
               >, a growing scheme which makes it financially viable for farmers
               to transition to organic cotton growing.
             </p> -->
-            <p>
+            <!-- <p>
               <a
                 href="https://go.yorksu.org/tLee0cc"
                 target="_blank"
                 class="text-roses-red hover:underline"
                 >Read all about sustainability at Roses 2025</a
               >.
-            </p>
+            </p> -->
           </div>
         </div>
         <div class="flex flex-col gap-6">
