@@ -3,9 +3,10 @@
     <HeroBanner
       title="ROSES MAP"
       image="https://assets-cdn.sums.su/YU/website/img/Roses/Hero_Banner_Food_Drink.png"
+      size="sm"
     />
     <div class="body">
-      <div class="container mx-auto py-28">
+      <div class="container mx-auto py-4">
         <RosesMap />
       </div>
     </div>

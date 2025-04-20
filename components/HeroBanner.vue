@@ -1,6 +1,7 @@
 <template>
   <div
-    class="w-full bg-cover h-[500px]"
+    class="w-full bg-cover"
+    :class="`${SIZES[size]}`"
     :style="{ backgroundImage: `url(${image})` }"
   >
     <div class="container mx-auto flex justify-between h-full">
@@ -54,6 +55,20 @@ export default {
       type: String,
       default: "",
     },
+    size: {
+      type: String,
+      default: "lg",
+      validator: function (value) {
+        return ["sm", "md", "lg"].indexOf(value) !== -1;
+      },
+    },
   },
+  data: () => ({
+    SIZES: {
+      sm: "h-[200px]",
+      md: "h-[400px]",
+      lg: "h-[500px]",
+    },
+  }),
 };
 </script>
