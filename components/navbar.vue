@@ -82,7 +82,7 @@ export default {
         {
           name: "Shop",
           href: "https://go.yorksu.org/pQ16Z8l",
-          hidden: true,
+          hidden: false,
         },
         { name: "Map", href: "/map", hidden: false },
       ],
