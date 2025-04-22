@@ -19,9 +19,7 @@
               <a href="/get-involved">Get Involved</a>
               <a href="/about">About</a>
               <a href="/food-and-drink">Food & Drink</a>
-              <!-- <a href="https://go.yorksu.org/pQ16Z8l" target="_blank">
-                Shop</a
-              > -->
+              <a href="https://go.yorksu.org/pQ16Z8l" target="_blank"> Shop</a>
               <a href="/map">Map</a>
               <a href="/terms-and-conditions">Terms & Conditions</a>
             </div>
