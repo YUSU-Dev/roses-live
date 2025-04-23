@@ -1,11 +1,12 @@
 <template>
   <div class="w-full flex flex-col gap-2 lg:gap-0 lg:flex-row fixtureTile">
-    <div class="fixtureTime">
-      <p
-        class="font-semibold text-xl lg:text-2xl w-15 flex lg:justify-center items-center"
-      >
-        {{ formattedTime }}
-      </p>
+    <div class="lg:pl-24 lg:pr-16 lg:border-r border-slate-300">
+      <div class="w-25 flex md:flex-col gap-2 lg:justify-center items-center">
+        <p class="font-semibold text-xl lg:text-2xl">{{ formattedTime }}</p>
+        <p v-if="fixture.highlighted">
+          <Star class="h-12" />
+        </p>
+      </div>
     </div>
     <div class="flex flex-col gap-2 lg:gap-0 flex-grow fixtureDetails">
       <div class="flex flex-wrap gap-2 text-xl lg:text-2xl">
@@ -13,7 +14,12 @@
         <p v-if="York.team" class="">{{ York.team.name }}</p>
       </div>
       <div class="flex justify-between">
-        <p v-if="fixture.location">{{ locationName }}</p>
+        <div>
+          <p v-if="fixture.location">{{ locationName }}</p>
+          <p v-if="fixture.highlighted" class="text-sm text-roses-red">
+            Women in Sport Highlighted Fixture
+          </p>
+        </div>
         <p
           v-if="fixture.scoringRules[0].pointsValue !== 0"
           class="block lg:hidden whitespace-nowrap"
@@ -111,11 +117,13 @@
 </template>
 
 <script>
+import { Star } from "lucide-vue-next";
 import addToCalendar from "~/components/addToCalendar.vue";
 export default {
   name: "FixtureTile",
   components: {
     addToCalendar,
+    Star,
   },
   props: {
     fixture: {
