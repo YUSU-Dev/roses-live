@@ -9,7 +9,7 @@
       <div class="grid sm:grid-cols-2 lg:flex lg:flex-row text-white gap-4">
         <a
           href="/fixtures"
-          class="relative flex flex-col justify-end overflow-hidden"
+          class="relative flex flex-col justify-end overflow-hidden bg-black"
         >
           <div
             class="absolute flex w-full justify-between items-center px-6 pb-8 z-10"
@@ -25,7 +25,7 @@
         </a>
         <a
           href="/get-involved"
-          class="relative flex flex-col justify-end overflow-hidden"
+          class="relative flex flex-col justify-end overflow-hidden bg-black"
         >
           <div
             class="absolute flex w-full justify-between items-center px-6 pb-8 z-10"
@@ -41,7 +41,7 @@
         </a>
         <a
           href="/food-and-drink"
-          class="relative flex flex-col justify-end overflow-hidden"
+          class="relative flex flex-col justify-end overflow-hidden bg-black"
         >
           <div
             class="absolute flex w-full justify-between items-center px-6 pb-8 z-10"
@@ -55,8 +55,8 @@
             alt="Food & Drink"
           />
         </a>
-        <!-- <a
-          class="relative flex flex-col justify-end overflow-hidden"
+        <a
+          class="relative flex flex-col justify-end overflow-hidden bg-black"
           href="https://go.yorksu.org/pQ16Z8l"
           target="_blank"
         >
@@ -71,7 +71,7 @@
             src="https://assets-cdn.sums.su/YU/website/img/Roses/Fixtures_Tile.png"
             alt="Shop"
           />
-        </a> -->
+        </a>
       </div>
     </div>
   </div>

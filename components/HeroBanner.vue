@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full bg-cover h-[500px]"
+    class="w-full bg-cover h-[500px] bg-black"
     :style="{ backgroundImage: `url(${image})` }"
   >
     <div class="container mx-auto flex justify-between h-full">
