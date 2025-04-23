@@ -32,6 +32,7 @@
       <div v-else>
         <LoadingFixtureTile />
       </div>
+      <RosesCarousel :sport="sport.slug" />
       <div class="py-12 lg:py-28">
         <h2 class="text-4xl font-bold text-roses-red mb-4">
           HISTORIC FIXTURES
@@ -52,6 +53,7 @@ import FixtureTile from "~/components/FixtureTile.vue";
 import LoadingFixtureTile from "~/components/LoadingFixtureTile.vue";
 import HistoricFixtureTile from "~/components/HistoricFixtureTile.vue";
 import { groupBy } from "lodash";
+import RosesCarousel from "~/components/carousel.vue";
 export default {
   name: "FixturesPage",
   components: {
@@ -59,6 +61,7 @@ export default {
     FixtureTile,
     LoadingFixtureTile,
     HistoricFixtureTile,
+    RosesCarousel,
   },
   data() {
     return {
@@ -77,9 +80,9 @@ export default {
       });
     },
   },
-  mounted() {
+  async mounted() {
     this.route = this.$route.params.id;
-    this.getSport();
+    await this.getSport();
   },
   methods: {
     async getSport() {

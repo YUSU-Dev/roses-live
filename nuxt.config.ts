@@ -90,6 +90,8 @@ export default defineNuxtConfig({
           "data:",
           "https://assets-cdn.sums.su",
           "https://app.greenweb.org",
+          "https://roses-media-assets-staging.yorksu.org/",
+          "https://media-assets.roseslive.co.uk",
         ], // Add relevant https://... sources if you load images from external sources
         "font-src": ["'self'", "https:", "data:"], //  For increased security, replace by the specific sources for fonts
         "object-src": ["'none'"],
