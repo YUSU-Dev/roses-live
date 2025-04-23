@@ -94,6 +94,7 @@ export default defineNuxtConfig({
         "font-src": ["'self'", "https:", "data:"], //  For increased security, replace by the specific sources for fonts
         "object-src": ["'none'"],
         "script-src-attr": ["'none'"],
+        "media-src": ["'self'", "https://radio.roses.media"],
         "upgrade-insecure-requests": true,
         "report-to": "csp-endpoint",
         "report-uri": [
