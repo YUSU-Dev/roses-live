@@ -91,10 +91,10 @@
           >
             <div class="flex flex-col">
               <!-- <p class="xcond font-semibold text-2xl">
-              {{ formatDay(blog.createdAt) }}
+              {{ formatDay(blog.publishedAt) }}
             </p> -->
               <p class="text-4xl xcond font-bold text-roses-red">
-                {{ formatTime(blog.createdAt) }}
+                {{ formatTime(blog.publishedAt) }}
               </p>
             </div>
             <div class="flex flex-col gap-2">
@@ -107,6 +107,14 @@
         </div>
         <div class="flex gap-1">
           <button
+            v-if="page > 3"
+            aria-label="Go back to the first page"
+            class="bg-white border-2 w-8 h-8 hover:cursor-pointer"
+            @click="page = 1"
+          >
+            <i class="fa-solid fa-angles-left"></i>
+          </button>
+          <button
             v-if="page > 1"
             aria-label="Go back one page"
             class="bg-white border-2 w-8 h-8 hover:cursor-pointer"
@@ -115,30 +123,29 @@
             <i class="fa-solid fa-arrow-left"></i>
           </button>
           <button
-            v-for="i in page"
+            v-for="i in paginationRange"
             :key="i"
-            :class="{ activePage: i === page }"
+            :class="{ '!bg-roses-red text-white': i === page }"
             class="bg-white border-2 w-8 h-8 hover:cursor-pointer"
             @click="page = i"
           >
             {{ i }}
           </button>
-          <!-- This will need updating when/if page count is added to the API -->
           <button
-            v-if="blogs.length === pageSize"
-            class="bg-white border-2 w-8 h-8 hover:cursor-pointer"
-            @click="page++"
-          >
-            {{ page + 1 }}
-          </button>
-          <!-- This too -->
-          <button
-            v-if="blogs.length === pageSize"
+            v-if="page < totalPages"
             aria-label="Go forward one page"
             class="bg-white border-2 w-8 h-8 hover:cursor-pointer"
             @click="page++"
           >
             <i class="fa-solid fa-arrow-right"></i>
+          </button>
+          <button
+            v-if="totalPages > 3 && page < totalPages - 2"
+            aria-label="Go to the last page"
+            class="bg-white border-2 w-8 h-8 hover:cursor-pointer"
+            @click="page = totalPages"
+          >
+            <i class="fa-solid fa-angles-right"></i>
           </button>
         </div>
       </div>
@@ -158,9 +165,27 @@ export default {
       streams: [],
       pageSize: 8,
       page: 1,
+      totalPages: 1,
       accordionOpen: true,
       activeStream: {},
     };
+  },
+  computed: {
+    paginationRange() {
+      const range = [];
+      if (this.totalPages <= 3) {
+        for (let i = 1; i <= this.totalPages; i++) {
+          range.push(i);
+        }
+      } else if (this.page === 1) {
+        range.push(1, 2, 3);
+      } else if (this.page === this.totalPages) {
+        range.push(this.totalPages - 2, this.totalPages - 1, this.totalPages);
+      } else {
+        range.push(this.page - 1, this.page, this.page + 1);
+      }
+      return range.filter((i) => i > 0 && i <= this.totalPages);
+    },
   },
   watch: {
     page() {
@@ -200,8 +225,8 @@ export default {
         "https://media-dashboard-staging.yorksu.org/api/cm5pijvl80000ltigazjog2kg/seasons/cm7w42e0x0001nr01mlt1ptmi/blogs" +
           parameters,
       );
-      this.blogs = response;
-      console.log(this.blogs);
+      this.blogs = response.data;
+      this.totalPages = response.pageInfo.totalPages;
     },
     formatTime(isoString) {
       const date = new Date(isoString);
