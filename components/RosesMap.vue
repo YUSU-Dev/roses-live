@@ -361,6 +361,7 @@ export default {
           properties: {
             name: venue.name,
             id: venue.id,
+            facilities: venue.facilities,
           },
           geometry: {
             type: "Point",
