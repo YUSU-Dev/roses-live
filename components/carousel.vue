@@ -63,10 +63,6 @@ export default {
       type: Number,
       default: 5000,
     },
-    sport: {
-      type: String,
-      required: true,
-    },
   },
   data() {
     return {

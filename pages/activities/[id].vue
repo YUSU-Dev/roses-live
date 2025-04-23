@@ -32,7 +32,7 @@
       <div v-else>
         <LoadingFixtureTile />
       </div>
-      <RosesCarousel :sport="sport.slug" />
+      <RosesCarousel />
       <div class="py-12 lg:py-28">
         <h2 class="text-4xl font-bold text-roses-red mb-4">
           HISTORIC FIXTURES
