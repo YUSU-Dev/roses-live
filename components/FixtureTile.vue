@@ -1,7 +1,7 @@
 <template>
   <div class="w-full flex flex-col gap-2 lg:gap-0 lg:flex-row fixtureTile">
     <div class="lg:pl-24 lg:pr-16 lg:border-r border-slate-300">
-      <div class="w-25 flex md:flex-col gap-2 lg:justify-center items-center">
+      <div class="w-25 flex lg:flex-col gap-2 lg:justify-center items-center">
         <p class="font-semibold text-xl lg:text-2xl">{{ formattedTime }}</p>
         <p v-if="fixture.highlighted">
           <Star class="h-12" />
