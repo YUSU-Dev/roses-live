@@ -66,8 +66,8 @@
           alt=""
           title="Our Charity Partner"
           sub-title="ROSES IN MIND"
-          button-title="York Mind"
-          button-href="https://go.yorksu.org/TjTnAgh"
+          button-title="Donate Now"
+          button-href="https://go.yorksu.org/UxA3oQP"
           button-target="_blank"
         >
           <template #text>
