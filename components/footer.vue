@@ -13,7 +13,7 @@
         >
           <div class="flex flex-col gap-4">
             <div class="flex flex-col gap-2 lg:gap-1">
-              <h2 class="text-roses-red mb-2">Useful Links</h2>
+              <h2 class="text-roses-red-dark-bg mb-2">Useful Links</h2>
               <!-- <a>Roses Live</a> -->
               <a href="/fixtures">Fixtures</a>
               <a href="/get-involved">Get Involved</a>
@@ -24,13 +24,13 @@
               <a href="/terms-and-conditions">Terms & Conditions</a>
             </div>
             <div class="flex flex-col gap-2 lg:gap-1">
-              <h2 class="text-roses-red mb-2">Contact Details</h2>
+              <h2 class="text-roses-red-dark-bg mb-2">Contact Details</h2>
               <!-- <a href="tel:01904323724">01904 32 3724</a> -->
               <a href="mailto:helpdesk@yorksu.org">helpdesk@yorksu.org</a>
             </div>
           </div>
           <div class="flex flex-col gap-2 lg:gap-1">
-            <h2 class="text-roses-red mb-2">Student Media</h2>
+            <h2 class="text-roses-red-dark-bg mb-2">Student Media</h2>
             <a href="https://nouse.co.uk" target="_blank">Nouse</a>
             <a href="https://youtube.com/@YorkStudentTV" target="_blank"
               >YSTV</a
@@ -66,7 +66,9 @@
         <div class="flex items-center order-2 lg:order-1">
           <p class="mb-0 text-xs lg:text-sm">
             © University of York Students' Union 2025 | All rights reserved |
-            <a class="text-roses-red hover:underline" href="/contributors"
+            <a
+              class="text-roses-red-dark-bg hover:underline"
+              href="/contributors"
               >Website Credits</a
             >
           </p>
