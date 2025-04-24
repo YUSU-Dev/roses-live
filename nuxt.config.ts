@@ -97,6 +97,11 @@ export default defineNuxtConfig({
         "object-src": ["'none'"],
         "script-src-attr": ["'none'"],
         "media-src": ["'self'", "https://radio.roses.media"],
+        "frame-src": [
+          "'self'",
+          "https://www.youtube.com",
+          "https://www.youtube-nocookie.com",
+        ],
         "upgrade-insecure-requests": true,
         "report-to": "csp-endpoint",
         "report-uri": [
