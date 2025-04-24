@@ -19,6 +19,12 @@
           <p v-if="fixture.highlighted" class="text-sm text-roses-red">
             Women in Sport Highlighted Fixture
           </p>
+          <p
+            v-if="fixture.status === 'Cancelled'"
+            class="text-sm text-roses-red"
+          >
+            {{ fixture.status }}
+          </p>
         </div>
         <p
           v-if="fixture.scoringRules[0].pointsValue !== 0"
