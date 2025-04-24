@@ -32,9 +32,34 @@
               class="text-roses-red hover:underline"
               href="https://github.com/YUSU-Dev"
               target="_blank"
-              >York Students' Union Digital Team</a
+              >York Students' Union Digital and Communications Team</a
             >
           </li>
+          <li>
+            <a
+              class="text-roses-red hover:underline"
+              href="https://github.com/YSTV"
+              target="_blank"
+              >YSTV Computing Team</a
+            >
+          </li>
+          <li>
+            <a
+              class="text-roses-red hover:underline"
+              href="https://github.com/UniversityRadioYork"
+              target="_blank"
+              >URY Computing Team</a
+            >
+          </li>
+          <li>
+            <a
+              class="text-roses-red hover:underline"
+              href="https://github.com/rosesmedia"
+              target="_blank"
+              >Roses Student Developer Forum</a
+            >
+          </li>
+          <li>York SU Media Committee</li>
         </ul>
       </div>
     </div>
