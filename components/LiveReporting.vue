@@ -1,9 +1,9 @@
 <template>
-  <div class="flex gap-5">
-    <div class="flex flex-col bg-light-gray p-8 w-3/10 gap-10 h-fit">
-      <div class="flex flex-col gap-6">
+  <div class="flex flex-col md:flex-row gap-5">
+    <div class="flex flex-col bg-light-gray p-8 md:w-3/10 gap-10 h-fit">
+      <div class="flex flex-col gap-6 order-2 md:order-1">
         <h2 class="text-4xl xcond font-bold">LIVE STREAMS</h2>
-        <div class="flex flex-col gap-2 w-fit">
+        <div class="flex flex-wrap md:flex-col gap-2 w-fit">
           <button
             v-for="stream in streams"
             :key="stream.id"
@@ -17,7 +17,7 @@
           </button>
         </div>
       </div>
-      <div class="flex flex-col gap-6">
+      <div class="flex flex-col gap-6 order-1 md:order-2">
         <h2 class="text-4xl xcond font-bold">MISSED THE ACTION?</h2>
         <p>Find all of our past streams on the catch up page!</p>
         <div class="flex">
@@ -25,7 +25,7 @@
         </div>
       </div>
     </div>
-    <div class="flex flex-col gap-5 flex-grow max-w-7/10">
+    <div class="flex flex-col gap-5 flex-grow md:max-w-7/10">
       <div class="flex flex-col bg-light-gray p-8 gap-4">
         <div class="flex justify-between items-center">
           <h2 class="text-5xl xcond font-bold">LIVE STREAM</h2>
