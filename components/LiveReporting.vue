@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/no-v-html -->
 <template>
   <div class="flex flex-col md:flex-row gap-5">
     <div class="flex flex-col bg-light-gray p-8 md:w-3/10 gap-10 h-fit">
@@ -13,7 +14,8 @@
             ]"
             @click="((activeStream = stream), (accordionOpen = true))"
           >
-            {{ stream.fixture.sport }}
+            <p>{{ stream.fixture.sport }}</p>
+            <p v-if="stream.fixture.name">{{ stream.fixture.name }}</p>
           </button>
         </div>
       </div>
@@ -42,14 +44,13 @@
           </button>
         </div>
         <div v-if="accordionOpen" class="flex flex-col gap-6">
-          <div
-            v-if="activeStream.content === 'youtube'"
-            class="aspect-video w-full"
-          >
+          <div v-if="activeStream.content" class="aspect-video w-full">
             <iframe
               width="100%"
               height="100%"
-              :src="'https://www.youtube.com/embed/' + activeStream.id"
+              :src="
+                'https://www.youtube-nocookie.com/embed/' + activeStream.content
+              "
               title="YouTube video player"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
@@ -201,14 +202,35 @@ export default {
       const response = await $fetch(
         "https://media-dashboard-staging.yorksu.org/api/cm5pijvl80000ltigazjog2kg/seasons/cm7w42e0x0001nr01mlt1ptmi/coverage",
       );
-      this.streams = response;
+
+      // Check if the content contains "embed" and extract the video ID accordingly
+      this.streams = response.map((stream) => {
+        let videoId = null;
+        if (stream.content) {
+          if (stream.content.includes("embed")) {
+            // Extract video ID from embed URL
+            videoId = stream.content.replace(
+              /.*\/embed\/([\w-]+)(?:\?.*)?$/,
+              "$1",
+            );
+          } else {
+            // Extract video ID from other YouTube URL formats
+            videoId = stream.content.replace(/.*[/=]([\w-]+)(?:\?.*)?$/, "$1");
+          }
+        }
+        return {
+          id: stream.id,
+          fixture: stream.fixture,
+          content: videoId,
+        };
+      });
+
       const rosesTrailer = {
-        id: "S_F-QjAy2Rg",
+        id: "roseTrailer",
         fixture: {
           sport: "Roses Trailer",
-          name: "Roses Trailer",
         },
-        content: "youtube",
+        content: "S_F-QjAy2Rg",
       };
       this.streams.unshift(rosesTrailer);
       this.activeStream = rosesTrailer;
