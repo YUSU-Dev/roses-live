@@ -513,6 +513,49 @@
             <i class="fa-solid fa-angles-right"></i>
           </button>
         </div>
+        <div v-if="activeReporting === 'scores'" class="flex gap-1">
+          <button
+            v-if="scoresPage > 3"
+            aria-label="Go back to the first page"
+            class="bg-white border-2 w-8 h-8 hover:cursor-pointer"
+            @click="scoresPage = 1"
+          >
+            <i class="fa-solid fa-angles-left"></i>
+          </button>
+          <button
+            v-if="scoresPage > 1"
+            aria-label="Go back one page"
+            class="bg-white border-2 w-8 h-8 hover:cursor-pointer"
+            @click="scoresPage--"
+          >
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+          <button
+            v-for="i in paginationRange('scores')"
+            :key="i"
+            :class="{ '!bg-roses-red text-white': i === scoresPage }"
+            class="bg-white border-2 w-8 h-8 hover:cursor-pointer"
+            @click="scoresPage = i"
+          >
+            {{ i }}
+          </button>
+          <button
+            v-if="scoresPage < totalScoresPages"
+            aria-label="Go forward one page"
+            class="bg-white border-2 w-8 h-8 hover:cursor-pointer"
+            @click="scoresPage++"
+          >
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
+          <button
+            v-if="totalScoresPages > 3 && scoresPage < totalScoresPages - 2"
+            aria-label="Go to the last page"
+            class="bg-white border-2 w-8 h-8 hover:cursor-pointer"
+            @click="scoresPage = totalScoresPages"
+          >
+            <i class="fa-solid fa-angles-right"></i>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -718,6 +761,9 @@ export default {
       } else if (reportingType === "all") {
         page = this.allCoveragePage;
         totalPages = this.totalAllCoveragePages;
+      } else if (reportingType === "scores") {
+        page = this.scoresPage;
+        totalPages = this.totalScoresPages;
       }
       if (totalPages <= 3) {
         for (let i = 1; i <= totalPages; i++) {
