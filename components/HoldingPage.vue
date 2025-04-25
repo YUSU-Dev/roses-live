@@ -16,6 +16,8 @@
       <div class="flex justify-center items-center gap-6 h-20">
         <a href="https://go.yorksu.org/vHmb9FY"
           ><NuxtImg
+            width="160px"
+            height="fit-content"
             src="https://assets-cdn.sums.su/YU/website/img/yorksu-logo-black-full.png"
             alt="University of York Students' Union"
             class="w-40"
