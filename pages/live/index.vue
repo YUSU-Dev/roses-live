@@ -13,6 +13,48 @@
         <LiveReporting />
       </div>
       <CtaTiles />
+      <div class="py-28">
+        <TextImageSection
+          image="https://assets-cdn.sums.su/YU/website/img/Roses/York_Mind_Image.jpg"
+          alt=""
+          title="Our Charity Partner"
+          sub-title="ROSES IN MIND"
+          button-title="Donate Now"
+          button-href="https://go.yorksu.org/UxA3oQP"
+          button-target="_blank"
+        >
+          <template #text>
+            <p>
+              Each year, we partner with a different charity. Across Roses
+              weekend, we raise awareness and money for the charity,
+              highlighting important causes. This year, we are partnering with
+              <a
+                class="text-roses-red hover:underline"
+                href="https://go.yorksu.org/TjTnAgh"
+                target="_blank"
+                >York Mind</a
+              >.
+            </p>
+            <p>
+              York Mind are an independent local mental health charity which
+              empowers individuals experiencing mental ill health to start on
+              the pathway to recovery, supported by one simple belief: the
+              condition should never define the person.
+            </p>
+            <p>
+              To mark the announcement, our Sports Officer, TJ, shared her story
+              of how sport helped her to overcome her own mental health
+              challenges.
+              <a
+                class="text-roses-red hover:underline"
+                href="https://go.yorksu.org/jeuA8pb"
+                target="_blank"
+                >Read TJ’s story: Sport and my mental health</a
+              >.
+            </p>
+          </template>
+        </TextImageSection>
+      </div>
     </div>
   </div>
 </template>
