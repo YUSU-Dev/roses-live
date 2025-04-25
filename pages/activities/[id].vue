@@ -5,8 +5,8 @@
       :title="sport?.name"
       image="https://assets-cdn.sums.su/YU/website/img/Roses/Hero_Banner_Fixtures.png"
     />
-    <div class="container mx-auto py-28">
-      <div v-if="sport?.description" class="pb-12 lg:pb-28 key-rules">
+    <div class="container mx-auto py-14 md:py-28">
+      <div v-if="sport?.description" class="pb-14 md:pb-28 key-rules">
         <h2 class="text-4xl font-bold text-roses-red mb-4 lg:mb-10">
           KEY RULES
         </h2>
@@ -33,7 +33,7 @@
         <LoadingFixtureTile />
       </div>
       <RosesCarousel />
-      <div class="py-12 lg:py-28">
+      <div class="py-14 md:py-28">
         <h2 class="text-4xl font-bold text-roses-red mb-4">
           HISTORIC FIXTURES
         </h2>

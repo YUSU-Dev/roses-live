@@ -1,5 +1,5 @@
 <template>
-  <div v-if="banners.length > 0" class="pt-12 lg:pt-28">
+  <div v-if="banners.length > 0" class="pt-14 md:pt-28">
     <h2 class="text-4xl font-bold text-roses-red mb-4">FIXTURE PHOTOS</h2>
 
     <div class="flex justify-center overflow-x-hidden bg-roses-red">

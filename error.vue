@@ -24,7 +24,7 @@ export default {
         :title="'Error - ' + error.statusCode"
         image="https://assets-cdn.sums.su/YU/website/img/Roses/Hero_Banner_About.webp"
       />
-      <div class="container mx-auto py-28">
+      <div class="container mx-auto py-14 md:py-28">
         <div class="flex flex-col gap-6">
           <h2 class="text-5xl xcond font-bold">
             Oops! Something went wrong...

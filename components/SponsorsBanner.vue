@@ -1,7 +1,7 @@
 <template>
   <div class="bg-light-gray w-full">
     <div
-      class="container mx-auto flex flex-col items-center justify-center py-28 gap-14"
+      class="container mx-auto flex flex-col items-center justify-center py-14 md:py-28 gap-14"
     >
       <h2 class="text-5xl xcond font-bold text-center">PROUDLY SUPPORTED BY</h2>
       <div class="flex flex-col lg:flex-row justify-center items-center gap-6">

@@ -5,7 +5,7 @@
       image="https://assets-cdn.sums.su/YU/website/img/Roses/Hero_Banner_Food_Drink.png"
     />
     <div class="body">
-      <div class="py-28">
+      <div class="py-14 md:py-28">
         <TextImageSection
           image="https://assets-cdn.sums.su/YU/website/img/Roses/Roses_cafe_Image.png"
           alt=""
@@ -37,7 +37,7 @@
           </template>
         </TextImageSection>
       </div>
-      <div class="container mx-auto pb-28 flex flex-col gap-14">
+      <div class="container mx-auto pb-14 md:pb-28 flex flex-col gap-14">
         <div class="flex flex-col gap-6">
           <h2 class="text-5xl xcond font-bold">THE COURTYARD</h2>
           <div class="flex flex-col gap-4">
@@ -108,7 +108,7 @@
           </div>
         </div>
       </div>
-      <div class="container mx-auto pb-28">
+      <div class="container mx-auto pb-14 md:pb-28">
         <div class="flex flex-col gap-6">
           <h2 class="text-5xl xcond font-bold">OPENING TIMES</h2>
           <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-8">

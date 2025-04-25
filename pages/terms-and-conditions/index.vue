@@ -5,7 +5,7 @@
       image="https://assets-cdn.sums.su/YU/website/img/Roses/Hero_Banner_Homepage.png"
     />
     <div class="body">
-      <div class="container mx-auto py-28 flex flex-col gap-6">
+      <div class="container mx-auto py-14 md:py-28 flex flex-col gap-6">
         <div class="pb-2">
           <h2 class="text-2xl font-bold">Disclaimer</h2>
           <p>

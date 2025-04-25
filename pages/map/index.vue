@@ -5,7 +5,7 @@
       image="https://assets-cdn.sums.su/YU/website/img/Roses/Hero_Banner_Food_Drink.png"
     />
     <div class="body">
-      <div class="container mx-auto py-28">
+      <div class="container mx-auto py-14 md:py-28">
         <RosesMap />
       </div>
     </div>

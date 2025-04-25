@@ -9,7 +9,7 @@
       sub-image="https://assets-cdn.sums.su/YU/website/img/Roses/Hero_banner_NEW_cropped.png"
     />
     <div class="body">
-      <div class="pt-28">
+      <div class="pt-14 md:pt-28">
         <TextImageSection
           image="https://assets-cdn.sums.su/YU/website/img/Roses/About_Image_Homepage.png"
           alt=""
@@ -51,7 +51,9 @@
           </template>
         </TextImageSection>
       </div>
-      <div class="flex flex-col items-center justify-center gap-14 py-28">
+      <div
+        class="flex flex-col items-center justify-center gap-14 py-14 md:py-28"
+      >
         <div class="container mx-auto">
           <h2 class="font-bold xcond text-5xl text-center">
             COUNTDOWN TO ROSES 2025
@@ -60,7 +62,7 @@
         <RosesCountdown date="2025-05-02T20:00:00" />
       </div>
       <CtaTiles />
-      <div class="py-28">
+      <div class="py-14 md:py-28">
         <TextImageSection
           image="https://assets-cdn.sums.su/YU/website/img/Roses/York_Mind_Image.jpg"
           alt=""
