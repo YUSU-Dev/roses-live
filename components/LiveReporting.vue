@@ -63,6 +63,7 @@
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
               allowfullscreen
+              credentialless
             ></iframe>
           </div>
           <div
@@ -75,6 +76,7 @@
               :src="'https://radio.roses.media/embed/stream/' + activeStream.id"
               title="Live Radio Stream"
               frameborder="0"
+              credentialless
             ></iframe>
           </div>
         </div>
