@@ -583,6 +583,7 @@ export default {
     return {
       blogs: [],
       streams: [],
+      mainStreams: [],
       photos: [],
       scores: [],
       allCoverage: [],
@@ -626,29 +627,31 @@ export default {
       const response = await $fetch(
         "https://media-dashboard-staging.yorksu.org/api/cm5pijvl80000ltigazjog2kg/seasons/cm7w42e0x0001nr01mlt1ptmi/coverage",
       );
+      const mainStreamsResponse = await $fetch(
+        "https://media-dashboard-staging.yorksu.org/api/cm5pijvl80000ltigazjog2kg/seasons/cm99vmptc0001qp01s21a8egb/coverage",
+      );
+      this.mainStreams = mainStreamsResponse.map((stream) => ({
+        id: stream.id,
+        fixture: stream.fixture,
+        content: this.extractVideoId(stream.content),
+        coverage: stream.coverage,
+      }));
 
-      // Check if the content contains "embed" and extract the video ID accordingly
-      this.streams = response.map((stream) => {
-        let videoId = null;
-        if (stream.content) {
-          if (stream.content.includes("embed")) {
-            // Extract video ID from embed URL
-            videoId = stream.content.replace(
-              /.*\/embed\/([\w-]+)(?:\?.*)?$/,
-              "$1",
-            );
-          } else {
-            // Extract video ID from other YouTube URL formats
-            videoId = stream.content.replace(/.*[/=]([\w-]+)(?:\?.*)?$/, "$1");
-          }
-        }
-        return {
-          id: stream.id,
-          fixture: stream.fixture,
-          content: videoId,
-          coverage: stream.coverage,
-        };
-      });
+      this.streams = response.map((stream) => ({
+        id: stream.id,
+        fixture: stream.fixture,
+        content: this.extractVideoId(stream.content),
+        coverage: stream.coverage,
+      }));
+
+      // Add main streams to the beginning of the streams array
+      this.streams = [
+        ...this.mainStreams,
+        ...this.streams.filter(
+          (stream) =>
+            !this.mainStreams.some((mainStream) => mainStream.id === stream.id),
+        ),
+      ];
 
       const rosesTrailer = {
         id: "roseTrailer",
@@ -803,6 +806,16 @@ export default {
     },
     formatScore(score) {
       return score.toString().padStart(2, "0");
+    },
+    extractVideoId(content) {
+      if (!content) return null;
+      if (content.includes("embed")) {
+        // Extract video ID from embed URL
+        return content.replace(/.*\/embed\/([\w-]+)(?:\?.*)?$/, "$1");
+      } else {
+        // Extract video ID from other YouTube URL formats
+        return content.replace(/.*[/=]([\w-]+)(?:\?.*)?$/, "$1");
+      }
     },
   },
 };
