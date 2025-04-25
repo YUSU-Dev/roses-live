@@ -75,6 +75,7 @@ export default defineNuxtConfig({
           "'strict-dynamic'", // Strict CSP via 'strict-dynamic', supported by most modern browsers (level 3)
           "'nonce-{{nonce}}'", // Enables CSP nonce support for scripts in SSR mode, supported by almost any browser (level 2)
           "https://eu.i.posthog.com",
+          "https://www.youtube-nocookie.com",
         ],
         "style-src": [
           "'self'", // Enables loading of stylesheets hosted on same origin
