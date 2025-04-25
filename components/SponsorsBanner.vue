@@ -9,7 +9,7 @@
           <NuxtImg
             height="96px"
             width="fit-content"
-            fit="fill"
+            fit="contain"
             src="https://assets-cdn.sums.su/YU/website/img/Roses/LUSU_Logo.png"
             alt="Lancaster Students' Union"
             loading="lazy"
@@ -19,7 +19,7 @@
           <NuxtImg
             height="96px"
             width="fit-content"
-            fit="fill"
+            fit="contain"
             src="https://assets-cdn.sums.su/YU/website/img/Roses/YS-logo-BLACK.png"
             alt="York Sport"
             loading="lazy"
@@ -29,7 +29,7 @@
           <NuxtImg
             height="96px"
             width="fit-content"
-            fit="fill"
+            fit="contain"
             src="https://assets-cdn.sums.su/YU/website/img/Roses/equitix_logo.png"
             alt="Equitix"
             loading="lazy"
@@ -39,7 +39,7 @@
           <NuxtImg
             height="96px"
             width="fit-content"
-            fit="fill"
+            fit="contain"
             src="https://assets-cdn.sums.su/YU/website/img/Roses/Uni_of_York_logo.png"
             alt="University of York"
             loading="lazy"
