@@ -90,7 +90,7 @@ export default {
   methods: {
     async fetchFixtures() {
       this.loading = true;
-      const locationId = this.$route.query.location;
+      const locationId = this.$route.query.location ?? null;
       let parameters = "";
       if (this.selectedDay && this.searchTerm === "") {
         parameters +=
@@ -100,7 +100,7 @@ export default {
           this.selectedDay.endsAt;
       } else if (this.searchTerm !== "") {
         parameters = "&query=" + this.searchTerm;
-      } else if (this.selectedDay === null) {
+      } else if (this.selectedDay === null && locationId) {
         parameters = "location=" + locationId;
       }
       this.fixtures = await $fetch(

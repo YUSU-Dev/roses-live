@@ -103,7 +103,7 @@ export default {
       }
     },
   },
-  mounted() {
+  created() {
     this.locationId = this.$route.query.location;
     if (this.locationId) {
       this.selectedDay = null;
