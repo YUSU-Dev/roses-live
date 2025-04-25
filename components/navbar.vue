@@ -76,7 +76,7 @@ export default {
     return {
       isMenuOpen: false,
       links: [
-        { name: "Roses Live", href: "/", hidden: true },
+        { name: "Roses Live", href: "/live", hidden: true },
         { name: "Fixtures", href: "/fixtures", hidden: false },
         { name: "Get Involved", href: "/get-involved", hidden: false },
         { name: "About", href: "/about", hidden: false },
