@@ -19,6 +19,7 @@ export default defineNuxtConfig({
     "@sentry/nuxt/module",
     "@nuxtjs/seo",
     "nuxt-security",
+    "@nuxt/image",
   ],
   eslint: { config: { stylistic: false } },
   site: {
@@ -60,6 +61,16 @@ export default defineNuxtConfig({
       posthogPublicKey: "phc_7UNozIT6wt5PDS26tlecUIcybDSxDVOhyrj1RC7amws",
       posthogHost: "https://eu.i.posthog.com",
     },
+  },
+  image: {
+    cloudflare: {
+      baseURL: "https://roses-media-assets-staging.yorksu.org",
+    },
+    domains: [
+      "assets-cdn.sums.su",
+      "roses-media-assets-staging.yorksu.org",
+      "media-assets.roseslive.co.uk",
+    ],
   },
   robots: {
     blockAiBots: true,

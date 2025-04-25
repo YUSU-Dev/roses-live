@@ -6,7 +6,7 @@
       <a href="/">
         <div class="relative w-32 h-32 lg:w-36 lg:h-36">
           <div class="absolute w-full h-full p-3 bg-roses-dark">
-            <img
+            <NuxtImg
               src="https://assets-cdn.sums.su/YU/website/img/Roses/Roses_mark_Navigation.png"
               class="w-full h-full aspect-square"
               alt="Roses Live"
@@ -25,10 +25,11 @@
       </div>
       <div class="hidden lg:flex w-48 items-center">
         <a href="https://go.yorksu.org/vHmb9FY" target="_blank">
-          <img
+          <NuxtImg
             src="https://assets-cdn.sums.su/YU/website/img/yorksu-logo-white-full.png"
             class="w-full h-auto"
             alt="University of York Students' Union"
+            loading="lazy"
           />
         </a>
       </div>
@@ -56,10 +57,11 @@
           </template>
         </div>
         <div class="flex justify-center items-center pb-8">
-          <img
+          <NuxtImg
             src="https://assets-cdn.sums.su/YU/website/img/yorksu-logo-white-full.png"
             class="w-full max-w-40"
             alt=""
+            loading="lazy"
           />
         </div>
       </div>

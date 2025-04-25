@@ -31,10 +31,11 @@
               involved in the Roses buzz!
             </p>
           </div>
-          <img
+          <NuxtImg
             src="https://assets-cdn.sums.su/YU/website/img/Roses/Battleiscominghome_Image.png"
             class="w-full"
             alt="About Roses"
+            loading="lazy"
           />
         </div>
         <div class="flex flex-col gap-6 pb-28">
