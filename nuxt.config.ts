@@ -101,6 +101,7 @@ export default defineNuxtConfig({
           "'self'",
           "https://www.youtube.com",
           "https://www.youtube-nocookie.com",
+          "https://radio.roses.media/",
         ],
         "upgrade-insecure-requests": true,
         "report-to": "csp-endpoint",
