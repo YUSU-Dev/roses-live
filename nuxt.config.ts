@@ -109,7 +109,7 @@ export default defineNuxtConfig({
           "https://o4506869614903296.ingest.us.sentry.io/api/4508098677374976/security/?sentry_key=e6600512df57797f4fd551f8f8adf187;",
         ],
       },
-      crossOriginEmbedderPolicy: "credentialless",
+      crossOriginEmbedderPolicy: "require-corp",
       referrerPolicy: "strict-origin-when-cross-origin",
       permissionsPolicy: {
         geolocation: ["self"], // Allow geolocation for the current origin
