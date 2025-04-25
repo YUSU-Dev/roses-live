@@ -704,7 +704,7 @@ export default {
         parameters += `&page=${this.scoresPage}`;
       }
       const response = await $fetch(
-        "https://sports-admin-staging.yorksu.org/api/clsbxap510000gv60in0ijvp1/seasons/clt8ogzi9000km29p876hqgvh/fixtures/results" +
+        "https://sports-admin.yorksu.org/api/clst1o9lv0001q5teb61pqfyy/seasons/cm7uo6y6a0005nn0153286r5l/fixtures/results" +
           parameters,
       );
       this.scores = response.data;
@@ -726,7 +726,7 @@ export default {
       this.allCoverage = response.data;
       if (this.allCoveragePage === 1) {
         const scoresResponse = await $fetch(
-          "https://sports-admin-staging.yorksu.org/api/clsbxap510000gv60in0ijvp1/seasons/clt8ogzi9000km29p876hqgvh/fixtures/results?pageSize=5",
+          "https://sports-admin.yorksu.org/api/clst1o9lv0001q5teb61pqfyy/seasons/cm7uo6y6a0005nn0153286r5l/fixtures/results?pageSize=5",
         );
         if (this.allCoverage.length > 0) {
           const lastPublishedAt = new Date(
