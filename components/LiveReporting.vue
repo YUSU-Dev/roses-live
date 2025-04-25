@@ -47,7 +47,12 @@
           </button>
         </div>
         <div v-if="accordionOpen" class="flex flex-col gap-6">
-          <div v-if="activeStream.content" class="aspect-video w-full">
+          <div
+            v-if="
+              activeStream.coverage === 'TVCoverage' && activeStream.content
+            "
+            class="aspect-video w-full"
+          >
             <iframe
               width="100%"
               height="100%"
@@ -60,19 +65,18 @@
               allowfullscreen
             ></iframe>
           </div>
-          <!-- <div class="flex flex-col gap-2">
-            <p class="text-2xl font-bold">
-              {{ activeStream.fixture.sport }}
-            </p>
-            <p class="text-xl font-semibold">
-              Listen to the live radio stream here!
-            </p>
+          <div
+            v-if="activeStream.coverage === 'RadioCoverage'"
+            class="h-50 w-full"
+          >
             <iframe
-              controls
+              width="100%"
+              height="100%"
+              :src="'https://radio.roses.media/embed/stream/' + activeStream.id"
               title="Live Radio Stream"
-              src="https://radio.roses.media/embed/stream/test-stream-01"
+              frameborder="0"
             ></iframe>
-          </div> -->
+          </div>
         </div>
       </div>
       <div v-if="!catchup" class="flex flex-col bg-light-gray p-8 gap-10">
@@ -640,6 +644,7 @@ export default {
           id: stream.id,
           fixture: stream.fixture,
           content: videoId,
+          coverage: stream.coverage,
         };
       });
 
@@ -649,6 +654,7 @@ export default {
           sport: "Roses Trailer",
         },
         content: "S_F-QjAy2Rg",
+        coverage: "TVCoverage",
       };
       this.streams.unshift(rosesTrailer);
       this.activeStream = rosesTrailer;
