@@ -4,6 +4,8 @@
       title="ROSES LIVE"
       image="https://assets-cdn.sums.su/YU/website/img/Roses/Hero_Banner_Homepage.png"
       sub-image="https://assets-cdn.sums.su/YU/website/img/Roses/Hero_banner_NEW_cropped.png"
+      button-title="Fixtures"
+      button-href="/fixtures"
     />
     <div class="body">
       <div class="container mx-auto py-28">
