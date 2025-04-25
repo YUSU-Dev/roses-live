@@ -42,10 +42,10 @@
             target="_blank"
             class="flex gap-2 bg-roses-red text-white px-6 md:px-3 py-2 text-center hover:bg-roses-red-dark transition duration-200 ease-in-out"
             ><NuxtImg
-              src="/assets/img//gcal-logo.webp"
+              src="/img//gcal-logo.webp"
               alt=""
-              class="w-8 h-8"
-              sizes="100vw"
+              width="32"
+              height="32"
             /><span>Add to Google Calendar</span></a
           >
           <a
@@ -53,20 +53,20 @@
             target="_blank"
             class="flex gap-2 bg-roses-red text-white px-6 md:px-3 py-2 text-center hover:bg-roses-red-dark transition duration-200 ease-in-out"
             ><NuxtImg
-              src="/assets/img/outlook-logo.png"
+              src="/img/outlook-logo.png"
               alt=""
-              class="w-8 h-8"
-              sizes="100vw"
+              width="32"
+              height="32"
             /><span>Add to Outlook</span></a
           ><a
             :href="appleLink"
             target="_blank"
             class="flex gap-2 bg-roses-red text-white px-6 md:px-3 py-2 text-center hover:bg-roses-red-dark transition duration-200 ease-in-out"
             ><NuxtImg
-              src="/assets/img/icloud-logo.png"
+              src="/img/icloud-logo.png"
               alt=""
-              class="w-8 h-8"
-              sizes="100vw"
+              width="32"
+              height="32"
             /><span>Add to Apple Calendar</span></a
           >
         </div>
