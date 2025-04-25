@@ -76,5 +76,12 @@ export default {
 };
 useHead({
   title: "Roses Live",
+  meta: [
+    {
+      name: "description",
+      content:
+        "Roses is an annual sporting varsity between the University of York and Lancaster University. Roses 2025 marks the 60th anniversary of the competition! #RosesAreWhite",
+    },
+  ],
 });
 </script>
