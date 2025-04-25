@@ -5,7 +5,14 @@
     <div
       class="min-w-[50%] flex justify-center lg:justify-end lg:pr-20 order-2 lg:order-1"
     >
-      <NuxtImg class="h-fit" :src="image" :alt="alt" loading="lazy" />
+      <NuxtImg
+        class="h-fit"
+        :src="image"
+        :alt="alt"
+        loading="lazy"
+        width="404px"
+        height="fit-content"
+      />
     </div>
     <div
       class="flex flex-col gap-6 order-1 lg:order-2 items-center text-center lg:items-start lg:text-start"

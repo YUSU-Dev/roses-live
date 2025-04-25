@@ -16,6 +16,7 @@
                 :src="banners[currentIndex].fileName"
                 :alt="banners[currentIndex].altText"
                 class="h-[400px] object-cover"
+                height="400"
               />
               <p
                 v-if="banners[currentIndex].caption"

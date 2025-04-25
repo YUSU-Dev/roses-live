@@ -4,6 +4,8 @@
       <div class="flex flex-col lg:flex-row justify-between items-start">
         <div class="order-2 lg:order-1">
           <NuxtImg
+            height="fit-content"
+            width="377px"
             src="https://assets-cdn.sums.su/YU/website/img/Roses/Roses_are_white_footer.png"
             alt=""
           />
@@ -47,6 +49,8 @@
           <div class="flex-col flex gap-3">
             <a href="https://go.yorksu.org/vHmb9FY" target="_blank">
               <NuxtImg
+                height="auto"
+                width="100%"
                 src="https://assets-cdn.sums.su/YU/website/img/yorksu-logo-white-full.png"
                 class="w-full h-auto"
                 alt="University of York Students' Union"
@@ -54,6 +58,8 @@
             </a>
             <div>
               <NuxtImg
+                height="auto"
+                width="100%"
                 src="https://app.greenweb.org/api/v3/greencheckimage/roseslive.co.uk?nocache=true"
                 alt="This website runs on green hosting - verified by thegreenwebfoundation.org"
                 class="w-full h-fit"

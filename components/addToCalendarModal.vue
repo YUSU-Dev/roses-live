@@ -45,6 +45,7 @@
               src="/assets/img//gcal-logo.webp"
               alt=""
               class="w-8 h-8"
+              sizes="100vw"
             /><span>Add to Google Calendar</span></a
           >
           <a
@@ -55,6 +56,7 @@
               src="/assets/img/outlook-logo.png"
               alt=""
               class="w-8 h-8"
+              sizes="100vw"
             /><span>Add to Outlook</span></a
           ><a
             :href="appleLink"
@@ -64,6 +66,7 @@
               src="/assets/img/icloud-logo.png"
               alt=""
               class="w-8 h-8"
+              sizes="100vw"
             /><span>Add to Apple Calendar</span></a
           >
         </div>

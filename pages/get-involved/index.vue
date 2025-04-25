@@ -97,6 +97,8 @@
             </p>
           </div>
           <NuxtImg
+            width="100%"
+            height="fit-content"
             src="https://assets-cdn.sums.su/YU/website/img/Roses/Run_to_Roses_image.png"
             class="w-full"
             alt="Run to Roses"
@@ -127,6 +129,8 @@
             </p>
           </div>
           <NuxtImg
+            width="100%"
+            height="fit-content"
             src="https://assets-cdn.sums.su/YU/website/img/Roses/Roses_Art_Competition_Image.png"
             class="w-full"
             alt="Roses Art Competition"

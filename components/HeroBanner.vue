@@ -18,9 +18,10 @@
       <div v-if="subImage" class="hidden lg:flex items-end">
         <NuxtImg
           :src="subImage"
-          class="object-contain w-full h-auto"
           alt=""
           loading="lazy"
+          width="600px"
+          height="fit-content"
         />
       </div>
     </div>
