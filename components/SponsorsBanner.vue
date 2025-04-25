@@ -7,8 +7,8 @@
       <div class="flex flex-col lg:flex-row justify-center items-center gap-6">
         <a href="https://go.yorksu.org/4GpEEUC" target="_blank">
           <NuxtImg
-            height="96"
-            width="auto"
+            height="96px"
+            width="fit-content"
             fit="fill"
             src="https://assets-cdn.sums.su/YU/website/img/Roses/LUSU_Logo.png"
             alt="Lancaster Students' Union"
@@ -17,8 +17,8 @@
         </a>
         <a href="https://go.yorksu.org/9ZR9WTA" target="_blank">
           <NuxtImg
-            height="96"
-            width="auto"
+            height="96px"
+            width="fit-content"
             fit="fill"
             src="https://assets-cdn.sums.su/YU/website/img/Roses/YS-logo-BLACK.png"
             alt="York Sport"
@@ -27,8 +27,8 @@
         </a>
         <a href="https://go.yorksu.org/oujNo29" target="_blank">
           <NuxtImg
-            height="96"
-            width="auto"
+            height="96px"
+            width="fit-content"
             fit="fill"
             src="https://assets-cdn.sums.su/YU/website/img/Roses/equitix_logo.png"
             alt="Equitix"
@@ -37,8 +37,8 @@
         </a>
         <a href="https://go.yorksu.org/zQ85tmg" target="_blank">
           <NuxtImg
-            height="96"
-            width="auto"
+            height="96px"
+            width="fit-content"
             fit="fill"
             src="https://assets-cdn.sums.su/YU/website/img/Roses/Uni_of_York_logo.png"
             alt="University of York"
