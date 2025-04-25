@@ -623,10 +623,10 @@ export default {
   methods: {
     async getStreams() {
       const response = await $fetch(
-        "https://media-dashboard-staging.yorksu.org/api/cm5pijvl80000ltigazjog2kg/seasons/cm7w42e0x0001nr01mlt1ptmi/coverage",
+        "https://media-dashboard.yorksu.org/api/cm5pio57y0000vt6y0l5p92f4/seasons/cm9tx5ab10001o9011ugbylm7/coverage",
       );
       const mainStreamsResponse = await $fetch(
-        "https://media-dashboard-staging.yorksu.org/api/cm5pijvl80000ltigazjog2kg/seasons/cm99vmptc0001qp01s21a8egb/coverage",
+        "https://media-dashboard.yorksu.org/api/cm5pio57y0000vt6y0l5p92f4/seasons/cm9tx60d1008ho9017ua4vw1b/coverage",
       );
       this.mainStreams = mainStreamsResponse.map((stream) => ({
         id: stream.id,
@@ -672,7 +672,7 @@ export default {
         parameters += `&page=${this.page}`;
       }
       const response = await $fetch(
-        "https://media-dashboard-staging.yorksu.org/api/cm5pijvl80000ltigazjog2kg/seasons/cm7w42e0x0001nr01mlt1ptmi/blogs" +
+        "https://media-dashboard.yorksu.org/api/cm5pio57y0000vt6y0l5p92f4/seasons/cm9tx5ab10001o9011ugbylm7/blogs" +
           parameters,
       );
       this.blogs = response.data;
@@ -688,7 +688,7 @@ export default {
         parameters += `&page=${this.photosPage}`;
       }
       const response = await $fetch(
-        "https://media-dashboard-staging.yorksu.org/api/cm5pijvl80000ltigazjog2kg/seasons/cm7w42e0x0001nr01mlt1ptmi/photos" +
+        "https://media-dashboard.yorksu.org/api/cm5pio57y0000vt6y0l5p92f4/seasons/cm9tx5ab10001o9011ugbylm7/photos" +
           parameters,
       );
       this.photos = response.data;
@@ -720,7 +720,7 @@ export default {
         parameters += `&page=${this.allCoveragePage}`;
       }
       const response = await $fetch(
-        "https://media-dashboard-staging.yorksu.org/api/cm5pijvl80000ltigazjog2kg/seasons/cm7w42e0x0001nr01mlt1ptmi/print-coverage" +
+        "https://media-dashboard.yorksu.org/api/cm5pio57y0000vt6y0l5p92f4/seasons/cm9tx5ab10001o9011ugbylm7/print-coverage" +
           parameters,
       );
       this.allCoverage = response.data;
