@@ -623,10 +623,10 @@ export default {
   methods: {
     async getStreams() {
       const response = await $fetch(
-        "https://media-dashboard-staging.yorksu.org/api/cm5pijvl80000ltigazjog2kg/seasons/cm7w42e0x0001nr01mlt1ptmi/coverage",
+        "https://media-dashboard.yorksu.org/api/cm5pijvl80000ltigazjog2kg/seasons/cm7w42e0x0001nr01mlt1ptmi/coverage",
       );
       const mainStreamsResponse = await $fetch(
-        "https://media-dashboard-staging.yorksu.org/api/cm5pijvl80000ltigazjog2kg/seasons/cm99vmptc0001qp01s21a8egb/coverage",
+        "https://media-dashboard.yorksu.org/api/cm5pijvl80000ltigazjog2kg/seasons/cm99vmptc0001qp01s21a8egb/coverage",
       );
       this.mainStreams = mainStreamsResponse.map((stream) => ({
         id: stream.id,
@@ -672,7 +672,7 @@ export default {
         parameters += `&page=${this.page}`;
       }
       const response = await $fetch(
-        "https://media-dashboard-staging.yorksu.org/api/cm5pijvl80000ltigazjog2kg/seasons/cm7w42e0x0001nr01mlt1ptmi/blogs" +
+        "https://media-dashboard.yorksu.org/api/cm5pijvl80000ltigazjog2kg/seasons/cm7w42e0x0001nr01mlt1ptmi/blogs" +
           parameters,
       );
       this.blogs = response.data;
@@ -688,7 +688,7 @@ export default {
         parameters += `&page=${this.photosPage}`;
       }
       const response = await $fetch(
-        "https://media-dashboard-staging.yorksu.org/api/cm5pijvl80000ltigazjog2kg/seasons/cm7w42e0x0001nr01mlt1ptmi/photos" +
+        "https://media-dashboard.yorksu.org/api/cm5pijvl80000ltigazjog2kg/seasons/cm7w42e0x0001nr01mlt1ptmi/photos" +
           parameters,
       );
       this.photos = response.data;
@@ -704,7 +704,7 @@ export default {
         parameters += `&page=${this.scoresPage}`;
       }
       const response = await $fetch(
-        "https://sports-admin-staging.yorksu.org/api/clsbxap510000gv60in0ijvp1/seasons/clt8ogzi9000km29p876hqgvh/fixtures/results" +
+        "https://sports-admin.yorksu.org/api/clsbxap510000gv60in0ijvp1/seasons/clt8ogzi9000km29p876hqgvh/fixtures/results" +
           parameters,
       );
       this.scores = response.data;
@@ -720,13 +720,13 @@ export default {
         parameters += `&page=${this.allCoveragePage}`;
       }
       const response = await $fetch(
-        "https://media-dashboard-staging.yorksu.org/api/cm5pijvl80000ltigazjog2kg/seasons/cm7w42e0x0001nr01mlt1ptmi/print-coverage" +
+        "https://media-dashboard.yorksu.org/api/cm5pijvl80000ltigazjog2kg/seasons/cm7w42e0x0001nr01mlt1ptmi/print-coverage" +
           parameters,
       );
       this.allCoverage = response.data;
       if (this.allCoveragePage === 1) {
         const scoresResponse = await $fetch(
-          "https://sports-admin-staging.yorksu.org/api/clsbxap510000gv60in0ijvp1/seasons/clt8ogzi9000km29p876hqgvh/fixtures/results?pageSize=5",
+          "https://sports-admin.yorksu.org/api/clsbxap510000gv60in0ijvp1/seasons/clt8ogzi9000km29p876hqgvh/fixtures/results?pageSize=5",
         );
         if (this.allCoverage.length > 0) {
           const lastPublishedAt = new Date(

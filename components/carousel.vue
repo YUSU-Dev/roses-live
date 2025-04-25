@@ -87,7 +87,7 @@ export default {
       const sportName = this.$route.params.id;
 
       const response = await $fetch(
-        `https://media-dashboard-staging.yorksu.org/api/cm5pijvl80000ltigazjog2kg/seasons/cm7w42e0x0001nr01mlt1ptmi/photos?sport=${sportName}`,
+        `https://media-dashboard.yorksu.org/api/cm5pijvl80000ltigazjog2kg/seasons/cm7w42e0x0001nr01mlt1ptmi/photos?sport=${sportName}`,
       );
       this.banners = response.data;
     },
