@@ -21,10 +21,11 @@ export default {
 <template>
   <div class="w-full h-full flex flex-col justify-center">
     <div class="absolute top-0 left-0 w-full h-full">
-      <img
+      <NuxtImg
         src="/img/seo-template.png"
         alt="Background Image"
         class="w-full h-full object-cover"
+        loading="lazy"
       />
     </div>
     <div class="flex flex-col justify-center items-center h-full">

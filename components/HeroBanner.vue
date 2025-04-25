@@ -16,7 +16,12 @@
         </div>
       </div>
       <div v-if="subImage" class="hidden lg:flex items-end">
-        <img :src="subImage" class="object-contain w-full h-auto" alt="" />
+        <NuxtImg
+          :src="subImage"
+          class="object-contain w-full h-auto"
+          alt=""
+          loading="lazy"
+        />
       </div>
     </div>
   </div>
