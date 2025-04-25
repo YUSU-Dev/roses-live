@@ -32,6 +32,8 @@
             </p>
           </div>
           <NuxtImg
+            width="100%"
+            height="fit-content"
             src="https://assets-cdn.sums.su/YU/website/img/Roses/Battleiscominghome_Image.png"
             class="w-full"
             alt="About Roses"
