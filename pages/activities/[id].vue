@@ -80,9 +80,9 @@ export default {
       });
     },
   },
-  async mounted() {
+  mounted() {
     this.route = this.$route.params.id;
-    await this.getSport();
+    this.getSport();
   },
   methods: {
     async getSport() {
