@@ -4,8 +4,8 @@
       title="FIXTURES"
       image="https://assets-cdn.sums.su/YU/website/img/Roses/Hero_Banner_Fixtures.png"
     />
-    <div class="container mx-auto py-28">
-      <div class="pb-12 lg:pb-28 flex flex-col gap-8">
+    <div class="container mx-auto py-14 md:py-28">
+      <div class="pb-14 md:pb-28 flex flex-col gap-8">
         <DayFilters :search-term="searchTerm" @select-day="updateDay" />
         <FixtureSearch ref="fixtureSearch" @search="updateSearch" />
       </div>

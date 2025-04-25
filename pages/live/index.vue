@@ -8,14 +8,14 @@
       button-href="/fixtures"
     />
     <div class="body">
-      <div class="container mx-auto py-28">
-        <div class="pb-28">
+      <div class="container mx-auto py-14 md:py-28">
+        <div class="pb-14 md:pb-28">
           <LiveScore />
         </div>
         <LiveReporting />
       </div>
       <CtaTiles />
-      <div class="py-28">
+      <div class="py-14 md:py-28">
         <TextImageSection
           image="https://assets-cdn.sums.su/YU/website/img/Roses/York_Mind_Image.jpg"
           alt=""

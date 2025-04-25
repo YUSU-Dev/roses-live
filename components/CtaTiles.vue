@@ -1,7 +1,7 @@
 <template>
   <div class="bg-light-gray w-full">
     <div
-      class="container mx-auto py-28 flex flex-col gap-10 justify-center items-center"
+      class="container mx-auto py-14 md:py-28 flex flex-col gap-10 justify-center items-center"
     >
       <h2 class="font-bold xcond text-5xl text-center">
         A WEEKEND OF SPORTING RIVALRY

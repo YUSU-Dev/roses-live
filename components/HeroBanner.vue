@@ -1,9 +1,9 @@
 <template>
   <div
-    class="w-full bg-cover h-[500px] bg-black"
+    class="w-full bg-cover flex items-center min-h-[250px] md:h-[500px] bg-black"
     :style="{ backgroundImage: `url(${image})` }"
   >
-    <div class="container mx-auto flex justify-between h-full">
+    <div class="container mx-auto flex justify-between h-full py-10">
       <div class="flex flex-col lg:max-w-[40%] gap-6 text-white justify-center">
         <p class="text-lg hidden lg:block">{{ subTitle }}</p>
         <h1 class="text-7xl lg:text-8xl font-bold xcond italic">{{ title }}</h1>

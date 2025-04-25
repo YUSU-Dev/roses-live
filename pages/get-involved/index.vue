@@ -5,8 +5,8 @@
       image="https://assets-cdn.sums.su/YU/website/img/Roses/Hero_Banner_Get_Involved.webp"
     />
     <div class="body">
-      <div class="container mx-auto py-28">
-        <div class="flex flex-col gap-6 pb-28">
+      <div class="container mx-auto py-14 md:py-28">
+        <div class="flex flex-col gap-6 pb-14 md:pb-28">
           <h2 class="text-5xl xcond font-bold">ROSES EVENTS</h2>
           <div class="flex flex-col gap-4">
             <p>
@@ -63,7 +63,7 @@
             </div>
           </div>
         </div>
-        <div class="flex flex-col gap-6 pb-28">
+        <div class="flex flex-col gap-6 pb-14 md:pb-28">
           <h2 class="text-5xl xcond font-bold">LET’S RUN TO ROSES!</h2>
           <div class="flex flex-col gap-4">
             <p>
