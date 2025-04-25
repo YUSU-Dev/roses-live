@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-wrap justify-center items-center h-full">
     <div class="max-w-[500px] max-h-[500px]">
-      <img
+      <NuxtImg
         src="https://assets-cdn.sums.su/YU/website/img/Roses/500x500_Roses_Holding_Page.webp"
         class="aspect-square w-full object-contain"
         alt="Roses 2025 logo"
@@ -15,7 +15,7 @@
       </div>
       <div class="flex justify-center items-center gap-6 h-20">
         <a href="https://go.yorksu.org/vHmb9FY"
-          ><img
+          ><NuxtImg
             src="https://assets-cdn.sums.su/YU/website/img/yorksu-logo-black-full.png"
             alt="University of York Students' Union"
             class="w-40"

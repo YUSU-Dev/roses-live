@@ -186,13 +186,12 @@
                     </div>
                   </div>
                   <div class="flex justify-center items-center">
-                    <img
-                      :src="
-                        'https://roses-media-assets-staging.yorksu.org/' +
-                        photo.fileName
-                      "
+                    <NuxtImg
+                      provider="cloudflare"
+                      :src="photo.fileName"
                       class=""
                       :alt="photo.altText"
+                      loading="lazy"
                     />
                   </div>
                 </div>
@@ -245,13 +244,12 @@
                       </div>
                     </div>
                     <div class="flex justify-center items-center">
-                      <img
-                        :src="
-                          'https://roses-media-assets-staging.yorksu.org/' +
-                          coverage.fileName
-                        "
+                      <NuxtImg
+                        provider="cloudflare"
+                        :src="coverage.fileName"
                         class=""
                         :alt="coverage.altText"
+                        loading="lazy"
                       />
                     </div>
                   </div>

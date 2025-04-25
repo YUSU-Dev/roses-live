@@ -41,7 +41,7 @@
             :href="googleCalendarLink"
             target="_blank"
             class="flex gap-2 bg-roses-red text-white px-6 md:px-3 py-2 text-center hover:bg-roses-red-dark transition duration-200 ease-in-out"
-            ><img
+            ><NuxtImg
               src="/assets/img//gcal-logo.webp"
               alt=""
               class="w-8 h-8"
@@ -51,7 +51,7 @@
             :href="outlookLink"
             target="_blank"
             class="flex gap-2 bg-roses-red text-white px-6 md:px-3 py-2 text-center hover:bg-roses-red-dark transition duration-200 ease-in-out"
-            ><img
+            ><NuxtImg
               src="/assets/img/outlook-logo.png"
               alt=""
               class="w-8 h-8"
@@ -60,7 +60,7 @@
             :href="appleLink"
             target="_blank"
             class="flex gap-2 bg-roses-red text-white px-6 md:px-3 py-2 text-center hover:bg-roses-red-dark transition duration-200 ease-in-out"
-            ><img
+            ><NuxtImg
               src="/assets/img/icloud-logo.png"
               alt=""
               class="w-8 h-8"

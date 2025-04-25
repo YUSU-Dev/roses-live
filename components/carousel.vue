@@ -11,8 +11,9 @@
         >
           <div v-for="i in [currentIndex]" :key="i" class="absolute">
             <div v-if="banners.length > 0 && banners[currentIndex]">
-              <img
-                :src="`https://roses-media-assets-staging.yorksu.org/${banners[currentIndex].fileName}`"
+              <NuxtImg
+                provider="cloudflare"
+                :src="banners[currentIndex].fileName"
                 :alt="banners[currentIndex].altText"
                 class="h-[400px] object-cover"
               />

@@ -96,10 +96,11 @@
               competitions, ambassadors, and lots more!
             </p>
           </div>
-          <img
+          <NuxtImg
             src="https://assets-cdn.sums.su/YU/website/img/Roses/Run_to_Roses_image.png"
             class="w-full"
             alt="Run to Roses"
+            loading="lazy"
           />
         </div>
         <div class="flex flex-col gap-6">
@@ -125,10 +126,11 @@
               for you to take a look at in between fixtures and events.
             </p>
           </div>
-          <img
+          <NuxtImg
             src="https://assets-cdn.sums.su/YU/website/img/Roses/Roses_Art_Competition_Image.png"
             class="w-full"
             alt="Roses Art Competition"
+            loading="lazy"
           />
         </div>
       </div>

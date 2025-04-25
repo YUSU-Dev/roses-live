@@ -28,18 +28,20 @@
         <p class="order-2 md:order-3">YORK</p>
       </div>
       <div class="absolute h-full hidden flex-col items-center gap-2 md:flex">
-        <img
+        <NuxtImg
           src="https://assets-cdn.sums.su/YU/website/img/Roses/Trophy_icon.webp"
           alt=""
           class="w-9"
+          loading="lazy"
         />
         <div class="w-[2px] bg-black h-20"></div>
       </div>
       <div class="absolute flex md:hidden p-2 -top-7 bg-white">
-        <img
+        <NuxtImg
           src="https://assets-cdn.sums.su/YU/website/img/Roses/Trophy_icon.webp"
           alt=""
           class="w-9"
+          loading="lazy"
         />
       </div>
       <div
