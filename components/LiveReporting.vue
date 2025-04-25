@@ -11,7 +11,7 @@
             v-for="stream in streams"
             :key="stream.id"
             :class="[
-              'bg-roses-red text-white px-6 lg:px-10 py-2 rounded-full text-center hover:cursor-pointer',
+              'bg-roses-red text-white px-6 lg:px-10 py-2 rounded-full text-center hover:cursor-pointer flex flex-row gap-1 md:gap-0 md:flex-col',
               { '!bg-black !text-white': activeStream.id === stream.id },
             ]"
             @click="((activeStream = stream), (accordionOpen = true))"
@@ -21,13 +21,13 @@
           </button>
         </div>
       </div>
-      <div v-if="!catchup" class="flex flex-col gap-6 order-1 md:order-2">
+      <!-- <div v-if="!catchup" class="flex flex-col gap-6 order-1 md:order-2">
         <h2 class="text-4xl xcond font-bold">MISSED THE ACTION?</h2>
         <p>Find all of our past streams on the catch up page!</p>
         <div class="flex">
           <RosesButton href="/" target="_blank" title="Catch Up" />
         </div>
-      </div>
+      </div> -->
     </div>
     <div class="flex flex-col gap-5 flex-grow md:w-7/10">
       <div class="flex flex-col bg-light-gray p-8 gap-4">
@@ -568,10 +568,10 @@
 </template>
 
 <script>
-import RosesButton from "~/components/button.vue";
+// import RosesButton from "~/components/button.vue";
 export default {
   components: {
-    RosesButton,
+    // RosesButton,
   },
   props: {
     catchup: {

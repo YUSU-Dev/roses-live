@@ -16,14 +16,14 @@
             :style="{
               height: (york.points / pointsToWin) * 100 + '%',
             }"
-            class="w-30 bg-black"
+            class="w-30 bg-black min-h-2"
           ></div>
         </div>
         <div
           :style="{
             width: (york.points / pointsToWin) * 100 + '%',
           }"
-          class="h-10 bg-black hidden md:block order-2"
+          class="h-10 bg-black hidden md:block order-2 min-w-2"
         ></div>
         <p class="order-2 md:order-3">YORK</p>
       </div>
@@ -50,13 +50,13 @@
           :style="{
             height: (Lancaster.points / pointsToWin) * 100 + '%',
           }"
-          class="w-30 bg-roses-red block md:hidden order-2"
+          class="w-30 bg-roses-red block md:hidden order-2 min-h-2"
         ></div>
         <div
           :style="{
             width: (Lancaster.points / pointsToWin) * 100 + '%',
           }"
-          class="h-10 bg-roses-red hidden md:block order-2"
+          class="h-10 bg-roses-red hidden md:block order-2 min-w-2"
         ></div>
         <p class="order-2 md:order-3">LANCASTER</p>
       </div>
