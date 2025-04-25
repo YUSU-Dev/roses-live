@@ -64,7 +64,7 @@ export default defineNuxtConfig({
   },
   image: {
     cloudflare: {
-      baseURL: "https://roses-media-assets-staging.yorksu.org",
+      baseURL: "https://media-assets.roseslive.co.uk",
     },
     domains: [
       "assets-cdn.sums.su",
