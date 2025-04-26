@@ -140,7 +140,7 @@ export default {
   data() {
     return {
       yorkCollectionId: "clt4mx9jb0005rtqtslh1o6id",
-      lancasterCollectionId: "clt4mxczy0007rtqtmz2ljm2t",
+      lancasterCollectionId: "cm7uoj6qj000xt301imx1eu2w",
       York: {},
       Lancaster: {},
     };
