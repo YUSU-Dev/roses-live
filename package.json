@@ -24,7 +24,7 @@
     "ical-generator": "^8.1.1",
     "lucide-vue-next": "^0.503.0",
     "mapbox-gl": "^3.11.0",
-    "nuxt": "^3.13.0",
+    "nuxt": "^3.17.0",
     "nuxt-security": "^2.2.0",
     "posthog-js": "^1.224.0",
     "vue": "latest",
