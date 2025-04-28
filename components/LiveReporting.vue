@@ -286,8 +286,8 @@
                         v-if="coverage.scoringRules"
                         class="text-lg font-semibold"
                       >
-                        {{ coverage.scoringRules[0].pointsValue }} Point{{
-                          coverage.scoringRules[0].pointsValue === 1 ? "" : "s"
+                        {{ coverage.scoringRules[0].pointsValue }} POINT{{
+                          coverage.scoringRules[0].pointsValue === 1 ? "" : "S"
                         }}
                       </p>
                     </div>
