@@ -637,6 +637,7 @@ export default {
       this.mainStreams = mainStreamsResponse.map((stream) => ({
         id: stream.id,
         fixture: {
+          id: stream.fixture.id,
           sport: null,
           name: stream.fixture.name,
           sportSlug: stream.fixture.sportSlug,
