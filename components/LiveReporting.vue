@@ -283,10 +283,16 @@
                         York Win
                       </p>
                       <p
-                        v-if="coverage.teams[1].outcome === 'Win'"
+                        v-else-if="coverage.teams[1].outcome === 'Win'"
                         class="xcond font-bold text-3xl text-roses-red"
                       >
                         Lancaster Win
+                      </p>
+                      <p
+                        v-else-if="coverage.teams[0].outcome === 'Draw'"
+                        class="xcond font-bold text-3xl"
+                      >
+                        Draw
                       </p>
                       <p
                         v-if="coverage.scoringRules"
@@ -361,10 +367,16 @@
                     York Win
                   </p>
                   <p
-                    v-if="score.teams[1].outcome === 'Win'"
+                    v-else-if="score.teams[1].outcome === 'Win'"
                     class="xcond font-bold text-3xl text-roses-red"
                   >
                     Lancaster Win
+                  </p>
+                  <p
+                    v-else-if="score.teams[0].outcome === 'Draw'"
+                    class="xcond font-bold text-3xl"
+                  >
+                    Draw
                   </p>
                   <div class="flex flex-col sm:flex-row gap-6 sm:gap-8 w-full">
                     <div class="flex gap-4 items-center">
