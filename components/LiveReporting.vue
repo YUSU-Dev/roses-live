@@ -275,18 +275,29 @@
                       {{ coverage.sport.name }} -
                       {{ coverage.teams[0].team.name }}
                     </h3>
-                    <p
-                      v-if="coverage.teams[0].outcome === 'Win'"
-                      class="xcond font-bold text-3xl"
-                    >
-                      York Win
-                    </p>
-                    <p
-                      v-if="coverage.teams[1].outcome === 'Win'"
-                      class="xcond font-bold text-3xl text-roses-red"
-                    >
-                      Lancaster Win
-                    </p>
+                    <div>
+                      <p
+                        v-if="coverage.teams[0].outcome === 'Win'"
+                        class="xcond font-bold text-3xl"
+                      >
+                        York Win
+                      </p>
+                      <p
+                        v-if="coverage.teams[1].outcome === 'Win'"
+                        class="xcond font-bold text-3xl text-roses-red"
+                      >
+                        Lancaster Win
+                      </p>
+                      <p
+                        v-if="coverage.scoringRules"
+                        class="text-lg font-semibold"
+                      >
+                        {{ coverage.scoringRules[0].pointsValue }} POINT{{
+                          coverage.scoringRules[0].pointsValue === 1 ? "" : "S"
+                        }}
+                      </p>
+                    </div>
+
                     <div
                       class="flex flex-col sm:flex-row gap-6 sm:gap-8 w-full"
                     >
