@@ -162,11 +162,23 @@ export default {
         },
       });
       if (urlLocationId) {
+        this.$nextTick(() => {
+          const mapContainer = document.getElementById("map-container");
+          if (mapContainer) {
+            mapContainer.scrollIntoView({
+              behavior: "smooth",
+              block: "center",
+            });
+          }
+        });
         const locationFeature =
           this.formattedLocations.find(
             (feature) => feature.properties.id === urlLocationId,
           ) ||
           this.formattedChildLocations.find(
+            (feature) => feature.properties.id === urlLocationId,
+          ) ||
+          this.formattedVenues.find(
             (feature) => feature.properties.id === urlLocationId,
           );
 
