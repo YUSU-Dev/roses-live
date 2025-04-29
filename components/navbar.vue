@@ -45,7 +45,7 @@
     </div>
     <div
       v-if="isMenuOpen"
-      class="lg:hidden absolute top-28 w-full bg-roses-dark"
+      class="lg:hidden absolute top-28 w-full bg-roses-dark z-100"
     >
       <hr class="border-zinc-600 mt-6 mx-6" />
       <div class="container mx-auto flex flex-col gap-10">

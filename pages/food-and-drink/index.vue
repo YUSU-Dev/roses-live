@@ -48,11 +48,15 @@
               between fixtures.
             </p>
           </div>
-          <div class="flex">
+          <div class="flex flex-wrap gap-2">
             <RosesButton
               href="https://go.yorksu.org/Yl48o5J"
               target="_blank"
               title="Courtyard"
+            />
+            <RosesButton
+              href="/map?location=cm99unpgi001zpd01eu3xc40y"
+              title="See on map"
             />
           </div>
         </div>
@@ -66,11 +70,15 @@
               alongside a drink.
             </p>
           </div>
-          <div class="flex">
+          <div class="flex flex-wrap gap-2">
             <RosesButton
               href="https://go.yorksu.org/U905BIt"
               target="_blank"
               title="Vanbrugh Arms"
+            />
+            <RosesButton
+              href="/map?location=cm99uwl23003fpd01sfr5ucsa"
+              title="See on map"
             />
           </div>
         </div>
@@ -82,11 +90,15 @@
               fixtures and a bite to eat from YUZU.
             </p>
           </div>
-          <div class="flex">
+          <div class="flex flex-wrap gap-2">
             <RosesButton
               href="https://go.yorksu.org/ikbq4O3"
               target="_blank"
               title="Glasshouse"
+            />
+            <RosesButton
+              href="/map?location=cm7vxotfq002lt301t9811sjw"
+              title="See on map"
             />
           </div>
         </div>
@@ -99,11 +111,15 @@
               and a bagel and relax in our cosy cafe.
             </p>
           </div>
-          <div class="flex">
+          <div class="flex flex-wrap gap-2">
             <RosesButton
               href="https://go.yorksu.org/0ozKisB"
               target="_blank"
               title="Kitchen"
+            />
+            <RosesButton
+              href="/map?location=cm99ux87x003jpd016ga6oufz"
+              title="See on map"
             />
           </div>
         </div>
