@@ -16,7 +16,7 @@
             ]"
             @click="((activeStream = stream), (accordionOpen = true))"
           >
-            <p>{{ stream.fixture.sport }}</p>
+            <p v-if="stream.fixture.sport">{{ stream.fixture.sport }}</p>
             <p v-if="stream.fixture.name">{{ stream.fixture.name }}</p>
           </button>
         </div>
@@ -67,13 +67,19 @@
             ></iframe>
           </div>
           <div
-            v-if="activeStream.coverage === 'RadioCoverage'"
+            v-if="
+              activeStream.coverage === 'RadioCoverage' &&
+              activeStream.fixture.id
+            "
             class="h-50 w-full"
           >
             <iframe
               width="100%"
               height="100%"
-              :src="'https://radio.roses.media/embed/stream/' + activeStream.id"
+              :src="
+                'https://radio.roses.media/embed/stream/' +
+                activeStream.fixture.id
+              "
               title="Live Radio Stream"
               frameborder="0"
               credentialless
@@ -630,7 +636,12 @@ export default {
       );
       this.mainStreams = mainStreamsResponse.map((stream) => ({
         id: stream.id,
-        fixture: stream.fixture,
+        fixture: {
+          id: stream.fixture.id,
+          sport: null,
+          name: stream.fixture.name,
+          sportSlug: stream.fixture.sportSlug,
+        },
         content: this.extractVideoId(stream.content),
         coverage: stream.coverage,
       }));
