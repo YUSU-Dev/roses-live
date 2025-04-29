@@ -58,6 +58,7 @@
         </TextImageSection>
       </div>
     </div>
+    <cookie-consent />
   </div>
 </template>
 
@@ -66,12 +67,14 @@ import HeroBanner from "~/components/HeroBanner.vue";
 import LiveScore from "~/components/LiveScore.vue";
 import LiveReporting from "~/components/LiveReporting.vue";
 import CtaTiles from "~/components/CtaTiles.vue";
+import CookieConsent from "~/components/cookieConsent.vue";
 export default {
   components: {
     HeroBanner,
     LiveScore,
     LiveReporting,
     CtaTiles,
+    CookieConsent,
   },
 };
 useHead({

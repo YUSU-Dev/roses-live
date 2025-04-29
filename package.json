@@ -27,6 +27,7 @@
     "nuxt": "^3.17.0",
     "nuxt-security": "^2.2.0",
     "posthog-js": "^1.224.0",
+    "tiny-cookie": "^2.5.1",
     "vue": "latest",
     "vue-router": "latest",
     "vue-tsc": "^2.2.0"
