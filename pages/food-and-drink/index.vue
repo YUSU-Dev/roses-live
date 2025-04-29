@@ -50,7 +50,7 @@
           </div>
           <div class="flex">
             <RosesButton
-              href="https://go.yorksu.org/0ozKisB"
+              href="https://go.yorksu.org/Yl48o5J"
               target="_blank"
               title="Courtyard"
             />
