@@ -52,7 +52,9 @@
           v-if="fixture.scoringRules[0].pointsValue !== 0"
           class="block lg:hidden whitespace-nowrap pl-1"
         >
-          {{ fixture.scoringRules[0].pointsValue }} POINTS
+          {{ fixture.scoringRules[0].pointsValue }} POINT{{
+            fixture.scoringRules[0].pointsValue === 1 ? "" : "S"
+          }}
         </p>
       </div>
     </div>
@@ -168,7 +170,9 @@
           v-if="fixture.scoringRules[0].pointsValue !== 0"
           class="whitespace-nowrap hidden lg:block"
         >
-          {{ fixture.scoringRules[0].pointsValue }} POINTS
+          {{ fixture.scoringRules[0].pointsValue }} POINT{{
+            fixture.scoringRules[0].pointsValue === 1 ? "" : "S"
+          }}
         </p>
       </div>
     </div>
