@@ -9,26 +9,83 @@
         <h2 class="text-4xl xcond font-bold">
           <span v-if="!catchup">LIVE </span>STREAMS
         </h2>
-        <div class="flex flex-wrap md:flex-col gap-2 w-fit">
-          <button
-            v-for="stream in streams"
-            :key="stream.id"
-            :class="[
-              'bg-roses-red text-white px-6 lg:px-10 py-2 rounded-full text-center hover:cursor-pointer flex flex-row gap-1 md:gap-0 md:flex-col',
-              { '!bg-black !text-white': activeStream.id === stream.id },
-            ]"
-            @click="((activeStream = stream), (accordionOpen = true))"
-          >
-            <p v-if="stream.fixture.sport || stream.fixture.name">
-              <span v-if="stream.fixture.sport"
-                >{{ stream.fixture.sport }}
-              </span>
-              <span v-if="stream.fixture.sport && stream.fixture.name">
-                -
-              </span>
-              <span v-if="stream.fixture.name">{{ stream.fixture.name }}</span>
-            </p>
-          </button>
+        <div v-if="mainStreams.length > 0">
+          <h3 class="font-bold xcond text-2xl">Main Streams</h3>
+          <div class="flex flex-wrap md:flex-col gap-2 w-fit">
+            <button
+              v-for="stream in mainStreams"
+              :key="stream.id"
+              :class="[
+                'bg-roses-red text-white px-6 lg:px-10 py-2 rounded-full text-center hover:cursor-pointer flex flex-row gap-1 md:gap-0 md:flex-col',
+                { '!bg-black !text-white': activeStream.id === stream.id },
+              ]"
+              @click="((activeStream = stream), (accordionOpen = true))"
+            >
+              <p v-if="stream.fixture.sport || stream.fixture.name">
+                <span v-if="stream.fixture.sport"
+                  >{{ stream.fixture.sport }}
+                </span>
+                <span v-if="stream.fixture.sport && stream.fixture.name">
+                  -
+                </span>
+                <span v-if="stream.fixture.name">{{
+                  stream.fixture.name
+                }}</span>
+              </p>
+            </button>
+          </div>
+        </div>
+        <div v-if="video.length > 0">
+          <h3 class="font-bold xcond text-2xl">Video Streams</h3>
+          <div class="flex flex-wrap md:flex-col gap-2 w-fit">
+            <button
+              v-for="stream in video"
+              :key="stream.id"
+              :class="[
+                'bg-roses-red text-white px-6 lg:px-10 py-2 rounded-full text-center hover:cursor-pointer flex flex-row gap-1 md:gap-0 md:flex-col',
+                { '!bg-black !text-white': activeStream.id === stream.id },
+              ]"
+              @click="((activeStream = stream), (accordionOpen = true))"
+            >
+              <p v-if="stream.fixture.sport || stream.fixture.name">
+                <span v-if="stream.fixture.sport"
+                  >{{ stream.fixture.sport }}
+                </span>
+                <span v-if="stream.fixture.sport && stream.fixture.name">
+                  -
+                </span>
+                <span v-if="stream.fixture.name">{{
+                  stream.fixture.name
+                }}</span>
+              </p>
+            </button>
+          </div>
+        </div>
+        <div v-if="radio.length > 0">
+          <h3 class="font-bold xcond text-2xl">Radio Streams</h3>
+          <div class="flex flex-wrap md:flex-col gap-2 w-fit">
+            <button
+              v-for="stream in radio"
+              :key="stream.id"
+              :class="[
+                'bg-roses-red text-white px-6 lg:px-10 py-2 rounded-full text-center hover:cursor-pointer flex flex-row gap-1 md:gap-0 md:flex-col',
+                { '!bg-black !text-white': activeStream.id === stream.id },
+              ]"
+              @click="((activeStream = stream), (accordionOpen = true))"
+            >
+              <p v-if="stream.fixture.sport || stream.fixture.name">
+                <span v-if="stream.fixture.sport"
+                  >{{ stream.fixture.sport }}
+                </span>
+                <span v-if="stream.fixture.sport && stream.fixture.name">
+                  -
+                </span>
+                <span v-if="stream.fixture.name">{{
+                  stream.fixture.name
+                }}</span>
+              </p>
+            </button>
+          </div>
         </div>
       </div>
       <div v-if="!catchup" class="flex flex-col gap-6 order-1 md:order-2">
@@ -624,6 +681,8 @@ export default {
     return {
       blogs: [],
       streams: [],
+      video: [],
+      radio: [],
       mainStreams: [],
       photos: [],
       scores: [],
@@ -682,8 +741,16 @@ export default {
         content: this.extractVideoId(stream.content),
         coverage: stream.coverage,
       }));
-      if (this.streams.length > 0 && this.catchup) {
-        this.activeStream = this.streams[0];
+      this.video = this.streams.filter(
+        (stream) => stream.coverage === "TVCoverage",
+      );
+      this.radio = this.streams.filter(
+        (stream) => stream.coverage === "RadioCoverage",
+      );
+      if (this.video.length > 0 && this.catchup) {
+        this.activeStream = this.video[0];
+      } else if (this.radio.length > 0 && this.catchup) {
+        this.activeStream = this.radio[0];
       }
       if (!this.catchup) {
         const mainStreamsResponse = await $fetch(
@@ -701,17 +768,6 @@ export default {
           coverage: stream.coverage,
         }));
 
-        // Add main streams to the beginning of the streams array
-        this.streams = [
-          ...this.mainStreams,
-          ...this.streams.filter(
-            (stream) =>
-              !this.mainStreams.some(
-                (mainStream) => mainStream.id === stream.id,
-              ),
-          ),
-        ];
-
         const rosesTrailer = {
           id: "roseTrailer",
           fixture: {
@@ -720,8 +776,12 @@ export default {
           content: "S_F-QjAy2Rg",
           coverage: "TVCoverage",
         };
-        this.streams.unshift(rosesTrailer);
-        this.activeStream = rosesTrailer;
+        this.video.unshift(rosesTrailer);
+        if (this.mainStreams.length > 0) {
+          this.activeStream = this.mainStreams[0];
+        } else {
+          this.activeStream = rosesTrailer;
+        }
       }
     },
     async getBlogs() {
