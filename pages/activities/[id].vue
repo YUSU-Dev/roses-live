@@ -38,11 +38,7 @@
         class="container mx-auto flex flex-col gap-14 md:gap-28 pb-14 md:pb-28"
       >
         <RosesCarousel />
-        <LiveReporting
-          v-if="sport.slug"
-          :catchup="true"
-          :sport-slug="sport.slug"
-        />
+        <LiveReporting v-if="sport.slug" catchup :sport-slug="sport.slug" />
       </div>
     </div>
     <div class="container mx-auto pb-14 md:pb-28">
