@@ -19,20 +19,25 @@
             ]"
             @click="((activeStream = stream), (accordionOpen = true))"
           >
-            <p v-if="stream.fixture.sport">
-              {{ stream.fixture.sport }}
-              <span v-if="stream.fixture.name"> {{ stream.fixture.name }}</span>
+            <p v-if="stream.fixture.sport || stream.fixture.name">
+              <span v-if="stream.fixture.sport"
+                >{{ stream.fixture.sport }}
+              </span>
+              <span v-if="stream.fixture.sport && stream.fixture.name">
+                -
+              </span>
+              <span v-if="stream.fixture.name">{{ stream.fixture.name }}</span>
             </p>
           </button>
         </div>
       </div>
-      <!-- <div v-if="!catchup" class="flex flex-col gap-6 order-1 md:order-2">
+      <div v-if="!catchup" class="flex flex-col gap-6 order-1 md:order-2">
         <h2 class="text-4xl xcond font-bold">MISSED THE ACTION?</h2>
-        <p>Find all of our past streams on the catch up page!</p>
+        <p>Catch up on an activities past streams directly on their page!</p>
         <div class="flex">
-          <RosesButton href="/" target="_blank" title="Catch Up" />
+          <RosesButton href="/fixtures?activities=true" title="Activities" />
         </div>
-      </div> -->
+      </div>
     </div>
     <div class="flex flex-col gap-5 flex-grow md:w-7/10">
       <div class="flex flex-col bg-light-gray p-8 gap-4">
@@ -600,10 +605,10 @@
 </template>
 
 <script>
-// import RosesButton from "~/components/button.vue";
+import RosesButton from "~/components/button.vue";
 export default {
   components: {
-    // RosesButton,
+    RosesButton,
   },
   props: {
     catchup: {
