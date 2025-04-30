@@ -1,6 +1,9 @@
 <!-- eslint-disable vue/no-v-html -->
 <template>
-  <div class="flex flex-col md:flex-row gap-5">
+  <div
+    v-if="!(catchup && streams.length === 0)"
+    class="flex flex-col md:flex-row gap-5"
+  >
     <div class="flex flex-col bg-light-gray p-8 md:w-3/10 gap-10 h-fit">
       <div class="flex flex-col gap-6 order-2 md:order-1">
         <h2 class="text-4xl xcond font-bold">
@@ -16,8 +19,10 @@
             ]"
             @click="((activeStream = stream), (accordionOpen = true))"
           >
-            <p v-if="stream.fixture.sport">{{ stream.fixture.sport }}</p>
-            <p v-if="stream.fixture.name">{{ stream.fixture.name }}</p>
+            <p v-if="stream.fixture.sport">
+              {{ stream.fixture.sport }}
+              <span v-if="stream.fixture.name"> {{ stream.fixture.name }}</span>
+            </p>
           </button>
         </div>
       </div>
@@ -605,6 +610,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    sportSlug: {
+      type: String,
+      default: null,
+    },
   },
   data() {
     return {
@@ -651,50 +660,64 @@ export default {
   },
   methods: {
     async getStreams() {
+      let parameters = "";
+      if (this.catchup) {
+        parameters += "?catchup=true";
+        if (this.sportSlug) {
+          parameters += `&sport=${this.sportSlug}`;
+        }
+      }
       const response = await $fetch(
-        "https://media-dashboard.yorksu.org/api/cm5pio57y0000vt6y0l5p92f4/seasons/cm9tx5ab10001o9011ugbylm7/coverage",
+        "https://media-dashboard-staging.yorksu.org/api/cm5pijvl80000ltigazjog2kg/seasons/cm7w42e0x0001nr01mlt1ptmi/coverage" +
+          parameters,
       );
-      const mainStreamsResponse = await $fetch(
-        "https://media-dashboard.yorksu.org/api/cm5pio57y0000vt6y0l5p92f4/seasons/cm9tx60d1008ho9017ua4vw1b/coverage",
-      );
-      this.mainStreams = mainStreamsResponse.map((stream) => ({
-        id: stream.id,
-        fixture: {
-          id: stream.fixture.id,
-          sport: null,
-          name: stream.fixture.name,
-          sportSlug: stream.fixture.sportSlug,
-        },
-        content: this.extractVideoId(stream.content),
-        coverage: stream.coverage,
-      }));
-
       this.streams = response.map((stream) => ({
         id: stream.id,
         fixture: stream.fixture,
         content: this.extractVideoId(stream.content),
         coverage: stream.coverage,
       }));
+      if (this.streams.length > 0 && this.catchup) {
+        this.activeStream = this.streams[0];
+      }
+      if (!this.catchup) {
+        const mainStreamsResponse = await $fetch(
+          "https://media-dashboard.yorksu.org/api/cm5pio57y0000vt6y0l5p92f4/seasons/cm9tx60d1008ho9017ua4vw1b/coverage",
+        );
+        this.mainStreams = mainStreamsResponse.map((stream) => ({
+          id: stream.id,
+          fixture: {
+            id: stream.fixture.id,
+            sport: null,
+            name: stream.fixture.name,
+            sportSlug: stream.fixture.sportSlug,
+          },
+          content: this.extractVideoId(stream.content),
+          coverage: stream.coverage,
+        }));
 
-      // Add main streams to the beginning of the streams array
-      this.streams = [
-        ...this.mainStreams,
-        ...this.streams.filter(
-          (stream) =>
-            !this.mainStreams.some((mainStream) => mainStream.id === stream.id),
-        ),
-      ];
+        // Add main streams to the beginning of the streams array
+        this.streams = [
+          ...this.mainStreams,
+          ...this.streams.filter(
+            (stream) =>
+              !this.mainStreams.some(
+                (mainStream) => mainStream.id === stream.id,
+              ),
+          ),
+        ];
 
-      const rosesTrailer = {
-        id: "roseTrailer",
-        fixture: {
-          sport: "Roses Trailer",
-        },
-        content: "S_F-QjAy2Rg",
-        coverage: "TVCoverage",
-      };
-      this.streams.unshift(rosesTrailer);
-      this.activeStream = rosesTrailer;
+        const rosesTrailer = {
+          id: "roseTrailer",
+          fixture: {
+            sport: "Roses Trailer",
+          },
+          content: "S_F-QjAy2Rg",
+          coverage: "TVCoverage",
+        };
+        this.streams.unshift(rosesTrailer);
+        this.activeStream = rosesTrailer;
+      }
     },
     async getBlogs() {
       this.activeReporting = "blogs";
