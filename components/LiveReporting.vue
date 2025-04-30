@@ -284,179 +284,32 @@
           </div>
         </div>
         <div v-if="activeReporting === 'blogs'" class="flex gap-1">
-          <button
-            v-if="page > 3"
-            aria-label="Go back to the first page"
-            class="bg-white border-2 w-8 h-8 hover:cursor-pointer"
-            @click="page = 1"
-          >
-            <i class="fa-solid fa-angles-left"></i>
-          </button>
-          <button
-            v-if="page > 1"
-            aria-label="Go back one page"
-            class="bg-white border-2 w-8 h-8 hover:cursor-pointer"
-            @click="page--"
-          >
-            <i class="fa-solid fa-arrow-left"></i>
-          </button>
-          <button
-            v-for="i in paginationRange('blogs')"
-            :key="i"
-            :class="{ '!bg-roses-red text-white': i === page }"
-            class="bg-white border-2 w-8 h-8 hover:cursor-pointer"
-            @click="page = i"
-          >
-            {{ i }}
-          </button>
-          <button
-            v-if="page < totalPages"
-            aria-label="Go forward one page"
-            class="bg-white border-2 w-8 h-8 hover:cursor-pointer"
-            @click="page++"
-          >
-            <i class="fa-solid fa-arrow-right"></i>
-          </button>
-          <button
-            v-if="totalPages > 3 && page < totalPages - 2"
-            aria-label="Go to the last page"
-            class="bg-white border-2 w-8 h-8 hover:cursor-pointer"
-            @click="page = totalPages"
-          >
-            <i class="fa-solid fa-angles-right"></i>
-          </button>
+          <roses-pagination
+            :page="page"
+            :total-pages="totalPages"
+            @update:page="(newValue) => (page = newValue)"
+          />
         </div>
         <div v-if="activeReporting === 'photos'" class="flex gap-1">
-          <button
-            v-if="photosPage > 3"
-            aria-label="Go back to the first page"
-            class="bg-white border-2 w-8 h-8 hover:cursor-pointer"
-            @click="photosPage = 1"
-          >
-            <i class="fa-solid fa-angles-left"></i>
-          </button>
-          <button
-            v-if="photosPage > 1"
-            aria-label="Go back one page"
-            class="bg-white border-2 w-8 h-8 hover:cursor-pointer"
-            @click="photosPage--"
-          >
-            <i class="fa-solid fa-arrow-left"></i>
-          </button>
-          <button
-            v-for="i in paginationRange('photos')"
-            :key="i"
-            :class="{ '!bg-roses-red text-white': i === photosPage }"
-            class="bg-white border-2 w-8 h-8 hover:cursor-pointer"
-            @click="photosPage = i"
-          >
-            {{ i }}
-          </button>
-          <button
-            v-if="photosPage < totalPhotoPages"
-            aria-label="Go forward one page"
-            class="bg-white border-2 w-8 h-8 hover:cursor-pointer"
-            @click="photosPage++"
-          >
-            <i class="fa-solid fa-arrow-right"></i>
-          </button>
-          <button
-            v-if="totalPhotoPages > 3 && photosPage < totalPhotoPages - 2"
-            aria-label="Go to the last page"
-            class="bg-white border-2 w-8 h-8 hover:cursor-pointer"
-            @click="photosPage = totalPages"
-          >
-            <i class="fa-solid fa-angles-right"></i>
-          </button>
+          <roses-pagination
+            :page="photosPage"
+            :total-pages="totalPhotoPages"
+            @update:page="(newValue) => (photosPage = newValue)"
+          />
         </div>
         <div v-if="activeReporting === 'all'" class="flex gap-1">
-          <button
-            v-if="allCoveragePage > 3"
-            aria-label="Go back to the first page"
-            class="bg-white border-2 w-8 h-8 hover:cursor-pointer"
-            @click="allCoveragePage = 1"
-          >
-            <i class="fa-solid fa-angles-left"></i>
-          </button>
-          <button
-            v-if="allCoveragePage > 1"
-            aria-label="Go back one page"
-            class="bg-white border-2 w-8 h-8 hover:cursor-pointer"
-            @click="allCoveragePage--"
-          >
-            <i class="fa-solid fa-arrow-left"></i>
-          </button>
-          <button
-            v-for="i in paginationRange('all')"
-            :key="i"
-            :class="{ '!bg-roses-red text-white': i === allCoveragePage }"
-            class="bg-white border-2 w-8 h-8 hover:cursor-pointer"
-            @click="allCoveragePage = i"
-          >
-            {{ i }}
-          </button>
-          <button
-            v-if="allCoveragePage < totalAllCoveragePages"
-            aria-label="Go forward one page"
-            class="bg-white border-2 w-8 h-8 hover:cursor-pointer"
-            @click="allCoveragePage++"
-          >
-            <i class="fa-solid fa-arrow-right"></i>
-          </button>
-          <button
-            v-if="
-              totalAllCoveragePages > 3 &&
-              allCoveragePage < totalAllCoveragePages - 2
-            "
-            aria-label="Go to the last page"
-            class="bg-white border-2 w-8 h-8 hover:cursor-pointer"
-            @click="allCoveragePage = totalAllCoveragePages"
-          >
-            <i class="fa-solid fa-angles-right"></i>
-          </button>
+          <roses-pagination
+            :page="allCoveragePage"
+            :total-pages="totalAllCoveragePages"
+            @update:page="(newValue) => (allCoveragePage = newValue)"
+          />
         </div>
         <div v-if="activeReporting === 'scores'" class="flex gap-1">
-          <button
-            v-if="scoresPage > 3"
-            aria-label="Go back to the first page"
-            class="bg-white border-2 w-8 h-8 hover:cursor-pointer"
-            @click="scoresPage = 1"
-          >
-            <i class="fa-solid fa-angles-left"></i>
-          </button>
-          <button
-            v-if="scoresPage > 1"
-            aria-label="Go back one page"
-            class="bg-white border-2 w-8 h-8 hover:cursor-pointer"
-            @click="scoresPage--"
-          >
-            <i class="fa-solid fa-arrow-left"></i>
-          </button>
-          <button
-            v-for="i in paginationRange('scores')"
-            :key="i"
-            :class="{ '!bg-roses-red text-white': i === scoresPage }"
-            class="bg-white border-2 w-8 h-8 hover:cursor-pointer"
-            @click="scoresPage = i"
-          >
-            {{ i }}
-          </button>
-          <button
-            v-if="scoresPage < totalScoresPages"
-            aria-label="Go forward one page"
-            class="bg-white border-2 w-8 h-8 hover:cursor-pointer"
-            @click="scoresPage++"
-          >
-            <i class="fa-solid fa-arrow-right"></i>
-          </button>
-          <button
-            v-if="totalScoresPages > 3 && scoresPage < totalScoresPages - 2"
-            aria-label="Go to the last page"
-            class="bg-white border-2 w-8 h-8 hover:cursor-pointer"
-            @click="scoresPage = totalScoresPages"
-          >
-            <i class="fa-solid fa-angles-right"></i>
-          </button>
+          <roses-pagination
+            :page="scoresPage"
+            :total-pages="totalScoresPages"
+            @update:page="(newValue) => (scoresPage = newValue)"
+          />
         </div>
       </div>
     </div>
@@ -468,12 +321,14 @@ import RosesButton from "~/components/button.vue";
 import LiveReportingBlogTile from "./LiveReportingBlogTile.vue";
 import LiveReportingPhotoTile from "./LiveReportingPhotoTile.vue";
 import LiveReportingResultTile from "./LiveReportingResultTile.vue";
+import RosesPagination from "./RosesPagination.vue";
 export default {
   components: {
     RosesButton,
     LiveReportingResultTile,
     LiveReportingPhotoTile,
     LiveReportingBlogTile,
+    RosesPagination,
   },
   props: {
     catchup: {
@@ -686,36 +541,6 @@ export default {
         hour: "2-digit",
         minute: "2-digit",
       });
-    },
-    paginationRange(reportingType) {
-      const range = [];
-      let page;
-      let totalPages;
-      if (reportingType === "blogs") {
-        page = this.page;
-        totalPages = this.totalPages;
-      } else if (reportingType === "photos") {
-        page = this.photosPage;
-        totalPages = this.totalPhotoPages;
-      } else if (reportingType === "all") {
-        page = this.allCoveragePage;
-        totalPages = this.totalAllCoveragePages;
-      } else if (reportingType === "scores") {
-        page = this.scoresPage;
-        totalPages = this.totalScoresPages;
-      }
-      if (totalPages <= 3) {
-        for (let i = 1; i <= totalPages; i++) {
-          range.push(i);
-        }
-      } else if (page === 1) {
-        range.push(1, 2, 3);
-      } else if (page === totalPages) {
-        range.push(totalPages - 2, totalPages - 1, totalPages);
-      } else {
-        range.push(page - 1, page, page + 1);
-      }
-      return range.filter((i) => i > 0 && i <= totalPages);
     },
     refreshCoverage() {
       if (this.activeReporting === "blogs") {
