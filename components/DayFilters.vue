@@ -105,9 +105,13 @@ export default {
   },
   created() {
     this.locationId = this.$route.query.location;
+    const activities = this.$route.query.activities;
     if (this.locationId) {
       this.selectedDay = null;
       this.$emit("selectDay", null);
+    } else if (activities && activities === "true") {
+      this.selectedDay = "activities";
+      this.$emit("selectDay", this.selectedDay);
     } else {
       this.setDefaultDay();
     }
