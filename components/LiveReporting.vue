@@ -673,7 +673,7 @@ export default {
         }
       }
       const response = await $fetch(
-        "https://media-dashboard-staging.yorksu.org/api/cm5pijvl80000ltigazjog2kg/seasons/cm7w42e0x0001nr01mlt1ptmi/coverage" +
+        "https://media-dashboard.yorksu.org/api/cm5pio57y0000vt6y0l5p92f4/seasons/cm9tx5ab10001o9011ugbylm7/coverage" +
           parameters,
       );
       this.streams = response.map((stream) => ({
