@@ -49,12 +49,15 @@
           </div>
         </div>
         <p
-          v-if="fixture.scoringRules[0].pointsValue !== 0"
+          v-if="fixture.scoringRules[0].pointsValue > 0"
           class="block lg:hidden whitespace-nowrap pl-1"
         >
           {{ fixture.scoringRules[0].pointsValue }} POINT{{
             fixture.scoringRules[0].pointsValue === 1 ? "" : "S"
           }}
+        </p>
+        <p v-else class="block lg:hidden whitespace-nowrap pl-1">
+          Exhibition Fixture
         </p>
       </div>
     </div>
@@ -167,12 +170,15 @@
           <p class="font-bold text-xl">DRAW</p>
         </div>
         <p
-          v-if="fixture.scoringRules[0].pointsValue !== 0"
+          v-if="fixture.scoringRules[0].pointsValue > 0"
           class="whitespace-nowrap hidden lg:block"
         >
           {{ fixture.scoringRules[0].pointsValue }} POINT{{
             fixture.scoringRules[0].pointsValue === 1 ? "" : "S"
           }}
+        </p>
+        <p v-else class="whitespace-nowrap hidden lg:block">
+          Exhibition Fixture
         </p>
       </div>
     </div>

@@ -1,4 +1,3 @@
-<!-- eslint-disable vue/no-v-html -->
 <template>
   <div
     v-if="!(catchup && streams.length === 0)"
@@ -203,36 +202,18 @@
             >
               Results
             </button>
-            <!-- <button
-              class="bg-roses-red text-white px-6 lg:px-10 py-2 rounded-full text-center hover:cursor-pointer"
-              :class="{
-                '!bg-black !text-white': activeReporting === 'scores',
-              }"
-              @click="activeReporting = 'scores'"
-            >
-              Scores
-            </button> -->
           </div>
           <div v-if="activeReporting === 'blogs'" class="flex flex-col">
             <div v-if="blogs.length !== 0">
-              <a
+              <div
                 v-for="(blog, index) in blogs"
                 :key="index"
-                :href="'/activities/' + blog.fixture.sportSlug"
-                class="flex not-last:border-b-2 py-6 gap-6"
+                class="not-last:border-b-2"
               >
-                <div class="flex flex-col">
-                  <p class="text-4xl xcond font-bold text-roses-red">
-                    {{ formatTime(blog.publishedAt) }}
-                  </p>
-                </div>
-                <div class="flex flex-col gap-2">
-                  <h3 class="text-xl font-bold">
-                    {{ blog.fixture.sport }} - {{ blog.fixture.name }}
-                  </h3>
-                  <div v-html="blog.content"></div>
-                </div>
-              </a>
+                <a :href="'/activities/' + blog.fixture.sportSlug">
+                  <live-reporting-blog-tile :coverage="blog" />
+                </a>
+              </div>
             </div>
             <div v-else class="flex items-center pt-8 pb-6">
               <p class="text-2xl font-bold">No blogs available</p>
@@ -240,35 +221,15 @@
           </div>
           <div v-if="activeReporting === 'photos'" class="flex flex-col">
             <div v-if="photos.length !== 0">
-              <a
+              <div
                 v-for="(photo, index) in photos"
                 :key="index"
-                :href="'/activities/' + photo.fixture.sportSlug"
-                class="flex not-last:border-b-2 py-6 gap-6"
+                class="not-last:border-b-2"
               >
-                <div class="flex flex-col gap-4 w-full">
-                  <div class="flex gap-4 items-center">
-                    <p class="text-4xl xcond font-bold text-roses-red">
-                      {{ formatTime(photo.publishedAt) }}
-                    </p>
-                    <div class="flex flex-col">
-                      <h3 class="text-xl font-bold">
-                        {{ photo.fixture.sport }} - {{ photo.fixture.name }}
-                      </h3>
-                      <p>{{ photo.caption }}</p>
-                    </div>
-                  </div>
-                  <div class="flex justify-center items-center">
-                    <NuxtImg
-                      provider="cloudflare"
-                      :src="photo.fileName"
-                      class=""
-                      :alt="photo.altText"
-                      loading="lazy"
-                    />
-                  </div>
-                </div>
-              </a>
+                <a :href="'/activities/' + photo.fixture.sportSlug">
+                  <live-reporting-photo-tile :coverage="photo" />
+                </a>
+              </div>
             </div>
             <div v-else class="flex items-center pt-8 pb-6">
               <p class="text-2xl font-bold">No photos available</p>
@@ -284,124 +245,21 @@
                 <a
                   v-if="coverage.type === 'blog'"
                   :href="'/activities/' + coverage.fixture.sportSlug"
-                  class="flex py-6 gap-6"
                 >
-                  <div class="flex flex-col">
-                    <p class="text-4xl xcond font-bold text-roses-red">
-                      {{ formatTime(coverage.publishedAt) }}
-                    </p>
-                  </div>
-                  <div class="flex flex-col gap-2">
-                    <h3 class="text-xl font-bold">
-                      {{ coverage.fixture.sport }} - {{ coverage.fixture.name }}
-                    </h3>
-                    <div v-html="coverage.content"></div>
-                  </div>
+                  <live-reporting-blog-tile :coverage="coverage" />
                 </a>
                 <a
                   v-if="coverage.type === 'photo'"
                   :href="'/activities/' + coverage.fixture.sportSlug"
                   class="flex py-6 gap-6"
                 >
-                  <div class="flex flex-col gap-4 w-full">
-                    <div class="flex gap-4 items-center">
-                      <p class="text-4xl xcond font-bold text-roses-red">
-                        {{ formatTime(coverage.publishedAt) }}
-                      </p>
-                      <div class="flex flex-col">
-                        <h3 class="text-xl font-bold">
-                          {{ coverage.fixture.sport }} -
-                          {{ coverage.fixture.name }}
-                        </h3>
-                        <p>{{ coverage.caption }}</p>
-                      </div>
-                    </div>
-                    <div class="flex justify-center items-center">
-                      <NuxtImg
-                        provider="cloudflare"
-                        :src="coverage.fileName"
-                        class=""
-                        :alt="coverage.altText"
-                        loading="lazy"
-                      />
-                    </div>
-                  </div>
+                  <live-reporting-photo-tile :coverage="coverage" />
                 </a>
                 <a
                   v-if="coverage.competitionPoints"
                   :href="'/activities/' + coverage.sport.slug"
-                  class="flex py-6 gap-6"
                 >
-                  <div class="flex flex-col">
-                    <p class="text-4xl xcond font-bold text-roses-red">
-                      {{ formatTime(coverage.competitionPoints[0].createdAt) }}
-                    </p>
-                  </div>
-                  <div class="flex flex-col gap-2">
-                    <h3 class="text-xl font-bold">
-                      {{ coverage.sport.name }} -
-                      {{ coverage.teams[0].team.name }}
-                    </h3>
-                    <div>
-                      <p
-                        v-if="coverage.teams[0].outcome === 'Win'"
-                        class="xcond font-bold text-3xl"
-                      >
-                        York Win
-                      </p>
-                      <p
-                        v-else-if="coverage.teams[1].outcome === 'Win'"
-                        class="xcond font-bold text-3xl text-roses-red"
-                      >
-                        Lancaster Win
-                      </p>
-                      <p
-                        v-else-if="coverage.teams[0].outcome === 'Draw'"
-                        class="xcond font-bold text-3xl"
-                      >
-                        Draw
-                      </p>
-                      <p
-                        v-if="coverage.scoringRules"
-                        class="text-lg font-semibold"
-                      >
-                        {{ coverage.scoringRules[0].pointsValue }} POINT{{
-                          coverage.scoringRules[0].pointsValue === 1 ? "" : "S"
-                        }}
-                      </p>
-                    </div>
-
-                    <div
-                      class="flex flex-col sm:flex-row gap-6 sm:gap-8 w-full"
-                    >
-                      <div class="flex gap-4 items-center">
-                        <p
-                          class="font-semibold text-lg lg:text-2xl order-2 sm:order-1"
-                        >
-                          YORK
-                        </p>
-                        <div class="scoreTile scoreTileYork order-1 sm:order-2">
-                          <p class="text-xl lg:text-2xl">
-                            {{ formatScore(coverage.teams[0].result.score) }}
-                          </p>
-                        </div>
-                      </div>
-                      <div class="flex gap-4 items-center">
-                        <p
-                          class="font-semibold text-lg lg:text-2xl order-2 sm:order-1"
-                        >
-                          LANCASTER
-                        </p>
-                        <div
-                          class="scoreTile scoreTileLancaster order-1 sm:order-2"
-                        >
-                          <p class="text-xl lg:text-2xl">
-                            {{ formatScore(coverage.teams[1].result.score) }}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  <live-reporting-result-tile :coverage="coverage" />
                 </a>
               </div>
             </div>
@@ -411,70 +269,15 @@
           </div>
           <div v-if="activeReporting === 'scores'" class="flex flex-col">
             <div v-if="scores.length !== 0">
-              <a
+              <div
                 v-for="(score, index) in scores"
                 :key="index"
-                :href="'/activities/' + score.sport.slug"
-                class="flex py-6 gap-6 not-last:border-b-2"
+                class="not-last:border-b-2"
               >
-                <div class="flex flex-col">
-                  <p class="text-4xl xcond font-bold text-roses-red">
-                    {{ formatTime(score.competitionPoints[0].createdAt) }}
-                  </p>
-                </div>
-                <div class="flex flex-col gap-2">
-                  <h3 class="text-xl font-bold">
-                    {{ score.sport.name }} -
-                    {{ score.teams[0].team.name }}
-                  </h3>
-                  <p
-                    v-if="score.teams[0].outcome === 'Win'"
-                    class="xcond font-bold text-3xl"
-                  >
-                    York Win
-                  </p>
-                  <p
-                    v-else-if="score.teams[1].outcome === 'Win'"
-                    class="xcond font-bold text-3xl text-roses-red"
-                  >
-                    Lancaster Win
-                  </p>
-                  <p
-                    v-else-if="score.teams[0].outcome === 'Draw'"
-                    class="xcond font-bold text-3xl"
-                  >
-                    Draw
-                  </p>
-                  <div class="flex flex-col sm:flex-row gap-6 sm:gap-8 w-full">
-                    <div class="flex gap-4 items-center">
-                      <p
-                        class="font-semibold text-lg lg:text-2xl order-2 sm:order-1"
-                      >
-                        YORK
-                      </p>
-                      <div class="scoreTile scoreTileYork order-1 sm:order-2">
-                        <p class="text-xl lg:text-2xl">
-                          {{ formatScore(score.teams[0].result.score) }}
-                        </p>
-                      </div>
-                    </div>
-                    <div class="flex gap-4 items-center">
-                      <p
-                        class="font-semibold text-lg lg:text-2xl order-2 sm:order-1"
-                      >
-                        LANCASTER
-                      </p>
-                      <div
-                        class="scoreTile scoreTileLancaster order-1 sm:order-2"
-                      >
-                        <p class="text-xl lg:text-2xl">
-                          {{ formatScore(score.teams[1].result.score) }}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </a>
+                <a :href="'/activities/' + score.sport.slug">
+                  <live-reporting-result-tile :coverage="score" />
+                </a>
+              </div>
             </div>
             <div v-else class="flex items-center pt-8 pb-6">
               <p class="text-2xl font-bold">No score updates available</p>
@@ -663,9 +466,15 @@
 
 <script>
 import RosesButton from "~/components/button.vue";
+import LiveReportingBlogTile from "./LiveReportingBlogTile.vue";
+import LiveReportingPhotoTile from "./LiveReportingPhotoTile.vue";
+import LiveReportingResultTile from "./LiveReportingResultTile.vue";
 export default {
   components: {
     RosesButton,
+    LiveReportingResultTile,
+    LiveReportingPhotoTile,
+    LiveReportingBlogTile,
   },
   props: {
     catchup: {
