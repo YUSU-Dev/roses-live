@@ -1,9 +1,12 @@
 <template>
   <div
-    v-if="!(catchup && streams.length === 0)"
+    v-if="!(catchup && streams.length === 0 && allCoverage.length === 0)"
     class="flex flex-col md:flex-row gap-5"
   >
-    <div class="flex flex-col bg-light-gray p-8 md:w-3/10 gap-10 h-fit">
+    <div
+      v-if="!(catchup && streams.length === 0)"
+      class="flex flex-col bg-light-gray p-8 md:w-3/10 gap-10 h-fit"
+    >
       <div class="flex flex-col gap-6 order-2 md:order-1">
         <h2 class="text-4xl xcond font-bold">
           <span v-if="!catchup">LIVE </span>STREAMS
@@ -96,7 +99,10 @@
       </div>
     </div>
     <div class="flex flex-col gap-5 flex-grow md:w-7/10">
-      <div class="flex flex-col bg-light-gray p-8 gap-4">
+      <div
+        v-if="!(catchup && streams.length === 0)"
+        class="flex flex-col bg-light-gray p-8 gap-4"
+      >
         <div class="flex justify-between items-center">
           <h2 v-if="!catchup" class="text-5xl xcond font-bold">LIVE STREAM</h2>
           <h2 v-else class="text-5xl xcond font-bold">CATCH UP</h2>
@@ -153,9 +159,11 @@
           </div>
         </div>
       </div>
-      <div v-if="!catchup" class="flex flex-col bg-light-gray p-8 gap-10">
+      <div class="flex flex-col bg-light-gray p-8 gap-10">
         <div class="flex justify-between items-center">
-          <h2 class="text-5xl xcond font-bold">LIVE REPORTING</h2>
+          <h2 class="text-5xl xcond font-bold">
+            <span v-if="!catchup">LIVE </span> REPORTING
+          </h2>
           <button
             aria-label="Refresh"
             class="hover:cursor-pointer p-2"
@@ -456,6 +464,9 @@ export default {
       if (this.page) {
         parameters += `&page=${this.page}`;
       }
+      if (this.sportSlug && this.catchup) {
+        parameters += `&sport=${this.sportSlug}`;
+      }
       const response = await $fetch(
         "https://media-dashboard.yorksu.org/api/cm5pio57y0000vt6y0l5p92f4/seasons/cm9tx5ab10001o9011ugbylm7/blogs" +
           parameters,
@@ -471,6 +482,9 @@ export default {
       }
       if (this.photosPage) {
         parameters += `&page=${this.photosPage}`;
+      }
+      if (this.sportSlug && this.catchup) {
+        parameters += `&sport=${this.sportSlug}`;
       }
       const response = await $fetch(
         "https://media-dashboard.yorksu.org/api/cm5pio57y0000vt6y0l5p92f4/seasons/cm9tx5ab10001o9011ugbylm7/photos" +
@@ -488,6 +502,9 @@ export default {
       if (this.scoresPage) {
         parameters += `&page=${this.scoresPage}`;
       }
+      if (this.sportSlug && this.catchup) {
+        parameters += `&sport=${this.sportSlug}`;
+      }
       const response = await $fetch(
         "https://sports-admin.yorksu.org/api/clst1o9lv0001q5teb61pqfyy/seasons/cm7uo6y6a0005nn0153286r5l/fixtures/results" +
           parameters,
@@ -504,12 +521,15 @@ export default {
       if (this.allCoveragePage) {
         parameters += `&page=${this.allCoveragePage}`;
       }
+      if (this.sportSlug && this.catchup) {
+        parameters += `&sport=${this.sportSlug}`;
+      }
       const response = await $fetch(
         "https://media-dashboard.yorksu.org/api/cm5pio57y0000vt6y0l5p92f4/seasons/cm9tx5ab10001o9011ugbylm7/print-coverage" +
           parameters,
       );
       this.allCoverage = response.data;
-      if (this.allCoveragePage === 1) {
+      if (this.allCoveragePage === 1 && !this.catchup) {
         const scoresResponse = await $fetch(
           "https://sports-admin.yorksu.org/api/clst1o9lv0001q5teb61pqfyy/seasons/cm7uo6y6a0005nn0153286r5l/fixtures/results?pageSize=5",
         );
