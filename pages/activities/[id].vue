@@ -32,17 +32,26 @@
       <div v-else>
         <LoadingFixtureTile />
       </div>
-      <RosesCarousel />
-      <div class="py-14 md:py-28">
-        <h2 class="text-4xl font-bold text-roses-red mb-4">
-          HISTORIC FIXTURES
-        </h2>
-        <HistoricFixtureTile
-          v-for="historicFixture in historicFixtures"
-          :key="historicFixture.id"
-          :historic-fixture="historicFixture"
+    </div>
+    <div class="body">
+      <div
+        class="container mx-auto flex flex-col gap-14 md:gap-28 pb-14 md:pb-28"
+      >
+        <RosesCarousel />
+        <LiveReporting
+          v-if="sport.slug"
+          :catchup="true"
+          :sport-slug="sport.slug"
         />
       </div>
+    </div>
+    <div class="container mx-auto pb-14 md:pb-28">
+      <h2 class="text-4xl font-bold text-roses-red mb-4">HISTORIC FIXTURES</h2>
+      <HistoricFixtureTile
+        v-for="historicFixture in historicFixtures"
+        :key="historicFixture.id"
+        :historic-fixture="historicFixture"
+      />
     </div>
   </div>
 </template>
@@ -54,6 +63,7 @@ import LoadingFixtureTile from "~/components/LoadingFixtureTile.vue";
 import HistoricFixtureTile from "~/components/HistoricFixtureTile.vue";
 import { groupBy } from "lodash";
 import RosesCarousel from "~/components/carousel.vue";
+import LiveReporting from "~/components/LiveReporting.vue";
 export default {
   name: "FixturesPage",
   components: {
@@ -62,6 +72,7 @@ export default {
     LoadingFixtureTile,
     HistoricFixtureTile,
     RosesCarousel,
+    LiveReporting,
   },
   data() {
     return {

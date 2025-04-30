@@ -1,5 +1,5 @@
 <template>
-  <div v-if="banners.length > 0" class="pt-14 md:pt-28">
+  <div v-if="banners.length > 0" class="">
     <h2 class="text-4xl font-bold text-roses-red mb-4">FIXTURE PHOTOS</h2>
 
     <div class="flex justify-center overflow-x-hidden bg-roses-red">
@@ -32,16 +32,34 @@
     <div class="bg-[#f7f7f7]">
       <div class="banner-container mx-auto h-10">
         <div v-if="banners.length > 1" class="flex justify-center gap-x-4 py-2">
-          <button aria-label="Previous slide" @click="prev()">
+          <button
+            aria-label="Previous slide"
+            class="hover:cursor-pointer"
+            @click="prev()"
+          >
             <ArrowLeft />
           </button>
-          <button v-if="playing" aria-label="Stop slide" @click="stopSlide()">
+          <button
+            v-if="playing"
+            aria-label="Stop slide"
+            class="hover:cursor-pointer"
+            @click="stopSlide()"
+          >
             <PauseIcon />
           </button>
-          <button v-else aria-label="Start Slide" @click="startSlide()">
+          <button
+            v-else
+            aria-label="Start Slide"
+            class="hover:cursor-pointer"
+            @click="startSlide()"
+          >
             <PlayIcon />
           </button>
-          <button aria-label="Next slide" @click="next()">
+          <button
+            aria-label="Next slide"
+            class="hover:cursor-pointer"
+            @click="next()"
+          >
             <ArrowRight />
           </button>
         </div>

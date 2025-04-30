@@ -129,7 +129,9 @@ export default {
       this.selectedDay = day;
       if (this.selectedDay === "activities") {
         this.searchTerm = "";
-        this.$refs.fixtureSearch.$refs.searchInput.value = "";
+        if (this.$refs.fixtureSearch?.$refs?.searchInput) {
+          this.$refs.fixtureSearch.$refs.searchInput.value = "";
+        }
         this.fetchActivities();
         return;
       }
