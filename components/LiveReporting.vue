@@ -251,7 +251,6 @@
                 <a
                   v-if="coverage.type === 'photo'"
                   :href="'/activities/' + coverage.fixture.sportSlug"
-                  class="flex py-6 gap-6"
                 >
                   <live-reporting-photo-tile :coverage="coverage" />
                 </a>
