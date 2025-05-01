@@ -83,7 +83,8 @@
           <h3 className="text-xl pt-4 font-bold">The Cookies We Set</h3>
           <h4 className="pt-4 font-bold">Third Party Cookies</h4>
           <p>
-            This website will track your engagement using PostHog, including:
+            This website will track your engagement using PostHog and Microsoft
+            Clarity, including:
           </p>
 
           <ul class="list-disc pl-8">
