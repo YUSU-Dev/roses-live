@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col gap-18 md:gap-12 xcond font-bold">
+  <div class="flex flex-col gap-18 md:gap-12 xcond font-bold w-full">
     <div class="flex flex-col justify-center items-center gap-2 text-5xl">
       <h2 class="text-center">POINTS REQUIRED TO WIN</h2>
       <p class="">{{ pointsToWin }}</p>
