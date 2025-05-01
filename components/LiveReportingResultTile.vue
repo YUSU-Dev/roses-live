@@ -30,6 +30,18 @@
           Draw
         </p>
         <p
+          v-else-if="coverage.teams[0].outcome === 'Forfeit'"
+          class="xcond font-bold text-3xl"
+        >
+          York Forfeit
+        </p>
+        <p
+          v-else-if="coverage.teams[1].outcome === 'Forfeit'"
+          class="xcond font-bold text-3xl text-roses-red"
+        >
+          Lancaster Forfeit
+        </p>
+        <p
           v-if="coverage.scoringRules[0].pointsValue > 0"
           class="text-lg font-semibold"
         >
