@@ -143,7 +143,7 @@
               activeStream.coverage === 'RadioCoverage' &&
               activeStream.fixture.id
             "
-            class="h-50 w-full"
+            class="h-65 sm:h-50 w-full"
           >
             <iframe
               width="100%"
