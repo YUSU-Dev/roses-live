@@ -81,10 +81,13 @@
               £2 deposit for a cup which you can reuse throughout the weekend.
               When you’re done, return your cup to get your deposit back..
             </p>
-            <p>
-              There’s more sustainability information to come, so keep your eyes
-              peeled for updates.
-            </p>
+            <div class="flex">
+              <RosesButton
+                href="https://go.yorksu.org/CRy661g"
+                target="_blank"
+                title="Sustainability at Roses"
+              />
+            </div>
             <!-- <p>
               Don’t worry, merch isn’t exempt from our sustainability work
               either. This year, all of our Roses merchandise will be made from
