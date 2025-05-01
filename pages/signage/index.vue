@@ -20,7 +20,7 @@ onMounted(() => {
   <div class="h-full bg-light-gray">
     <div class="container w-full mx-auto flex h-full py-4 items-center gap-20">
       <div
-        class="flex flex-col gap-28 justify-center flex-grow border-r-4 border-roses-red h-3/4 pr-20"
+        class="flex flex-col gap-28 justify-center flex-grow border-r-4 border-black h-3/4 pr-20"
       >
         <live-score />
         <div class="flex gap-28 items-center justify-center w-full h-fit">
