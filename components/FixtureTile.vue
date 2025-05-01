@@ -47,6 +47,20 @@
           >
             <p class="font-bold text-xl">DRAW</p>
           </div>
+          <div
+            v-else-if="York && York.outcome === 'Forfeit'"
+            class="flex pr-10 md:pr-58"
+          >
+            <p class="font-bold text-xl">YORK FORFEIT</p>
+          </div>
+          <div
+            v-else-if="Lancaster && Lancaster.outcome === 'Forfeit'"
+            class="flex pr-10"
+          >
+            <p class="font-bold text-xl xl:pl-19 text-roses-red">
+              LANCASTER FORFEIT
+            </p>
+          </div>
         </div>
         <p
           v-if="fixture.scoringRules[0].pointsValue > 0"
@@ -110,6 +124,20 @@
               >
                 <p class="font-bold text-xl">DRAW</p>
               </div>
+              <div
+                v-else-if="York && York.outcome === 'Forfeit'"
+                class="flex flex-grow"
+              >
+                <p class="font-bold text-xl">YORK FORFEIT</p>
+              </div>
+              <div
+                v-else-if="Lancaster && Lancaster.outcome === 'Forfeit'"
+                class="flex flex-grow xl:justify-center"
+              >
+                <p class="font-bold text-xl text-roses-red">
+                  LANCASTER FORFEIT
+                </p>
+              </div>
             </div>
             <div v-if="fixture.startsAt" class="">
               <add-to-calendar
@@ -168,6 +196,20 @@
         </div>
         <div v-else-if="York && York.outcome === 'Draw'" class="flex flex-grow">
           <p class="font-bold text-xl">DRAW</p>
+        </div>
+        <div
+          v-else-if="York && York.outcome === 'Forfeit'"
+          class="flex flex-grow"
+        >
+          <p class="font-bold text-xl">YORK FORFEIT</p>
+        </div>
+        <div
+          v-else-if="Lancaster && Lancaster.outcome === 'Forfeit'"
+          class="flex flex-grow xl:justify-center"
+        >
+          <p class="font-bold text-xl xl:pl-19 text-roses-red">
+            LANCASTER FORFEIT
+          </p>
         </div>
         <p
           v-if="fixture.scoringRules[0].pointsValue > 0"
