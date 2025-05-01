@@ -1,10 +1,23 @@
 <template>
-  <div id="map-container" class="h-150"></div>
+  <div class="flex flex-col gap-4">
+    <v-select
+      v-model="selectedLocation"
+      :options="locations"
+      label="name"
+      placeholder="Search locations..."
+      class="bg-light-gray"
+    />
+    <div id="map-container" class="h-150"></div>
+  </div>
 </template>
 
 <script>
 import mapboxgl from "mapbox-gl";
+import vSelect from "vue-select";
 export default {
+  components: {
+    vSelect,
+  },
   data() {
     return {
       map: null,
@@ -17,7 +30,13 @@ export default {
       currentPopup: null,
       venues: [],
       formattedVenues: [],
+      selectedLocation: null,
     };
+  },
+  watch: {
+    selectedLocation() {
+      this.selectLocation();
+    },
   },
   mounted() {
     const urlLocationId = this.$route.query.location;
@@ -381,20 +400,13 @@ export default {
           },
         });
       });
+      this.locations.sort((a, b) => {
+        return a.name.localeCompare(b.name);
+      });
     },
     updateActiveLocation(location) {
       if (location.features[0].id) {
-        if (this.activeLocation) {
-          this.map.setFeatureState(
-            { source: "locations", id: this.activeLocation },
-            { active: false },
-          );
-        }
         this.activeLocation = location.features[0].id;
-        this.map.setFeatureState(
-          { source: "locations", id: location.features[0].id },
-          { active: true },
-        );
       }
       this.map.flyTo({
         center: [
@@ -460,6 +472,33 @@ export default {
         maxZoom: 16,
         duration: 1000,
       });
+    },
+    selectLocation() {
+      if (!this.selectedLocation) {
+        this.activeLocation = null;
+        this.map.flyTo({
+          center: [-1.055034237300904, 53.94578819348761],
+          zoom: 15,
+        });
+        if (this.currentPopup) {
+          this.currentPopup.remove();
+          this.currentPopup = null;
+        }
+        return;
+      }
+      const feature =
+        this.formattedLocations.find(
+          (feature) => feature.properties.id === this.selectedLocation.id,
+        ) ||
+        this.formattedChildLocations.find(
+          (feature) => feature.properties.id === this.selectedLocation.id,
+        ) ||
+        this.formattedVenues.find(
+          (feature) => feature.properties.id === this.selectedLocation.id,
+        );
+      if (feature) {
+        this.updateActiveLocation({ features: [feature] });
+      }
     },
   },
 };

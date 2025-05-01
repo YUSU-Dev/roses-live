@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "vue-select/dist/vue-select.css";
 
 @theme {
   --font-*: initial;
@@ -260,4 +261,29 @@ body .xcond {
 
 .banner-container {
   @apply w-full max-w-screen-2xl;
+}
+
+/* Vue-Select */
+.vs__dropdown-menu {
+  @apply bg-light-gray;
+}
+
+.vs__dropdown-menu::-webkit-scrollbar {
+  @apply w-2;
+}
+
+.vs__dropdown-menu::-webkit-scrollbar-track {
+  @apply w-4;
+}
+
+.vs__dropdown-menu::-webkit-scrollbar-thumb {
+  @apply bg-roses-red rounded-lg;
+}
+
+.vs__dropdown-menu::-webkit-scrollbar-thumb:hover {
+  @apply bg-roses-red-dark;
+}
+
+.vs__dropdown-option--highlight {
+  @apply text-roses-red font-semibold bg-gray-100;
 }
