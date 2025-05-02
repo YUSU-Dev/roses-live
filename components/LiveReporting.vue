@@ -33,6 +33,10 @@
                 <span v-if="stream.fixture.name">{{
                   stream.fixture.name
                 }}</span>
+                <span v-if="stream.coverage === 'TVCoverage'"> (TV) </span>
+                <span v-if="stream.coverage === 'RadioCoverage'">
+                  (Radio)
+                </span>
               </p>
             </button>
           </div>
