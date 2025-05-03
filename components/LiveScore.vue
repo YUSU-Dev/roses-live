@@ -14,7 +14,7 @@
         <div class="flex items-end md:hidden order-2 h-[24rem]">
           <div
             :style="{
-              height: (york.points / pointsToWin) * 100 + '%',
+              height: (york.points / (pointsToWin + 25)) * 100 + '%',
             }"
             class="w-30 bg-black min-h-2"
           ></div>
@@ -50,7 +50,7 @@
         <p class="order-3 md:order-1">{{ Lancaster.points }}</p>
         <div
           :style="{
-            height: (Lancaster.points / pointsToWin) * 100 + '%',
+            height: (Lancaster.points / (pointsToWin + 25)) * 100 + '%',
           }"
           class="w-30 bg-roses-red block md:hidden order-2 min-h-2"
         ></div>
