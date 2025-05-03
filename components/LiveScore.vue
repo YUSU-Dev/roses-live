@@ -8,7 +8,7 @@
       class="relative flex justify-center text-4xl md:text-5xl border-t-2 border-black md:border-0"
     >
       <div
-        class="flex flex-col gap-4 w-2/4 items-center md:items-start justify-end md:justify-center"
+        class="flex flex-col md:gap-4 gap-1 w-2/4 items-center md:items-start justify-end md:justify-center"
       >
         <p class="order-3 md:order-1">{{ york.points }}</p>
         <div class="flex items-end md:hidden order-2 h-[24rem]">
@@ -25,7 +25,7 @@
           }"
           class="h-10 bg-black hidden md:block order-2 min-w-2"
         ></div>
-        <p class="order-2 md:order-3">YORK</p>
+        <p class="order-2 md:order-3 md:pt-0 pt-2">YORK</p>
       </div>
       <div class="absolute h-full hidden flex-col items-center gap-2 md:flex">
         <NuxtImg
@@ -45,7 +45,7 @@
         />
       </div>
       <div
-        class="flex flex-col gap-4 w-2/4 items-center md:items-end justify-end md:justify-start"
+        class="flex flex-col md:gap-4 gap-1 w-2/4 items-center md:items-end justify-end md:justify-start"
       >
         <p class="order-3 md:order-1">{{ Lancaster.points }}</p>
         <div
@@ -60,7 +60,7 @@
           }"
           class="h-10 bg-roses-red hidden md:block order-2 min-w-2"
         ></div>
-        <p class="order-2 md:order-3">LANCASTER</p>
+        <p class="order-2 md:order-3 md:pt-0 pt-2">LANCASTER</p>
       </div>
     </div>
   </div>
