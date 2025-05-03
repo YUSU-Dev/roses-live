@@ -399,9 +399,9 @@ export default {
   },
   methods: {
     async getStreams() {
-      let parameters = "";
+      let parameters = "?pageSize=50";
       if (this.catchup) {
-        parameters += "?catchup=true";
+        parameters += "&catchup=true";
         if (this.sportSlug) {
           parameters += `&sport=${this.sportSlug}`;
         }
@@ -451,7 +451,9 @@ export default {
           content: "S_F-QjAy2Rg",
           coverage: "TVCoverage",
         };
-        this.video.unshift(rosesTrailer);
+        if (this.mainStreams.length === 0) {
+          this.video.unshift(rosesTrailer);
+        }
         if (this.mainStreams.length > 0) {
           this.activeStream = this.mainStreams[0];
         } else {
