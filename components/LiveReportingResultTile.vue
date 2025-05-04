@@ -11,26 +11,20 @@
         {{ coverage.teams[0].team.name }}
       </h3>
       <div>
-        <p
-          v-if="coverage.teams[0].outcome === 'Win'"
-          class="xcond font-bold text-3xl"
-        >
+        <p v-if="York.outcome === 'Win'" class="xcond font-bold text-3xl">
           York Win
         </p>
         <p
-          v-else-if="coverage.teams[1].outcome === 'Win'"
+          v-else-if="Lancaster.outcome === 'Win'"
           class="xcond font-bold text-3xl text-roses-red"
         >
           Lancaster Win
         </p>
-        <p
-          v-else-if="coverage.teams[0].outcome === 'Draw'"
-          class="xcond font-bold text-3xl"
-        >
+        <p v-else-if="York.outcome === 'Draw'" class="xcond font-bold text-3xl">
           Draw
         </p>
         <p
-          v-else-if="coverage.teams[0].outcome === 'Forfeit'"
+          v-else-if="York.outcome === 'Forfeit'"
           class="xcond font-bold text-3xl"
         >
           York Forfeit
@@ -59,7 +53,7 @@
           </p>
           <div class="scoreTile scoreTileYork order-1 sm:order-2">
             <p class="text-xl lg:text-2xl">
-              {{ formatScore(coverage.teams[0].result.score) }}
+              {{ YorkScore }}
             </p>
           </div>
         </div>
@@ -69,7 +63,7 @@
           </p>
           <div class="scoreTile scoreTileLancaster order-1 sm:order-2">
             <p class="text-xl lg:text-2xl">
-              {{ formatScore(coverage.teams[1].result.score) }}
+              {{ LancasterScore }}
             </p>
           </div>
         </div>
@@ -86,6 +80,19 @@ export default {
       required: true,
     },
   },
+  data() {
+    return {
+      yorkCollectionId: "clt4mx9jb0005rtqtslh1o6id",
+      lancasterCollectionId: "cm7uoj6qj000xt301imx1eu2w",
+      York: {},
+      Lancaster: {},
+      YorkScore: null,
+      LancasterScore: null,
+    };
+  },
+  mounted() {
+    this.formatTeams();
+  },
   methods: {
     formatTime(isoString) {
       const date = new Date(isoString);
@@ -93,6 +100,31 @@ export default {
         hour: "2-digit",
         minute: "2-digit",
       });
+    },
+    formatTeams() {
+      this.York = this.coverage.teams.find(
+        (team) => team.team.collectionId === this.yorkCollectionId,
+      );
+      this.Lancaster = this.coverage.teams.find(
+        (team) => team.team.collectionId === this.lancasterCollectionId,
+      );
+
+      if (this.York.result.frames) {
+        this.York.result.score = this.York.result.frames;
+      }
+      if (this.Lancaster.result.frames) {
+        this.Lancaster.result.score = this.Lancaster.result.frames;
+      }
+
+      this.YorkScore = this.York ? this.York.result.score : null;
+      this.LancasterScore = this.Lancaster ? this.Lancaster.result.score : null;
+
+      if (this.YorkScore !== null) {
+        this.YorkScore = this.formatScore(this.YorkScore);
+      }
+      if (this.LancasterScore !== null) {
+        this.LancasterScore = this.formatScore(this.LancasterScore);
+      }
     },
     formatScore(score) {
       return score.toString().padStart(2, "0");
