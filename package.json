@@ -22,7 +22,7 @@
     "@nuxtjs/seo": "^3.0.1",
     "@sentry/nuxt": "^9.2.0",
     "@tailwindcss/vite": "^4.0.9",
-    "ical-generator": "^8.1.1",
+    "ical-generator": "^9.0.0",
     "lucide-vue-next": "^0.503.0",
     "mapbox-gl": "^3.11.0",
     "nuxt": "^3.17.0",
