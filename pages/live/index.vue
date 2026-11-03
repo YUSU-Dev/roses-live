@@ -74,6 +74,8 @@ export default {
     CtaTiles,
   },
 };
+</script>
+<script setup>
 useHead({
   title: "Roses Live",
 });

@@ -85,7 +85,7 @@ export default {
     },
   },
   mounted() {
-    useAsyncData(() => this.fetchFixtures());
+    useAsyncData("get-fixtures", () => this.fetchFixtures());
   },
   methods: {
     async fetchFixtures() {
@@ -154,6 +154,8 @@ export default {
     },
   },
 };
+</script>
+<script setup>
 useHead({
   title: "Fixtures",
 });

@@ -122,6 +122,8 @@ export default {
     TextImageSection,
   },
 };
+</script>
+<script setup>
 useHead({
   title: "Roses Live",
   meta: [

@@ -192,6 +192,8 @@ export default {
     RosesButton,
   },
 };
+</script>
+<script setup>
 useHead({
   title: "About",
 });
