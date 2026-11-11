@@ -115,6 +115,8 @@
 import HeroBanner from "~/components/HeroBanner.vue";
 
 export default { name: "CookiePolicyPage", components: { HeroBanner } };
+</script>
+<script setup>
 useHead({
   title: "Terms & Conditions",
 });

@@ -4,7 +4,7 @@ import Clarity from "@microsoft/clarity";
 const clarityProjectId = "gg887k8q4u";
 
 Clarity.init(clarityProjectId);
-defineOgImageComponent("RosesOgTemplate");
+defineOgImage("RosesOgTemplate");
 </script>
 
 <template>

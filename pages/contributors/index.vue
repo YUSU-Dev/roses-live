@@ -69,6 +69,8 @@
 import HeroBanner from "~/components/HeroBanner.vue";
 
 export default { name: "ContributorsPage", components: { HeroBanner } };
+</script>
+<script setup>
 useHead({
   title: "Contributor",
 });

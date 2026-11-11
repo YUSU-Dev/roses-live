@@ -77,6 +77,8 @@ export default {
     CookieConsent,
   },
 };
+</script>
+<script setup>
 useHead({
   title: "Roses Live",
   meta: [

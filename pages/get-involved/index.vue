@@ -151,6 +151,8 @@ export default {
     RosesButton,
   },
 };
+</script>
+<script setup>
 useHead({
   title: "Get Involved",
 });
