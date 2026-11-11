@@ -20,6 +20,7 @@ export default defineNuxtConfig({
     "@nuxtjs/seo",
     "nuxt-security",
     "@nuxt/image",
+    "@nuxt/fonts",
   ],
   eslint: { config: { stylistic: false } },
   site: {
