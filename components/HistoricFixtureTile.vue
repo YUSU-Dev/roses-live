@@ -24,7 +24,7 @@
           <p class="font-semibold text-lg lg:text-2xl">YORK</p>
           <div class="scoreTile scoreTileYork">
             <p class="text-xl lg:text-2xl">
-              {{ formatScore(historicFixture.teams[1].result.score) }}
+              {{ formatScore(historicFixture.teams[1].result) }}
             </p>
           </div>
         </div>
@@ -32,7 +32,7 @@
           <p class="font-semibold text-lg lg:text-2xl">LANCASTER</p>
           <div class="scoreTile scoreTileLancaster">
             <p class="text-xl lg:text-2xl">
-              {{ formatScore(historicFixture.teams[0].result.score) }}
+              {{ formatScore(historicFixture.teams[0].result) }}
             </p>
           </div>
         </div>
@@ -51,8 +51,17 @@ export default {
     },
   },
   methods: {
-    formatScore(score) {
-      return score.toString().padStart(2, "0");
+    formatScore(result) {
+      // Some fixtures return a different name for the "score" value in the result
+      // e.g Pool has "Frames" not "Score"
+      // Need to check if there are ever multiple keys returned for some activities
+      const result_keys = Object.keys(result);
+      if (result_keys.length == 1) {
+        return result[result_keys[0]].toString().padStart(2, "0");
+      } else {
+        // Need to check for multiple or no result keys here
+        return null;
+      }
     },
   },
 };
