@@ -25,12 +25,12 @@ onMounted(() => {
         <live-score />
         <div class="flex gap-28 items-center justify-center w-full h-fit">
           <NuxtImg
-            src="https://assets-cdn.sums.su/YU/website/img/Roses/Roses_mark_Navigation.png"
+            src="https://assets-cdn.sums.digital/YU/website/img/Roses/Roses_mark_Navigation.png"
             class="w-50 h-50 aspect-square"
             alt="Roses Live"
           />
           <NuxtImg
-            src="https://assets-cdn.sums.su/YU/website/img/yorksu-logo-black-full.png"
+            src="https://assets-cdn.sums.digital/YU/website/img/yorksu-logo-black-full.png"
             class="w-auto h-9/10"
             alt="University of York Students' Union"
             loading="lazy"

@@ -22,7 +22,7 @@ export default {
     <div class="">
       <HeroBanner
         :title="'Error - ' + error.statusCode"
-        image="https://assets-cdn.sums.su/YU/website/img/Roses/Hero_Banner_About.webp"
+        image="https://assets-cdn.sums.digital/YU/website/img/Roses/Hero_Banner_About.webp"
       />
       <div class="container mx-auto py-14 md:py-28">
         <div class="flex flex-col gap-6">

@@ -2,12 +2,12 @@
   <div>
     <HeroBanner
       title="FOOD & DRINK"
-      image="https://assets-cdn.sums.su/YU/website/img/Roses/Hero_Banner_Food_Drink.png"
+      image="https://assets-cdn.sums.digital/YU/website/img/Roses/Hero_Banner_Food_Drink.png"
     />
     <div class="body">
       <div class="py-14 md:py-28">
         <TextImageSection
-          image="https://assets-cdn.sums.su/YU/website/img/Roses/Roses_cafe_Image.png"
+          image="https://assets-cdn.sums.digital/YU/website/img/Roses/Roses_cafe_Image.png"
           alt=""
           sub-title="FOOD & DRINK"
         >

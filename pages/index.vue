@@ -2,8 +2,8 @@
   <div>
     <HeroBanner
       title="ROSES LIVE"
-      image="https://assets-cdn.sums.su/YU/website/img/Roses/Hero_Banner_Homepage.png"
-      sub-image="https://assets-cdn.sums.su/YU/website/img/Roses/Hero_banner_NEW_cropped.png"
+      image="https://assets-cdn.sums.digital/YU/website/img/Roses/Hero_Banner_Homepage.png"
+      sub-image="https://assets-cdn.sums.digital/YU/website/img/Roses/Hero_banner_NEW_cropped.png"
       button-title="Fixtures"
       button-href="/fixtures"
     />
@@ -17,7 +17,7 @@
       <CtaTiles />
       <div class="py-14 md:py-28">
         <TextImageSection
-          image="https://assets-cdn.sums.su/YU/website/img/Roses/York_Mind_Image.jpg"
+          image="https://assets-cdn.sums.digital/YU/website/img/Roses/York_Mind_Image.jpg"
           alt=""
           title="Our Charity Partner"
           sub-title="ROSES IN MIND"

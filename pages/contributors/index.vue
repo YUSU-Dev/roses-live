@@ -2,7 +2,7 @@
   <div>
     <HeroBanner
       title="CONTRIBUTORS"
-      image="https://assets-cdn.sums.su/YU/website/img/Roses/Hero_Banner_Homepage.png"
+      image="https://assets-cdn.sums.digital/YU/website/img/Roses/Hero_Banner_Homepage.png"
     />
     <div class="body">
       <div class="container mx-auto py-14 md:py-28 gap-6">

@@ -2,7 +2,7 @@
   <div>
     <HeroBanner
       title="ABOUT"
-      image="https://assets-cdn.sums.su/YU/website/img/Roses/Hero_Banner_About.webp"
+      image="https://assets-cdn.sums.digital/YU/website/img/Roses/Hero_Banner_About.webp"
     />
     <div class="body">
       <div class="container mx-auto py-14 md:py-28">
@@ -34,7 +34,7 @@
           <NuxtImg
             width="100%"
             height="fit-content"
-            src="https://assets-cdn.sums.su/YU/website/img/Roses/Battleiscominghome_Image.png"
+            src="https://assets-cdn.sums.digital/YU/website/img/Roses/Battleiscominghome_Image.png"
             class="w-full"
             alt="About Roses"
             loading="lazy"
