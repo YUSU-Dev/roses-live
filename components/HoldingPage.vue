@@ -2,7 +2,7 @@
   <div class="flex flex-wrap justify-center items-center h-full">
     <div class="max-w-[500px] max-h-[500px]">
       <NuxtImg
-        src="https://assets-cdn.sums.su/YU/website/img/Roses/500x500_Roses_Holding_Page.webp"
+        src="https://assets-cdn.sums.digital/YU/website/img/Roses/500x500_Roses_Holding_Page.webp"
         class="aspect-square w-full object-contain"
         alt="Roses 2025 logo"
       />
@@ -18,7 +18,7 @@
           ><NuxtImg
             width="160px"
             height="fit-content"
-            src="https://assets-cdn.sums.su/YU/website/img/yorksu-logo-black-full.png"
+            src="https://assets-cdn.sums.digital/YU/website/img/yorksu-logo-black-full.png"
             alt="University of York Students' Union"
             class="w-40"
         /></a>

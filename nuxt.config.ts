@@ -20,6 +20,7 @@ export default defineNuxtConfig({
     "@nuxtjs/seo",
     "nuxt-security",
     "@nuxt/image",
+    "@nuxt/fonts",
   ],
   eslint: { config: { stylistic: false } },
   site: {
@@ -67,7 +68,7 @@ export default defineNuxtConfig({
       baseURL: "https://media-assets.roseslive.co.uk",
     },
     domains: [
-      "assets-cdn.sums.su",
+      "assets-cdn.sums.digital",
       "roses-media-assets-staging.yorksu.org",
       "media-assets.roseslive.co.uk",
     ],
@@ -100,7 +101,7 @@ export default defineNuxtConfig({
         "img-src": [
           "'self'",
           "data:",
-          "https://assets-cdn.sums.su",
+          "https://assets-cdn.sums.digital",
           "https://app.greenweb.org",
           "https://roses-media-assets-staging.yorksu.org/",
           "https://media-assets.roseslive.co.uk",

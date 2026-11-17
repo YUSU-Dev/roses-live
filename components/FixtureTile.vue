@@ -85,7 +85,7 @@
               <p class="font-semibold text-lg lg:text-2xl">YORK</p>
               <div class="scoreTile scoreTileYork">
                 <p v-if="York && York.result" class="text-xl lg:text-2xl">
-                  {{ formatScore(York.result.score) }}
+                  {{ formatScore(York.result) }}
                 </p>
                 <p v-else class="">
                   <i class="fa-regular fa-clock"></i>
@@ -99,7 +99,7 @@
                   v-if="Lancaster && Lancaster.result"
                   class="text-xl lg:text-2xl"
                 >
-                  {{ formatScore(Lancaster.result.score) }}
+                  {{ formatScore(Lancaster.result) }}
                 </p>
                 <p v-else class="">
                   <i class="fa-regular fa-clock"></i>
@@ -283,8 +283,17 @@ export default {
         (team) => team.team.collectionId === this.lancasterCollectionId,
       );
     },
-    formatScore(score) {
-      return score.toString().padStart(2, "0");
+    formatScore(result) {
+      // Some fixtures return a different name for the "score" value in the result
+      // e.g Pool has "Frames" not "Score"
+      // Need to check if there are ever multiple keys returned for some activities
+      const result_keys = Object.keys(result);
+      if (result_keys.length == 1) {
+        return result[result_keys[0]].toString().padStart(2, "0");
+      } else {
+        // Need to check for multiple or no result keys here
+        return null;
+      }
     },
   },
 };

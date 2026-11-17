@@ -2,7 +2,7 @@
   <div>
     <HeroBanner
       title="TERMS & CONDITIONS"
-      image="https://assets-cdn.sums.su/YU/website/img/Roses/Hero_Banner_Homepage.png"
+      image="https://assets-cdn.sums.digital/YU/website/img/Roses/Hero_Banner_Homepage.png"
     />
     <div class="body">
       <div class="container mx-auto py-14 md:py-28 flex flex-col gap-6">
@@ -115,6 +115,8 @@
 import HeroBanner from "~/components/HeroBanner.vue";
 
 export default { name: "CookiePolicyPage", components: { HeroBanner } };
+</script>
+<script setup>
 useHead({
   title: "Terms & Conditions",
 });

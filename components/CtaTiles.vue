@@ -19,7 +19,7 @@
           </div>
           <NuxtImg
             class="hover:scale-105 transition-all"
-            src="https://assets-cdn.sums.su/YU/website/img/Roses/Shop_Tile.png"
+            src="https://assets-cdn.sums.digital/YU/website/img/Roses/Shop_Tile.png"
             alt="Fixtures"
             width="230px"
             height="fit-content"
@@ -37,7 +37,7 @@
           </div>
           <NuxtImg
             class="hover:scale-105 transition-all"
-            src="https://assets-cdn.sums.su/YU/website/img/Roses/Get_Involved_Tile.png"
+            src="https://assets-cdn.sums.digital/YU/website/img/Roses/Get_Involved_Tile.png"
             alt="Get Involved"
             width="230px"
             height="fit-content"
@@ -55,7 +55,7 @@
           </div>
           <NuxtImg
             class="hover:scale-105 transition-all"
-            src="https://assets-cdn.sums.su/YU/website/img/Roses/Food_Drink_Tile.png"
+            src="https://assets-cdn.sums.digital/YU/website/img/Roses/Food_Drink_Tile.png"
             alt="Food & Drink"
             width="230px"
             height="fit-content"
@@ -74,7 +74,7 @@
           </div>
           <NuxtImg
             class="hover:scale-105 transition-all"
-            src="https://assets-cdn.sums.su/YU/website/img/Roses/Fixtures_Tile.png"
+            src="https://assets-cdn.sums.digital/YU/website/img/Roses/Fixtures_Tile.png"
             alt="Shop"
             width="230px"
             height="fit-content"
