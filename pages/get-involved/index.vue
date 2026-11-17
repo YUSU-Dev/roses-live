@@ -2,7 +2,7 @@
   <div>
     <HeroBanner
       title="GET INVOLVED"
-      image="https://assets-cdn.sums.su/YU/website/img/Roses/Hero_Banner_Get_Involved.webp"
+      image="https://assets-cdn.sums.digital/YU/website/img/Roses/Hero_Banner_Get_Involved.webp"
     />
     <div class="body">
       <div class="container mx-auto py-14 md:py-28">
@@ -99,7 +99,7 @@
           <NuxtImg
             width="100%"
             height="fit-content"
-            src="https://assets-cdn.sums.su/YU/website/img/Roses/Run_to_Roses_image.png"
+            src="https://assets-cdn.sums.digital/YU/website/img/Roses/Run_to_Roses_image.png"
             class="w-full"
             alt="Run to Roses"
             loading="lazy"
@@ -131,7 +131,7 @@
           <NuxtImg
             width="100%"
             height="fit-content"
-            src="https://assets-cdn.sums.su/YU/website/img/Roses/Roses_Art_Competition_Image.png"
+            src="https://assets-cdn.sums.digital/YU/website/img/Roses/Roses_Art_Competition_Image.png"
             class="w-full"
             alt="Roses Art Competition"
             loading="lazy"
@@ -142,15 +142,9 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import HeroBanner from "~/components/HeroBanner.vue";
 import RosesButton from "~/components/button.vue";
-export default {
-  components: {
-    HeroBanner,
-    RosesButton,
-  },
-};
 useHead({
   title: "Get Involved",
 });

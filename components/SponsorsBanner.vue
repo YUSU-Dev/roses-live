@@ -8,7 +8,7 @@
         <a href="https://go.yorksu.org/4GpEEUC" target="_blank">
           <img
             class="h-24"
-            src="https://assets-cdn.sums.su/YU/website/img/Roses/LUSU_Logo.png"
+            src="https://assets-cdn.sums.digital/YU/website/img/Roses/LUSU_Logo.png"
             alt="Lancaster Students' Union"
             loading="lazy"
           />
@@ -16,7 +16,7 @@
         <a href="https://go.yorksu.org/9ZR9WTA" target="_blank">
           <img
             class="h-24"
-            src="https://assets-cdn.sums.su/YU/website/img/Roses/YS-logo-BLACK.png"
+            src="https://assets-cdn.sums.digital/YU/website/img/Roses/YS-logo-BLACK.png"
             alt="York Sport"
             loading="lazy"
           />
@@ -24,7 +24,7 @@
         <a href="https://go.yorksu.org/oujNo29" target="_blank">
           <img
             class="h-24"
-            src="https://assets-cdn.sums.su/YU/website/img/Roses/equitix_logo.png"
+            src="https://assets-cdn.sums.digital/YU/website/img/Roses/equitix_logo.png"
             alt="Equitix"
             loading="lazy"
           />
@@ -32,7 +32,7 @@
         <a href="https://go.yorksu.org/zQ85tmg" target="_blank">
           <img
             class="h-24"
-            src="https://assets-cdn.sums.su/YU/website/img/Roses/Uni_of_York_logo.png"
+            src="https://assets-cdn.sums.digital/YU/website/img/Roses/Uni_of_York_logo.png"
             alt="University of York"
             loading="lazy"
           />

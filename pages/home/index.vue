@@ -5,13 +5,13 @@
       sub-title="Roses 2025"
       button-title="Fixtures"
       button-href="/fixtures"
-      image="https://assets-cdn.sums.su/YU/website/img/Roses/Hero_Banner_Homepage.png"
-      sub-image="https://assets-cdn.sums.su/YU/website/img/Roses/Hero_banner_NEW_cropped.png"
+      image="https://assets-cdn.sums.digital/YU/website/img/Roses/Hero_Banner_Homepage.png"
+      sub-image="https://assets-cdn.sums.digital/YU/website/img/Roses/Hero_banner_NEW_cropped.png"
     />
     <div class="body">
       <div class="pt-14 md:pt-28">
         <TextImageSection
-          image="https://assets-cdn.sums.su/YU/website/img/Roses/About_Image_Homepage.png"
+          image="https://assets-cdn.sums.digital/YU/website/img/Roses/About_Image_Homepage.png"
           alt=""
           title="About"
           sub-title="ONE TEAM ONE YORK"
@@ -64,7 +64,7 @@
       <CtaTiles />
       <div class="py-14 md:py-28">
         <TextImageSection
-          image="https://assets-cdn.sums.su/YU/website/img/Roses/York_Mind_Image.jpg"
+          image="https://assets-cdn.sums.digital/YU/website/img/Roses/York_Mind_Image.jpg"
           alt=""
           title="Our Charity Partner"
           sub-title="ROSES IN MIND"
@@ -122,6 +122,8 @@ export default {
     TextImageSection,
   },
 };
+</script>
+<script setup>
 useHead({
   title: "Roses Live",
   meta: [

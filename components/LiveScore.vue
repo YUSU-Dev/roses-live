@@ -29,7 +29,7 @@
       </div>
       <div class="absolute h-full hidden flex-col items-center gap-2 md:flex">
         <NuxtImg
-          src="https://assets-cdn.sums.su/YU/website/img/Roses/Trophy_icon.webp"
+          src="https://assets-cdn.sums.digital/YU/website/img/Roses/Trophy_icon.webp"
           alt=""
           class="w-9"
           loading="lazy"
@@ -38,7 +38,7 @@
       </div>
       <div class="absolute flex md:hidden p-2 -top-7 bg-white">
         <NuxtImg
-          src="https://assets-cdn.sums.su/YU/website/img/Roses/Trophy_icon.webp"
+          src="https://assets-cdn.sums.digital/YU/website/img/Roses/Trophy_icon.webp"
           alt=""
           class="w-9"
           loading="lazy"

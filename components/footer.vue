@@ -6,7 +6,7 @@
           <NuxtImg
             height="fit-content"
             width="377px"
-            src="https://assets-cdn.sums.su/YU/website/img/Roses/Roses_are_white_footer.png"
+            src="https://assets-cdn.sums.digital/YU/website/img/Roses/Roses_are_white_footer.png"
             alt=""
           />
         </div>
@@ -51,7 +51,7 @@
               <NuxtImg
                 height="auto"
                 width="100%"
-                src="https://assets-cdn.sums.su/YU/website/img/yorksu-logo-white-full.png"
+                src="https://assets-cdn.sums.digital/YU/website/img/yorksu-logo-white-full.png"
                 class="w-full h-auto"
                 alt="University of York Students' Union"
               />

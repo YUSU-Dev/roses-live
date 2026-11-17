@@ -3,7 +3,7 @@
   <div>
     <HeroBanner
       :title="sport?.name"
-      image="https://assets-cdn.sums.su/YU/website/img/Roses/Hero_Banner_Fixtures.png"
+      image="https://assets-cdn.sums.digital/YU/website/img/Roses/Hero_Banner_Fixtures.png"
     />
     <div class="container mx-auto py-14 md:py-28">
       <div v-if="sport?.description" class="pb-14 md:pb-28 key-rules">

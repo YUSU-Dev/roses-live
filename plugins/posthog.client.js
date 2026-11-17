@@ -1,5 +1,7 @@
-import { defineNuxtPlugin } from "#app";
+import { defineNuxtPlugin, useRuntimeConfig, useRouter } from "#app";
+import { nextTick } from "vue";
 import posthog from "posthog-js";
+
 export default defineNuxtPlugin(() => {
   const runtimeConfig = useRuntimeConfig();
   const posthogClient = posthog.init(runtimeConfig.public.posthogPublicKey, {
