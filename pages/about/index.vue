@@ -183,17 +183,9 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import HeroBanner from "~/components/HeroBanner.vue";
 import RosesButton from "~/components/button.vue";
-export default {
-  components: {
-    HeroBanner,
-    RosesButton,
-  },
-};
-</script>
-<script setup>
 useHead({
   title: "About",
 });
